@@ -6,10 +6,16 @@ const localPort = "3000";
 const proxiedServer = "http://localhost:5555";
 
 module.exports = {
-    mode: "development",
+
     entry: [
-        "./src/index"
+        "./src/index.tsx",
     ],
+
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
+    },
+
+    mode: "development",
     devServer: {
         contentBase: "./build",
         lazy: false,     // always compile immediately in order to save time
@@ -46,7 +52,11 @@ module.exports = {
             { test: /\.js$/,
               exclude: /(node_modules|bower_components)/,
               use: [{loader: "babel-loader"}]
-            }
+            },
+            { test: /\.tsx?$/,
+                exclude: /node_modules/,
+                use: [{loader: "ts-loader"}]
+            },
         ]
     }
 };
