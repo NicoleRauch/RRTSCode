@@ -15,6 +15,18 @@
     "test-watch": "node_modules/.bin/mocha --watch --require babel-core/register --watch-extensions js --require ./enzymeSetup.js --recursive test"
   },
   "devDependencies": {
+    "@types/core-js": "2.5.0",
+    "@types/enzyme": "3.1.10",
+    "@types/enzyme-adapter-react-16": "1.0.2",
+    "@types/jest": "23.1.1",
+    "@types/nanoajax": "0.2.30",
+    "@types/ramda": "0.25.34",
+    "@types/react": "16.4.1",
+    "@types/react-dom": "16.0.6",
+    "@types/react-redux": "6.0.2",
+    "@types/react-router-dom": "4.2.7",
+    "@types/redux-logger": "3.0.6",
+    "@types/sinon": "5.0.1",
     "babel-core": "6.26.0",
     "babel-eslint": "8.2.2",
     "babel-loader": "7.1.4",
@@ -42,7 +54,7 @@
   },
   "dependencies": {
     "nanoajax": "0.4.3",
-    "react": "16.2.0",
+    "react": "16.4.1",
     "react-autosuggest": "9.3.4",
     "react-dom": "16.2.0",
     "react-redux": "5.0.7",
