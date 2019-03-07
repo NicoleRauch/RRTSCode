@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {UserType} from "./types";
+import {UserType} from "../src-solution-react/types";
 
 interface UserCreationProps {
     submitUser: (user: UserType) => void
@@ -10,7 +10,8 @@ interface UserCreationState {
     lastName: string
 }
 
-export default class UserCreationViaInternalState extends Component<UserCreationProps, UserCreationState> {
+
+export default class extends Component<UserCreationProps, UserCreationState> {
 
     constructor(props: UserCreationProps) {
         super(props);
@@ -40,5 +41,4 @@ export default class UserCreationViaInternalState extends Component<UserCreation
             </div>
         );
     }
-
 }
