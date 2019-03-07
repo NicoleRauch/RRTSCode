@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import UserList from "../src-solution-redux-1/UserList";
 import UserCreation from "../src-solution-redux-1/UserCreation";
 
-import {addUser} from "./reducers";
+import {addUser, StoreState} from "./reducers";
 
-export class AppComponent extends Component {
+export class AppComponent extends Component<StoreState> {
 
   render() {
 
@@ -19,4 +19,4 @@ export class AppComponent extends Component {
   }
 }
 
-export default connect(state => state)(AppComponent);
+export default connect<StoreState, {}, {}, StoreState> ((state: StoreState): StoreState => state)(AppComponent);
