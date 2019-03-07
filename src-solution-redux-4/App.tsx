@@ -4,18 +4,21 @@ import { connect } from "react-redux";
 import UserList from "../src-solution-redux-1/UserList";
 import UserCreation from "../src-solution-redux-1/UserCreation";
 
-import {addUser, StoreState} from "./reducers";
+import {addUser} from "./reducers";
+import {StoreState} from "../src-solution-redux-3/reducers";
+import {IDispatchProps} from "./types";
 
-export class AppComponent extends Component<StoreState> {
+export class AppComponent extends Component<StoreState & IDispatchProps> {
 
   render() {
 
-      const {users} = this.props;
+      const {users, dispatch} = this.props;
 
     return (
       <div>
         <UserList users={users} />
-<UserCreation submitUser={ user => { addUser(user); } } />
+<UserCreation submitUser={ user =>
+              { dispatch(addUser(user)); } } />
       </div>
     );
   }

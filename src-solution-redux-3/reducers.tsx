@@ -16,13 +16,11 @@ const INITIAL_STATE = {
 
 export enum UserActions {
     USER_ADDED = "USER_ADDED"
-};
+}
 
 export interface UserAddAction extends Action {
     type: UserActions.USER_ADDED,
     payload: UserType
-
-
 }
 
 export function addUser(user: UserType) {
