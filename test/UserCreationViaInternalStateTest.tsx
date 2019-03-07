@@ -3,6 +3,7 @@ import expect from "must";
 import sinon from "sinon";
 import {shallow} from "enzyme";
 import UserCreation from "../src-solution-react/UserCreationViaInternalState";
+import {UserType} from "../src-solution-react/types";
 
 describe('UserCreation', () => {
   let submit;

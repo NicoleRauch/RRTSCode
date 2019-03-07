@@ -9,7 +9,7 @@
     "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDirs": ["src*", "test*"],
+    "rootDirs": ["src*", "."],
     "forceConsistentCasingInFileNames": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
