@@ -1,4 +1,9 @@
+import {UserType} from "../src-solution-react/types";
 
+
+export interface StoreState {
+    users: UserType[]
+}
 
 const INITIAL_STATE = {
   users: [
@@ -8,6 +13,6 @@ const INITIAL_STATE = {
   ]
 };
 
-export default function (state = INITIAL_STATE, action = {}) {
+export default function (state:StoreState = INITIAL_STATE, _ = {}):StoreState {
   return state;
 }
