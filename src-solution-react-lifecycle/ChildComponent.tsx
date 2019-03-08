@@ -1,8 +1,12 @@
 import React, {Component} from "react";
 
-export default class extends Component {
+interface ChildComponentProps {
+    checked: boolean
+}
 
-  constructor(props) {
+export default class extends Component<ChildComponentProps> {
+
+  constructor(props: ChildComponentProps) {
     super(props);
     console.log("Child Component constructor.")
   }
