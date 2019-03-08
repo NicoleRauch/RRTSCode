@@ -4,10 +4,14 @@ const redBorder = {
   border: "1px solid red",
   width: "30em",
   padding: "5px",
-  clear: "both",
+  clear: "both" as "both",
 };
 
-const SingleUserParam = ({component}) => (
+interface SingleUserParamProps {
+  component: JSX.Element
+}
+
+const SingleUserParam = ({component}: SingleUserParamProps) => (
   <div style={redBorder}>
     {component}
   </div> );

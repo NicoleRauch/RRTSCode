@@ -34,11 +34,11 @@ export default class extends Component {
 <br />
 <SingleUserParam component={<User {...user} />} />
 <br />
-<SingleUserParamAndData component={<User/>} user={user} />
+<SingleUserParamAndData component={<User firstName="" lastName="" />} user={user} />
 <br />
 
 <hr/>
-<UserList users={users} component={<User/>} />
+<UserList users={users} component={<User firstName="" lastName="" />} />
       </div>
     );
   }

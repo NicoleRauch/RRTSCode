@@ -1,13 +1,18 @@
 import React from "react";
+import {UserType} from "../src-solution-react/types";
 
 const redBorder = {
   border: "1px solid red",
   width: "30em",
   padding: "5px",
-  clear: "both",
+  clear: "both" as "both",
 };
 
-const SingleUserMonolith = ({user}) => (
+interface SingleUserMonolithProps {
+    user: UserType
+}
+
+const SingleUserMonolith = ({user}: SingleUserMonolithProps) => (
   <div style={redBorder}>
     <div>
       <label>First name: </label><span>{user.firstName}</span><br/>
