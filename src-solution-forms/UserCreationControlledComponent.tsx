@@ -1,9 +1,18 @@
 import React, {Component} from "react";
+import {UserType} from "../src-solution-redux-big/types";
 
+interface UserCreationControlledComponentProps {
+    submitUser: (user: UserType) => void
+}
 
-export default class extends Component {
+interface UserCreationControlledComponentState {
+    firstName: string,
+    lastName: string
+}
 
-  constructor(props) {
+export default class extends Component<UserCreationControlledComponentProps, UserCreationControlledComponentState> {
+
+  constructor(props: UserCreationControlledComponentProps) {
     super(props);
     this.state = { firstName: "Pippi", lastName: "Langstrumpf"};
   }
@@ -23,7 +32,7 @@ export default class extends Component {
         </div>
         <div>
           <button
-            onClick={e => { this.props.submitUser(this.state); }}
+            onClick={() => { this.props.submitUser(this.state); }}
           >Submit</button>
         </div>
       </div>

@@ -1,11 +1,11 @@
-import React, {Component} from "react";
+import React, {Component, FormEvent} from "react";
 
 
 export default class extends Component {
 
-  onSubmit(e) {
+  onSubmit(e: FormEvent) {
     e.preventDefault();
-    console.log(e.target.firstname.value + " " + e.target.lastname.value);
+    console.log(e.currentTarget["firstname"].value + " " + e.currentTarget["lastname"].value);
   }
 
   render() {
