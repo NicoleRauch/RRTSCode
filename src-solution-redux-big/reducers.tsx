@@ -1,5 +1,6 @@
 import {Action, combineReducers} from "redux";
 import {DataType, ProductType, UserType} from "./types";
+import {createReducer} from "./createReducer";
 
 export interface StoreState {
     users: UserType[]
@@ -7,13 +8,6 @@ export interface StoreState {
     otherData: DataType | null,
 }
 
-
-function createReducer<ST>(initialState: ST, handlers: {}) {
-  return (state = initialState, action: Action = {type: "dummy"}) =>
-    handlers.hasOwnProperty(action.type) ?
-      handlers[action.type](state, action) :
-      state
-}
 
 const INITIAL_STATE: StoreState = {
   users: [],

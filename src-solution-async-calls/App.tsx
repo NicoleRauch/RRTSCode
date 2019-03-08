@@ -5,12 +5,14 @@ import UserList from "../src-solution-redux-1/UserList";
 import UserCreation from "../src-solution-redux-1/UserCreation";
 
 import {submitUser, loadUsers} from "./actions";
+import {StoreState} from "../src-solution-redux-3/reducers";
+import {IDispatchProps} from "../src-solution-redux-big/types";
 
-export class AppComponent extends Component {
+export class AppComponent extends Component<StoreState & IDispatchProps> {
 
-  constructor({dispatch}){
-    super();
-    dispatch(loadUsers());
+  constructor({dispatch}: IDispatchProps){
+    super({users: [], dispatch});
+    dispatch(loadUsers(dispatch));
   }
 
   render() {
@@ -25,4 +27,4 @@ export class AppComponent extends Component {
   }
 }
 
-export default connect(state => state)(AppComponent);
+export default connect<StoreState, {}, {}, StoreState> ((state: StoreState): StoreState => state)(AppComponent);

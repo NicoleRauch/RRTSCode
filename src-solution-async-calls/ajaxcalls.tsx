@@ -1,6 +1,7 @@
 import ajax from "nanoajax";
+import {UserType} from "../src-solution-redux-big/types";
 
-export function postUser(user, callback) {
+export function postUser(user: UserType, callback: (returnCode: number) => void) {
   ajax.ajax({
       url: "/api/user",
       method: "POST",
@@ -12,13 +13,13 @@ export function postUser(user, callback) {
   );
 }
 
-export function fetchUsers(callback) {
+export function fetchUsers(callback: (response: UserType[]) => void) {
   ajax.ajax({
       url: "/api/users",
       method: "GET"
     },
-    (code, response) => {
-      callback(JSON.parse(response));
+    (_, response) => {
+        callback(JSON.parse(response));
     }
   );
 }
