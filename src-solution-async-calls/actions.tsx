@@ -32,7 +32,7 @@ export const submitUser = (user:UserType) =>
 
 export interface UsersSetAction extends Action {
   type: ActionTypes.USERS_SET,
-    users: Array<UserType>
+    users: UserType[]
 
 }
 

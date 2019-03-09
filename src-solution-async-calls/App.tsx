@@ -12,7 +12,7 @@ export class AppComponent extends Component<StoreState & IDispatchProps> {
 
   constructor({dispatch}: IDispatchProps){
     super({users: [], dispatch});
-    dispatch(loadUsers(dispatch));
+    loadUsers(dispatch);
   }
 
   render() {
