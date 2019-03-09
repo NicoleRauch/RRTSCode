@@ -8,9 +8,7 @@ const redBorder = {
   clear: "both" as "both",
 };
 
-interface SingleUserMonolithProps {
-    user: UserType
-}
+interface SingleUserMonolithProps { user: UserType }
 
 const SingleUserMonolith = ({user}: SingleUserMonolithProps) => (
   <div style={redBorder}>
