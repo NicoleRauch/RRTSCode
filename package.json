@@ -34,8 +34,6 @@
     "html-webpack-plugin": "3.2.0",
     "isdev": "1.0.1",
     "jest": "23.6.0",
-    "jsdom": "13.2.0",
-    "jsdom-global": "3.0.2",
     "must": "0.13.4",
     "react-hot-loader": "4.7.2",
     "react-test-renderer": "16.8.3",
