@@ -13,7 +13,7 @@ module.exports = {
         "./src*",
         "."
     ],
-    "setupFilesAfterEnv": ["./enzymeSetup.ts"],
+    "setupTestFrameworkScriptFile": "./enzymeSetup.ts",
     "testRegex": "Test\\.tsx?$",
     "transform": {
         "^.+\\.tsx?$": "ts-jest"

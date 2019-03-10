@@ -17,7 +17,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "noUnusedParameters": true
   },
   "exclude": [
