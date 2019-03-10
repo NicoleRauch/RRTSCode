@@ -1,12 +1,12 @@
 import React from "react";
 import expect from "must";
 
-import {shallow} from "enzyme";
+import {shallow, ShallowWrapper} from "enzyme";
 import User from "../src-solution-react/UserWithHighlight";
 
 
 describe('UserWithHighlight', () => {
-  let user;
+  let user: ShallowWrapper;
 
   beforeEach(() => {
     user = shallow(<User firstName="Paul" lastName="Meier"/>);
@@ -19,9 +19,9 @@ describe('UserWithHighlight', () => {
       const highlighted = user.find({style: {backgroundColor: "#FF0000"}});
       const unhighlighted = user.find({style: {backgroundColor: "#FFFFFF"}});
 
-      expect(highlighted.length).to.be(0);
-      expect(unhighlighted.length).to.be(1);
-      expect(unhighlighted.text()).to.be("Paul");
+      expect(highlighted.length).to.eql(0);
+      expect(unhighlighted.length).to.eql(1);
+      expect(unhighlighted.text()).to.eql("Paul");
     });
 
     it('highlights the user name when the highlighted state is set to true', () => {
@@ -30,9 +30,9 @@ describe('UserWithHighlight', () => {
       const highlighted = user.find({style: {backgroundColor: "#FF0000"}});
       const unhighlighted = user.find({style: {backgroundColor: "#FFFFFF"}});
 
-      expect(highlighted.length).to.be(1);
-      expect(highlighted.text()).to.be("Paul");
-      expect(unhighlighted.length).to.be(0);
+      expect(highlighted.length).to.eql(1);
+      expect(highlighted.text()).to.eql("Paul");
+      expect(unhighlighted.length).to.eql(0);
     });
   });
 

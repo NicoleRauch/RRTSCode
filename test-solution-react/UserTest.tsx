@@ -12,10 +12,10 @@ const user =
 
 const nameParts = user.find("span");
 
-expect(nameParts.length).to.be(2);
+expect(nameParts.length).to.eql(2);
 
-expect(nameParts.at(0).text()).to.be("Petra");
-expect(nameParts.at(1).text()).to.be("Meier");
+expect(nameParts.at(0).text()).to.eql("Petra");
+expect(nameParts.at(1).text()).to.eql("Meier");
 
 expect(nameParts.map(c => c.text()))
   .to.eql(["Petra", "Meier"]);

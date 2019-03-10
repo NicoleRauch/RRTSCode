@@ -1,13 +1,12 @@
 import React from "react";
 import expect from "must";
-import sinon from "sinon";
-import {shallow} from "enzyme";
+import sinon, {SinonSpy} from "sinon";
+import {shallow, ShallowWrapper} from "enzyme";
 import UserCreation from "../src-solution-react/UserCreationViaInternalState";
-import {UserType} from "../src-solution-react/types";
 
 describe('UserCreation', () => {
-  let submit;
-  let user;
+  let submit: SinonSpy;
+  let user: ShallowWrapper;
 
   beforeEach(() => {
     submit = sinon.spy();
