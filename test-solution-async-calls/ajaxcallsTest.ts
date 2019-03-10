@@ -1,13 +1,23 @@
 import { postUser, fetchUsers } from "../src-solution-async-calls/ajaxcalls";
-import sinon from "sinon";
+import sinon, {SinonFakeXMLHttpRequest, SinonFakeXMLHttpRequestStatic} from "sinon";
 import expect from "must";
+import {UserType} from "../src-solution-react/types";
+
+declare var global: {XMLHttpRequest : SinonFakeXMLHttpRequestStatic};
+
+const user: UserType = {
+  firstName: "firstName",
+    lastName: "lastName"
+};
 
 describe("validateInBackend", function () {
+  let requests: SinonFakeXMLHttpRequest[];
+
   beforeEach(function () {
-    this.requests = [];
+    requests = [];
     global.XMLHttpRequest = sinon.FakeXMLHttpRequest;
     global.XMLHttpRequest.onCreate = request => {
-      this.requests.push(request);
+      requests.push(request);
     };
   });
 
@@ -17,20 +27,20 @@ describe("validateInBackend", function () {
 
   describe("postUser", function () {
     it("submits user data to the backend", function () {
-      postUser("myUsername", () => {});
+      postUser(user, () => {});
 
-      expect(this.requests.length).to.be(1);
-      expect(this.requests[0].url).to.be("/api/user");
-      expect(this.requests[0].method).to.be("POST");
+      expect(requests.length).to.eql(1);
+      expect(requests[0].url).to.eql("/api/user");
+      expect(requests[0].method).to.eql("POST");
     });
 
     it("passes the result code to the callback", function (done) {
-      postUser("validUsername", data => {
+      postUser(user, data => {
         expect(data).to.eql(200);
         done();
       });
 
-      this.requests[0].respond(200);
+      requests[0].respond(200, { "Content-Type": "application/json" }, "");
     });
   });
 
@@ -38,9 +48,9 @@ describe("validateInBackend", function () {
     it("makes request to the backend", function () {
       fetchUsers(() => {});
 
-      expect(this.requests.length).to.be(1);
-      expect(this.requests[0].url).to.be("/api/users");
-      expect(this.requests[0].method).to.be("GET");
+      expect(requests.length).to.eql(1);
+      expect(requests[0].url).to.eql("/api/users");
+      expect(requests[0].method).to.eql("GET");
     });
 
     it("passes the retrieved data to the callback", function(done) {
@@ -49,7 +59,7 @@ describe("validateInBackend", function () {
         done();
       });
 
-      this.requests[0].respond(200, {"Content-Type": "application/json" }, `{ "somedata": true }`);
+      requests[0].respond(200, {"Content-Type": "application/json" }, `{ "somedata": true }`);
     });
 
   });
