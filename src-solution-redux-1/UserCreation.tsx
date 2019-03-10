@@ -26,18 +26,17 @@ export default class extends Component<UserCreationProps, UserCreationState> {
                     <input type="text"
                            onBlur={e => this.setState({firstName: e.target.value})}/>
                 </div>
-                <div>
-                    <label>Last name:</label>
-                    <input type="text" onBlur={e => this.setState({lastName: e.target.value})}/>
-                </div>
-                <div>
-                    <button
-                        onClick={() => {
-                            this.props.submitUser(this.state);
-                        }}
-                    >Submit
-                    </button>
-                </div>
+<div>
+  <label>Last name:</label>
+  <input type="text" onBlur={e => this.setState({lastName: e.target.value})}/>
+</div>
+<div>
+  <button
+    onClick={() => {
+      this.props.submitUser(this.state);
+    }}
+  >Submit</button>
+</div>
             </div>
         );
     }

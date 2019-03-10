@@ -6,14 +6,13 @@ import HelloWorldFunctional from "../src-solution-react/HelloWorldFunctionalComp
 import HelloWorldClass from "../src-solution-react/HelloWorldClassComponent";
 
 describe('HelloWorldComponent', () => {
-    it('checks the result\'s type and contents', () => {
-        const functional = shallow(<HelloWorldFunctional />);
+  it('checks the result\'s type and contents', () => {
+    const functional = shallow(<HelloWorldFunctional />);
+    expect(functional.text()).to.eql("Hello World!");
+    expect(functional.type()).to.eql("p");
+    expect(functional.name()).to.eql("p");
 
-        expect(functional.text()).to.eql("Hello World!");
-        expect(functional.type()).to.eql("p");
-        expect(functional.name()).to.eql("p");
-
-        expect(functional.html()).to.eql("<p>Hello World!</p>");
+    expect(functional.html()).to.eql("<p>Hello World!</p>");
 
         const clazz = shallow(<HelloWorldClass/>);
 

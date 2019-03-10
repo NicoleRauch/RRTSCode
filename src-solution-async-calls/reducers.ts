@@ -13,7 +13,7 @@ const INITIAL_STATE = {
 
 const users = createReducer(INITIAL_STATE.users, {
   [ActionTypes.USER_ADDED]: (currentUsers: UserType[], action: UserAddAction) => currentUsers.concat(action.user),
-    [ActionTypes.USERS_SET]: (_: UserType[], action: UsersSetAction) => action.users
+  [ActionTypes.USERS_SET]: (_: UserType[], action: UsersSetAction) => action.users
 });
 
 export default combineReducers({
