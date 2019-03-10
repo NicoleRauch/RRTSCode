@@ -24,7 +24,7 @@ expect(users.childAt(0).key()).to.eql("userlist_PetraMeier");
 const userComps = users.find(User);
 expect(userComps.length).to.eql(2);
 
-expect(userComps.at(0).key()).to.be.undefined();
+expect(userComps.at(0).key()).to.be.null();
 
 expect(userComps.at(0).props())
   .to.eql({firstName:"Petra", lastName:"Meier"});

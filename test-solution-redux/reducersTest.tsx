@@ -1,14 +1,18 @@
-import React from "react";
 import expect from "must";
-import reducer, {addUser, USER_ADDED} from "../src-solution-redux-4/reducers";
+import reducer, {addUser, UserActions} from "../src-solution-redux-4/reducers";
+import {UserType} from "../src-solution-react/types";
 
-const user = "some user payload";
+
+
+const user: UserType = {firstName: "firstName", lastName: "lastName"};
+const stateUserOne: UserType = {firstName: "Peter", lastName: "Klaus"};
+const stateUserTwo: UserType = {firstName: "Max", lastName: "Mustermann"}
 
 describe('reducers', function () {
 
   describe('Actions', function () {
     it('creates a USER_ADDED action', function () {
-      expect(addUser(user)).to.eql({type: USER_ADDED, payload: user});
+      expect(addUser(user)).to.eql({type: UserActions.USER_ADDED, payload: user});
     });
   });
 
@@ -19,9 +23,9 @@ describe('reducers', function () {
       expect(newState).to.eql({users: [user]});
     });
     it('adds a user when there are already users in the state', function () {
-      const NONEMPTY_STATE = {users: ["user_1", "user_2"]};
+      const NONEMPTY_STATE = {users: [stateUserOne, stateUserTwo]};
       const newState = reducer(NONEMPTY_STATE, addUser(user));
-      expect(newState).to.eql({users: ["user_1", "user_2", user]});
+      expect(newState).to.eql({users: [stateUserOne, stateUserTwo, user]});
     });
   });
 });

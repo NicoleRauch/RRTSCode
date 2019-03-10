@@ -1,4 +1,3 @@
-import "jsdom-global/register";
 import React from "react";
 import expect from "must";
 import sinon, {SinonFakeServer, SinonFakeXMLHttpRequestStatic} from "sinon";

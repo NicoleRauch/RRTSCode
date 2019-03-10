@@ -1,12 +1,10 @@
-import 'jsdom-global/register'
-
 import React from "react";
 import expect from "must";
 import {mount} from "enzyme";
 import sinon from "sinon";
 
 import {AppComponent} from "../src-solution-redux-4/App";
-import {USER_ADDED} from "../src-solution-redux-4/reducers";
+import {UserActions} from "../src-solution-redux-4/reducers";
 
 describe('App', function () {
   it('displays its user list', function () {
@@ -23,6 +21,6 @@ describe('App', function () {
     const button = app.find("button");
     button.simulate("click");
 
-    expect(dispatcher.getCall(0).args[0]).to.eql({type: USER_ADDED, payload: {}});
+    expect(dispatcher.getCall(0).args[0]).to.eql({type: UserActions.USER_ADDED, payload: {firstName: "", lastName: ""}});
   });
 });
