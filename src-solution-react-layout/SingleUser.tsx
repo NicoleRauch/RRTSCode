@@ -1,6 +1,6 @@
 import React from "react";
 import User from "./User";
-import {UserType} from "../src-solution-react/types";
+import {IUser} from "../src-solution-react/types";
 
 const redBorder = {
   border: "1px solid red",
@@ -10,7 +10,7 @@ const redBorder = {
 };
 
 interface SingleUserProps {
-  user: UserType
+  user: IUser
 
 }
 

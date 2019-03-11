@@ -1,8 +1,8 @@
 import React from "react";
 import User from "./User";
-import {UserType} from "./types";
+import {IUser} from "./types";
 
-interface UserListProps { users: Array<UserType> }
+interface UserListProps { users: Array<IUser> }
 
 export default ({users}:UserListProps) => (
   <ul>

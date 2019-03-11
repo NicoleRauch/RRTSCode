@@ -7,7 +7,7 @@ export interface IDispatchProps {
 
 
 
-export interface UserType {
+export interface IUser {
     firstName: string,
     lastName: string
 }

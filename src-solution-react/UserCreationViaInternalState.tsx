@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import {UserType} from "./types";
+import {IUser} from "./types";
 
 interface UserCreationProps {
-    submitUser: (user: UserType) => void
+    submitUser: (user: IUser) => void
 }
 
 interface UserCreationState {

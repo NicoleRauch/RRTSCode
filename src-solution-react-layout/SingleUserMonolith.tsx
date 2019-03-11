@@ -1,5 +1,5 @@
 import React from "react";
-import {UserType} from "../src-solution-react/types";
+import {IUser} from "../src-solution-react/types";
 
 const redBorder = {
   border: "1px solid red",
@@ -8,7 +8,7 @@ const redBorder = {
   clear: "both" as "both",
 };
 
-interface SingleUserMonolithProps { user: UserType }
+interface SingleUserMonolithProps { user: IUser }
 
 const SingleUserMonolith = ({user}: SingleUserMonolithProps) => (
   <div style={redBorder}>

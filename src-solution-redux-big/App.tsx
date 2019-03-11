@@ -5,15 +5,15 @@ import UserList from "../src-solution-redux-1/UserList";
 import UserCreation from "../src-solution-redux-1/UserCreation";
 
 import {addUser, StoreState} from "./reducers";
-import {UserType} from "./types";
+import {IUser} from "./types";
 import {Action, Dispatch} from "redux";
 
 interface AppComponentProps {
-    specialUsers: UserType[]
+    specialUsers: IUser[]
 }
 
 interface AppComponentDispatch {
-    dispatchUser: (u: UserType) => void
+    dispatchUser: (u: IUser) => void
 }
 
 export class AppComponent extends Component<AppComponentProps & AppComponentDispatch> {

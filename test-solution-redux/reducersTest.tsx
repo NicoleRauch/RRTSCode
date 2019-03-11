@@ -1,12 +1,12 @@
 import expect from "must";
 import reducer, {addUser, UserActions} from "../src-solution-redux-4/reducers";
-import {UserType} from "../src-solution-react/types";
+import {IUser} from "../src-solution-react/types";
 
 
 
-const user: UserType = {firstName: "firstName", lastName: "lastName"};
-const stateUserOne: UserType = {firstName: "Peter", lastName: "Klaus"};
-const stateUserTwo: UserType = {firstName: "Max", lastName: "Mustermann"}
+const user: IUser = {firstName: "firstName", lastName: "lastName"};
+const stateUserOne: IUser = {firstName: "Peter", lastName: "Klaus"};
+const stateUserTwo: IUser = {firstName: "Max", lastName: "Mustermann"}
 
 describe('reducers', function () {
 

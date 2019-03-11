@@ -1,11 +1,11 @@
 import { postUser, fetchUsers } from "../src-solution-async-calls/ajaxcalls";
 import sinon, {SinonFakeXMLHttpRequest, SinonFakeXMLHttpRequestStatic} from "sinon";
 import expect from "must";
-import {UserType} from "../src-solution-react/types";
+import {IUser} from "../src-solution-react/types";
 
 declare var global: {XMLHttpRequest : SinonFakeXMLHttpRequestStatic};
 
-const user: UserType = {
+const user: IUser = {
   firstName: "firstName",
     lastName: "lastName"
 };

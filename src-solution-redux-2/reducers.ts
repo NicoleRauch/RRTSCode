@@ -1,8 +1,8 @@
-import {UserType} from "../src-solution-react/types";
+import {IUser} from "../src-solution-react/types";
 
 
 export interface StoreState {
-    users: UserType[]
+    users: IUser[]
 }
 
 const INITIAL_STATE = {

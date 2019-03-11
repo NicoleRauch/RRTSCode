@@ -1,6 +1,6 @@
 import * as backend from "./ajaxcalls";
 import {StoreState} from "../src-solution-redux-big/reducers";
-import {UserType} from "../src-solution-redux-big/types";
+import {IUser} from "../src-solution-redux-big/types";
 import {Action, Dispatch} from "redux";
 
 export enum ActionTypes {
@@ -11,16 +11,16 @@ export enum ActionTypes {
 
 export interface UserAddAction extends Action {
     type: ActionTypes.USER_ADDED,
-    user: UserType
+    user: IUser
 }
 
-export const addUser = (user: UserType): UserAddAction => ({
+export const addUser = (user: IUser): UserAddAction => ({
     type: ActionTypes.USER_ADDED,
     user
 });
 
 
-export const submitUser = (user:UserType) =>
+export const submitUser = (user:IUser) =>
     (dispatch: Dispatch<Action, StoreState>) => {
     backend.postUser(user, returnCode => {
       if(returnCode === 200) {
@@ -32,18 +32,18 @@ export const submitUser = (user:UserType) =>
 
 export interface UsersSetAction extends Action {
   type: ActionTypes.USERS_SET,
-    users: UserType[]
+    users: IUser[]
 
 }
 
 
-export const setUsers = (users: UserType[]):UsersSetAction => ({
+export const setUsers = (users: IUser[]):UsersSetAction => ({
     type: ActionTypes.USERS_SET,
     users
 });
 
 export const  loadUsers = (dispatch: Dispatch<Action, StoreState>) => {
-    backend.fetchUsers((users:UserType[]) => {
+    backend.fetchUsers((users:IUser[]) => {
         dispatch(setUsers(users));
     });
 };

@@ -1,8 +1,8 @@
 import React from "react";
-import {UserType} from "../src-solution-react/types";
+import {IUser} from "../src-solution-react/types";
 
 interface UserListProps {
-    users: UserType[],
+    users: IUser[],
     component: JSX.Element
 }
 

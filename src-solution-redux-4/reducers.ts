@@ -1,5 +1,5 @@
 import {Action} from "redux";
-import {UserType} from "../src-solution-react/types";
+import {IUser} from "../src-solution-react/types";
 
 
 const INITIAL_STATE = {
@@ -16,10 +16,10 @@ export enum UserActions {
 
 export interface UserAddAction extends Action {
     type: UserActions.USER_ADDED,
-    payload: UserType
+    payload: IUser
 }
 
-export function addUser(user: UserType) {
+export function addUser(user: IUser) {
     return {
         type: UserActions.USER_ADDED,
         payload: user

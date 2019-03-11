@@ -1,9 +1,9 @@
 import {Action, combineReducers} from "redux";
-import {DataType, ProductType, UserType} from "./types";
+import {DataType, ProductType, IUser} from "./types";
 import {createReducer} from "./createReducer";
 
 export interface StoreState {
-    users: UserType[]
+    users: IUser[]
     products: ProductType[],
     otherData: DataType | null,
 }
@@ -24,10 +24,10 @@ export enum ActionTypes {
 
 export interface UserAddAction extends Action {
     type: ActionTypes.USER_ADDED,
-    user: UserType
+    user: IUser
 }
 
-export function addUser(user: UserType): UserAddAction {
+export function addUser(user: IUser): UserAddAction {
     return {
         type: ActionTypes.USER_ADDED,
         user
@@ -35,7 +35,7 @@ export function addUser(user: UserType): UserAddAction {
 }
 
 const users = createReducer(INITIAL_STATE.users, {
-  [ActionTypes.USER_ADDED]: (currentUsers: UserType[], action: UserAddAction) => currentUsers.concat(action.user)
+  [ActionTypes.USER_ADDED]: (currentUsers: IUser[], action: UserAddAction) => currentUsers.concat(action.user)
 });
 
 export interface ProductAddAction extends Action {

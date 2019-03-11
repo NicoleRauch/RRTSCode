@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import {UserType} from "../src-solution-redux-big/types";
+import {IUser} from "../src-solution-redux-big/types";
 
 interface UserCreationControlledComponentProps {
-    submitUser: (user: UserType) => void
+    submitUser: (user: IUser) => void
 }
 
 interface UserCreationControlledComponentState {
