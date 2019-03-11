@@ -4,9 +4,19 @@ import { connect } from "react-redux";
 import UserList from "../src-solution-redux-1/UserList";
 import UserCreation from "../src-solution-redux-1/UserCreation";
 
-import {addUser} from "./reducers";
+import {addUser, StoreState} from "./reducers";
+import {UserType} from "./types";
+import {Action, Dispatch} from "redux";
 
-export class AppComponent extends Component {
+interface AppComponentProps {
+    specialUsers: UserType[]
+}
+
+interface AppComponentDispatch {
+    dispatchUser: (u: UserType) => void
+}
+
+export class AppComponent extends Component<AppComponentProps & AppComponentDispatch> {
 
   render() {
     return (
@@ -18,12 +28,12 @@ export class AppComponent extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state:StoreState): AppComponentProps => ({
     specialUsers: state.users
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch<Action, StoreState>): AppComponentDispatch => ({
     dispatchUser: user => dispatch(addUser(user))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppComponent);
+export default connect<AppComponentProps, AppComponentDispatch, {}, StoreState>(mapStateToProps, mapDispatchToProps)(AppComponent);
