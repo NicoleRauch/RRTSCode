@@ -2,7 +2,13 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/test-solution-async-calls" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test-solution-react" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test-solution-react-integration" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test-solution-redux" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/build-js" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

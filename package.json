@@ -1,5 +1,5 @@
 {
-  "name": "workshop-react-and-redux-3-day",
+  "name": "workshop-react-and-redux-in-typescript",
   "private": true,
   "scripts": {
     "install-build": "npm install && NODE_ENV=production webpack -p --config webpack.prod.config.js",
