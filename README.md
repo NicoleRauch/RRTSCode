@@ -1,5 +1,5 @@
-# RR3Code
-Code for a 3-day React-Redux training.
+# RRTSCode
+Code for a React-Redux training in TypeScript.
 
 ## Prerequisites
 
