@@ -12,7 +12,7 @@
     "build-watch": "webpack --watch --config webpack.config.js",
     "check-updates": "npm outdated",
     "compile": "tsc",
-    "test": "npm run compile && npm run tslint && npx jest",
+    "test": "npm run tslint && npx jest",
     "test-watch": "jest --watch"
   },
   "devDependencies": {
