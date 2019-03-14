@@ -10,11 +10,10 @@ module.exports = {
         "node"
     ],
     "roots": [
-        "./src*",
-        "."
+        ".",
     ],
     "setupTestFrameworkScriptFile": "./enzymeSetup.ts",
-    "testRegex": "Test\\.tsx?$",
+    "testRegex": "\\.*[tT]est\\.tsx?$",
     "transform": {
         "^.+\\.tsx?$": "ts-jest"
     },
