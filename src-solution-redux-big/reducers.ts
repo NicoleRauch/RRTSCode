@@ -8,13 +8,6 @@ export interface StoreState {
     otherData: DataType | null,
 }
 
-
-const INITIAL_STATE: StoreState = {
-  users: [],
-  products: [],
-  otherData: null
-};
-
 export enum ActionTypes {
     USER_ADDED = "USER_ADDED",
     PRODUCT_ADDED = "PRODUCT_ADDED",
@@ -34,7 +27,8 @@ export function addUser(user: IUser): UserAddAction {
     };
 }
 
-const users = createReducer(INITIAL_STATE.users, {
+const INITIAL_STATE_USERS: IUser[] = [];
+const users = createReducer(INITIAL_STATE_USERS, {
   [ActionTypes.USER_ADDED]: (currentUsers: IUser[], action: UserAddAction) => currentUsers.concat(action.user)
 });
 
@@ -50,7 +44,9 @@ export function addProduct(product: ProductType): ProductAddAction {
     }
 }
 
-const products = createReducer(INITIAL_STATE.products, {
+const INITIAL_STATE_PRODUCTS: ProductType[] = [];
+
+const products = createReducer(INITIAL_STATE_PRODUCTS, {
   [ActionTypes.PRODUCT_ADDED]: (currentProducts: ProductType[], action: ProductAddAction) => currentProducts.concat(action.product)
 });
 
@@ -76,7 +72,9 @@ export function removeData(): DataRemoveAction {
     }
 }
 
-const otherData = createReducer(INITIAL_STATE.otherData, {
+const INITIAL_STATE_OTHER_DATA: DataType | null = null;
+
+const otherData = createReducer(INITIAL_STATE_OTHER_DATA, {
   [ActionTypes.DATA_SET]: (data:DataType, _:DataSetAction) => data,
   [ActionTypes.DATA_REMOVED]: (_: DataType, __: DataRemoveAction) => null
 });
