@@ -10,9 +10,9 @@ import {IDispatchProps} from "../src-solution-redux-big/types";
 
 export class AppComponent extends Component<StoreState & IDispatchProps> {
 
-  constructor({dispatch}: IDispatchProps){
-    super({users: [], dispatch});
-    loadUsers(dispatch);
+  constructor(props: StoreState & IDispatchProps){
+    super(props);
+    loadUsers(props.dispatch);
   }
 
   render() {
