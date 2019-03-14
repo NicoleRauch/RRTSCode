@@ -7,7 +7,7 @@
     "build-win": "webpack -p --config webpack.prod.config.js",
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "start-win": "node .\\node_modules\\webpack-dev-server\\bin\\webpack-dev-server.js",
-    "tslint": "./node_modules/tslint/bin/tslint 'src/**/*.ts?(x)' '**/*Test.ts?(x)'",
+    "tslint": "./node_modules/tslint/bin/tslint 'src*/**/*.ts?(x)' 'test*/**/*Test.ts?(x)'",
     "webpack": "NODE_ENV=production webpack -p --config webpack.prod.config.js",
     "build-watch": "webpack --watch --config webpack.config.js",
     "check-updates": "npm outdated",
