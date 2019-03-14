@@ -10,10 +10,10 @@ const user: IUser = {
     lastName: "lastName"
 };
 
-describe("validateInBackend", function () {
+describe("validateInBackend", () => {
   let requests: SinonFakeXMLHttpRequest[];
 
-  beforeEach(function () {
+  beforeEach(() => {
     requests = [];
     global.XMLHttpRequest = sinon.FakeXMLHttpRequest;
     global.XMLHttpRequest.onCreate = request => {
@@ -21,20 +21,20 @@ describe("validateInBackend", function () {
     };
   });
 
-  afterEach(function () {
+  afterEach(() => {
     delete global.XMLHttpRequest;
   });
 
-  describe("postUser", function () {
-    it("submits user data to the backend", function () {
-      postUser(user, () => {});
+  describe("postUser", () => {
+    it("submits user data to the backend", () => {
+      postUser(user, () => { /**/ });
 
       expect(requests.length).to.eql(1);
       expect(requests[0].url).to.eql("/api/user");
       expect(requests[0].method).to.eql("POST");
     });
 
-    it("passes the result code to the callback", function (done) {
+    it("passes the result code to the callback", done => {
       postUser(user, data => {
         expect(data).to.eql(200);
         done();
@@ -44,16 +44,16 @@ describe("validateInBackend", function () {
     });
   });
 
-  describe("fetchUsers", function () {
-    it("makes request to the backend", function () {
-      fetchUsers(() => {});
+  describe("fetchUsers", () => {
+    it("makes request to the backend", () => {
+      fetchUsers(() => { /**/ });
 
       expect(requests.length).to.eql(1);
       expect(requests[0].url).to.eql("/api/users");
       expect(requests[0].method).to.eql("GET");
     });
 
-    it("passes the retrieved data to the callback", function(done) {
+    it("passes the retrieved data to the callback", done => {
       fetchUsers(data => {
         expect(data).to.eql({somedata: true});
         done();

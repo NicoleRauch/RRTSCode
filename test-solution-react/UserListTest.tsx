@@ -6,8 +6,8 @@ import User from "../src-solution-react/User";
 import UserList from "../src-solution-react/UserList";
 
 
-describe('UserList', function () {
-  it('displays the name that is passed to it', function () {
+describe('UserList', () => {
+  it('displays the name that is passed to it', () => {
 const users = shallow(<UserList users={[
   {firstName:"Petra", lastName:"Meier"},
   {firstName:"Peter", lastName:"Miller"}]} />);

@@ -17,12 +17,12 @@ const users = [
 
 declare var global: {XMLHttpRequest : SinonFakeXMLHttpRequestStatic};
 
-describe("Username end2end test", function () {
+describe("Username end2end test", () => {
   let server : SinonFakeServer;
   let store : Store;
   let component: ReactWrapper;
 
-  beforeEach(function () {
+  beforeEach(() => {
     global.XMLHttpRequest = sinon.FakeXMLHttpRequest;
     server = sinon.fakeServer.create({respondImmediately: true});
 
@@ -31,11 +31,11 @@ describe("Username end2end test", function () {
     );
   });
 
-  afterEach(function () {
+  afterEach(() => {
     server.restore();
   });
 
-  it("displays all loaded users", function () {
+  it("displays all loaded users", () => {
     server.respondWith("GET", "/api/users",
       [200, {"Content-Type": "application/json"}, JSON.stringify(users)]
     );

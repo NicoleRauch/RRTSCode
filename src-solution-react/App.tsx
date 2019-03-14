@@ -20,7 +20,7 @@ export default class extends Component {
         <HelloWorld />
         <User {...users[0]} />
         <UserList users={users} />
-        <UserCreationViaInternalState submitUser={ () => {} } />
+        <UserCreationViaInternalState submitUser={ () => { /**/ } } />
       </div>
     );
   }

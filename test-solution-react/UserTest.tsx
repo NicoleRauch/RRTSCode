@@ -5,8 +5,8 @@ import { shallow } from "enzyme";
 import User from "../src-solution-react/User";
 
 
-describe('User', function () {
-  it('displays the name that is passed to it', function () {
+describe('User', () => {
+  it('displays the name that is passed to it', () => {
 const user =
   shallow(<User firstName="Petra" lastName="Meier" />);
 

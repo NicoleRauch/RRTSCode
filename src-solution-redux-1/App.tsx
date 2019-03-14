@@ -13,7 +13,7 @@ export default class extends Component {
     return (
       <div>
         <UserList users={users} />
-        <UserCreation submitUser={ () => {} } />
+        <UserCreation submitUser={ () => { /**/ } } />
       </div>
     );
   }

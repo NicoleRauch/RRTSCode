@@ -5,7 +5,7 @@ export default class extends Component {
 
   onSubmit(e: FormEvent) {
     e.preventDefault();
-    console.log(e.currentTarget["firstname"].value + " " + e.currentTarget["lastname"].value);
+    // console.log(e.currentTarget["firstname"].value + " " + e.currentTarget["lastname"].value);
   }
 
   render() {

@@ -4,7 +4,7 @@ import User from "./User";
 import {IUser} from "../src-solution-react/types";
 
 interface UserListProps {
-    users: Array<IUser>
+    users: IUser[]
 }
 
 export default ({users}: UserListProps) => (

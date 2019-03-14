@@ -26,11 +26,11 @@ export default class extends Component {
             <li><Link to="/creation">User Creation</Link></li>
           </ul>
           <hr/>
-          <Route exact path="/" component={HelloWorld}/>
+          <Route exact={true} path="/" component={HelloWorld}/>
           <Route path="/user/:firstName/:lastName"
                  render={({match}) => <User firstName={match.params.firstName} lastName={match.params.lastName}/>}/>
           <Route path="/users" render={() => <UserList users={users}/>}/>
-          <Route path="/creation" render={() => <UserCreationViaInternalState submitUser={() => {
+          <Route path="/creation" render={() => <UserCreationViaInternalState submitUser={() => { //
           }}/>}/>
         </div>
       </Router>
