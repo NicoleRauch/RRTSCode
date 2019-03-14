@@ -8,32 +8,25 @@ import {addUser, StoreState} from "./reducers";
 import {IUser} from "./types";
 import {Action, Dispatch} from "redux";
 
-interface AppComponentProps {
-    specialUsers: IUser[]
-}
+interface AppProps { specialUsers: IUser[] }
+interface AppDispatch { dispatchUser: (u: IUser) => void }
 
-interface AppComponentDispatch {
-    dispatchUser: (u: IUser) => void
-}
-
-export class AppComponent extends Component<AppComponentProps & AppComponentDispatch> {
+export class AppComponent extends Component<AppProps & AppDispatch> {
 
   render() {
     return (
       <div>
-        <UserList users={this.props.specialUsers} />
-        <UserCreation submitUser={ user => { this.props.dispatchUser(user); } } />
+<UserList users={this.props.specialUsers} />
+<UserCreation submitUser={ user => { this.props.dispatchUser(user); } } />
       </div>
     );
   }
 }
 
-const mapStateToProps = (state:StoreState): AppComponentProps => ({
+const mapStateToProps = (state:StoreState): AppProps => ({
     specialUsers: state.users
 });
-
-const mapDispatchToProps = (dispatch: Dispatch<Action, StoreState>): AppComponentDispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch<Action, StoreState>): AppDispatch => ({
     dispatchUser: user => dispatch(addUser(user))
 });
-
-export default connect<AppComponentProps, AppComponentDispatch, {}, StoreState>(mapStateToProps, mapDispatchToProps)(AppComponent);
+export default connect<AppProps, AppDispatch, {}, StoreState>(mapStateToProps, mapDispatchToProps)(AppComponent);
