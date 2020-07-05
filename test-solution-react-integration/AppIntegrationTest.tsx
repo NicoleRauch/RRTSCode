@@ -8,7 +8,7 @@ import {UserActions} from "../src-solution-redux-4/reducers";
 
 describe('App', () => {
   it('displays its user list', () => {
-    const app = mount(<AppComponent users={[{firstName:"Petra", lastName:"Meier"}, {firstName:"Peter", lastName:"Miller"}]} dispatch={() => {/**/}} />);
+    const app = mount(<AppComponent users={[{firstName:"Petra", lastName:"Meier"}, {firstName:"Peter", lastName:"Miller"}]} dispatch={jest.fn} />);
 
     const nameParts = app.find("span");
     expect(nameParts.map(c => c.text())).to.eql(["Petra", "Meier", "Peter", "Miller"]);

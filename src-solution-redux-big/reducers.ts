@@ -2,12 +2,6 @@ import {Action, combineReducers} from "redux";
 import {DataType, ProductType, IUser} from "./types";
 import {createReducer} from "./createReducer";
 
-export interface StoreState {
-    users: IUser[]
-    products: ProductType[],
-    otherData: DataType | null,
-}
-
 export enum ActionTypes {
     USER_ADDED = "USER_ADDED",
     PRODUCT_ADDED = "PRODUCT_ADDED",

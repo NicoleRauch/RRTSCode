@@ -3,7 +3,7 @@ import {StoreState} from "../src-solution-redux-big/reducers";
 
 export function asyncActionInANutshell() {
 
-  return (dispatch: Dispatch<Action, StoreState>, getState: () => StoreState) => {
+  return (dispatch: Dispatch<Action>, getState: () => StoreState) => {
 
     const { someStatePart } = getState();
 

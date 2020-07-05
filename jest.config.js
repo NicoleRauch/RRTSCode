@@ -10,9 +10,12 @@ module.exports = {
         "node"
     ],
     "roots": [
-        ".",
+        "test-solution-react",
+        "test-solution-redux",
+        "test-solution-react-integration",
+        "test-solution-async-calls"
     ],
-    "setupTestFrameworkScriptFile": "./enzymeSetup.ts",
+    "setupFilesAfterEnv": ["./enzymeSetup.ts"],
     "testRegex": "\\.*[tT]est\\.tsx?$",
     "transform": {
         "^.+\\.tsx?$": "ts-jest"

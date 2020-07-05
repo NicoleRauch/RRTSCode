@@ -1,12 +1,12 @@
 import React, {Component} from "react";
+import {Action, Dispatch} from "redux";
 import { connect } from "react-redux";
 
 import UserList from "../src-solution-redux-1/UserList";
 import UserCreation from "../src-solution-redux-1/UserCreation";
 
-import {addUser, StoreState} from "./reducers";
-import {IUser} from "./types";
-import {Action, Dispatch} from "redux";
+import {addUser} from "./reducers";
+import {IUser, StoreState} from "./types";
 
 interface AppProps { specialUsers: IUser[] }
 interface AppDispatch { dispatchUser: (u: IUser) => void }
@@ -26,7 +26,7 @@ export class AppComponent extends Component<AppProps & AppDispatch> {
 const mapStateToProps = (state:StoreState): AppProps => ({
     specialUsers: state.users
 });
-const mapDispatchToProps = (dispatch: Dispatch<Action, StoreState>): AppDispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch<Action>): AppDispatch => ({
     dispatchUser: user => dispatch(addUser(user))
 });
 export default connect<AppProps, AppDispatch, {}, StoreState>(mapStateToProps, mapDispatchToProps)(AppComponent);

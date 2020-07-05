@@ -1,6 +1,5 @@
 import * as backend from "./ajaxcalls";
-import {StoreState} from "../src-solution-redux-big/reducers";
-import {IUser} from "../src-solution-redux-big/types";
+import {IUser, TAction} from "../src-solution-redux-big/types";
 import {Action, Dispatch} from "redux";
 
 export enum ActionTypes {
@@ -20,8 +19,8 @@ export const addUser = (user: IUser): UserAddAction => ({
 });
 
 
-export const submitUser = (user:IUser) =>
-    (dispatch: Dispatch<Action, StoreState>) => {
+export const submitUser = (user:IUser): TAction =>
+    (dispatch: Dispatch<Action>) => {
     backend.postUser(user, returnCode => {
       if(returnCode === 200) {
         dispatch(addUser(user));
@@ -42,7 +41,7 @@ export const setUsers = (users: IUser[]):UsersSetAction => ({
     users
 });
 
-export const  loadUsers = (dispatch: Dispatch<Action, StoreState>) => {
+export const  loadUsers = (dispatch: Dispatch<Action>) => {
     backend.fetchUsers((users:IUser[]) => {
         dispatch(setUsers(users));
     });

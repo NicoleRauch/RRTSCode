@@ -1,11 +1,5 @@
-import {Action, Dispatch} from "redux";
-import {StoreState} from "./reducers";
-
-export interface IDispatchProps {
-    dispatch: Dispatch<Action, StoreState>
-}
-
-
+import {Action} from "redux";
+import {ThunkAction, ThunkDispatch} from "redux-thunk";
 
 export interface IUser {
     firstName: string,
@@ -20,4 +14,27 @@ export interface ProductType {
 
 export interface DataType {
     otherData: string
+}
+
+export interface StoreState {
+    users: IUser[]
+    products: ProductType[],
+    otherData: DataType | null,
+}
+
+export type TAction = ThunkAction<
+    void,
+    StoreState,
+    unknown,
+    Action<string>
+    >;
+
+export type TDispatch = ThunkDispatch<
+    StoreState,
+    void,
+    Action<string>
+    >;
+
+export interface IDispatchProps {
+    dispatch: TDispatch
 }
