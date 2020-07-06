@@ -20,7 +20,7 @@ export default class UserWithHighlight extends Component<UserWithHighlightProps,
     this.state = {highlighted: false};
   }
 
-  render() {
+  render(): React.ReactElement {
     const highlightColor = this.state.highlighted
       ? "#FF0000" : "#FFFFFF";
 
@@ -36,7 +36,7 @@ export default class UserWithHighlight extends Component<UserWithHighlightProps,
     );
   }
 
-    _handleToggleClick() {
+    _handleToggleClick(): void {
         this.setState({highlighted: !this.state.highlighted});
     }
 }

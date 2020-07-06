@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import {IUser} from "./types";
 
-interface UserCreationProps {
+export interface UserCreationProps {
     submitUser: (user: IUser) => void
 }
 
-interface UserCreationState {
+export interface UserCreationState {
     firstName: string,
     lastName: string
 }

@@ -2,15 +2,16 @@ import React from "react";
 
 import sinon, {SinonSpy} from "sinon";
 import {shallow, ShallowWrapper} from "enzyme";
-import UserCreation from "../src-solution-react/UserCreationViaInternalState";
+import UserCreation, {UserCreationProps, UserCreationState} from "../src-solution-react/UserCreationViaInternalState";
+
 
 describe('UserCreation', () => {
   let submit: SinonSpy;
-  let user: ShallowWrapper;
+  let user: ShallowWrapper<UserCreationProps, UserCreationState, UserCreation>;
 
   beforeEach(() => {
     submit = sinon.spy();
-    user = shallow(<UserCreation submitUser={submit}/>);
+    user = shallow<UserCreation, UserCreationProps, UserCreationState>(<UserCreation submitUser={submit}/>);
   });
 
   it("saves the firstname to the internal state", () => {
