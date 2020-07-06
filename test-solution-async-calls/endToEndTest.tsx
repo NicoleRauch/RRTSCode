@@ -3,7 +3,7 @@ import React from "react";
 import sinon, {SinonFakeServer, SinonFakeXMLHttpRequestStatic} from "sinon";
 import {mount, ReactWrapper} from "enzyme";
 import {applyMiddleware, createStore, Store} from "redux";
-import {Provider} from "react-redux";
+import {Provider, ProviderProps} from "react-redux";
 import thunkMiddleware from "redux-thunk";
 
 import reducers from "../src-solution-async-calls/reducers";
@@ -20,7 +20,7 @@ declare const global: {XMLHttpRequest : SinonFakeXMLHttpRequestStatic};
 describe("Username end2end test", () => {
   let server : SinonFakeServer;
   let store : Store;
-  let component: ReactWrapper;
+  let component: ReactWrapper<ProviderProps, Record<string, unknown>, Provider>;
 
   beforeEach(() => {
     global.XMLHttpRequest = sinon.FakeXMLHttpRequest;
@@ -46,7 +46,7 @@ describe("Username end2end test", () => {
     // In case you need to find out which API is called, enable this:
     // this.server.respondWith(response => { console.log(response.url); response.respond(); });
 
-    component = mount(<Provider store={store}>
+    component = mount<Provider, ProviderProps, Record<string, unknown>>(<Provider store={store}>
         <App/>
       </Provider>
     );
