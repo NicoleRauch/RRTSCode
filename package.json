@@ -33,7 +33,6 @@
     "html-webpack-plugin": "4.3.0",
     "isdev": "1.0.1",
     "jest": "26.1.0",
-    "must": "0.13.4",
     "react-hot-loader": "4.12.21",
     "react-test-renderer": "16.13.1",
     "sinon": "9.0.2",
