@@ -1,5 +1,5 @@
 import React from "react";
-import expect from "must";
+
 import sinon, {SinonSpy} from "sinon";
 import {shallow, ShallowWrapper} from "enzyme";
 import UserCreation from "../src-solution-react/UserCreationViaInternalState";
@@ -17,14 +17,14 @@ describe('UserCreation', () => {
     const input = user.find("input").at(0);
     input.simulate("blur", {target: {value: "Paul"}});
 
-    expect(user.state("firstName")).to.eql("Paul");
+    expect(user.state("firstName")).toEqual("Paul");
   });
 
   it("saves the lastname to the internal state", () => {
     const input = user.find("input").at(1);
     input.simulate("blur", {target: {value: "Meier"}});
 
-    expect(user.state("lastName")).to.eql("Meier");
+    expect(user.state("lastName")).toEqual("Meier");
   });
 
   it("invokes the callback handler", () => {
@@ -32,9 +32,9 @@ describe('UserCreation', () => {
     const button = user.find("button"); // .first();
     button.simulate("click");
 
-    expect(submit.called).to.be.true();
-    expect(submit.calledOnce).to.be.true();
-    expect(submit.getCall(0).args).to.eql([{firstName: "Paul", lastName: "Meier"}]); // array!
+    expect(submit.called).toBeTruthy();
+    expect(submit.calledOnce).toBeTruthy();
+    expect(submit.getCall(0).args).toEqual([{firstName: "Paul", lastName: "Meier"}]); // array!
   });
 
   it("blackbox test", () => {
@@ -46,6 +46,6 @@ describe('UserCreation', () => {
     button.simulate("click");
 
     expect(submit.getCall(0).args)
-      .to.eql([{firstName: "Paul", lastName: "Meier"}]);
+      .toEqual([{firstName: "Paul", lastName: "Meier"}]);
   });
 });

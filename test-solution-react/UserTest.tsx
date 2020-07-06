@@ -1,5 +1,5 @@
 import React from "react";
-import expect from "must";
+
 
 import { shallow } from "enzyme";
 import User from "../src-solution-react/User";
@@ -12,13 +12,13 @@ const user =
 
 const nameParts = user.find("span");
 
-expect(nameParts.length).to.eql(2);
+expect(nameParts.length).toEqual(2);
 
-expect(nameParts.at(0).text()).to.eql("Petra");
-expect(nameParts.at(1).text()).to.eql("Meier");
+expect(nameParts.at(0).text()).toEqual("Petra");
+expect(nameParts.at(1).text()).toEqual("Meier");
 
 expect(nameParts.map(c => c.text()))
-  .to.eql(["Petra", "Meier"]);
+  .toEqual(["Petra", "Meier"]);
 
   });
 });

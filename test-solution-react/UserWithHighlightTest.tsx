@@ -1,5 +1,5 @@
 import React from "react";
-import expect from "must";
+
 
 import {shallow, ShallowWrapper} from "enzyme";
 import User from "../src-solution-react/UserWithHighlight";
@@ -19,9 +19,9 @@ describe('UserWithHighlight', () => {
       const highlighted = user.find({style: {backgroundColor: "#FF0000"}});
       const unhighlighted = user.find({style: {backgroundColor: "#FFFFFF"}});
 
-      expect(highlighted.length).to.eql(0);
-      expect(unhighlighted.length).to.eql(1);
-      expect(unhighlighted.text()).to.eql("Paul");
+      expect(highlighted.length).toEqual(0);
+      expect(unhighlighted.length).toEqual(1);
+      expect(unhighlighted.text()).toEqual("Paul");
     });
 
     it('highlights the user name when the highlighted state is set to true', () => {
@@ -30,27 +30,27 @@ describe('UserWithHighlight', () => {
       const highlighted = user.find({style: {backgroundColor: "#FF0000"}});
       const unhighlighted = user.find({style: {backgroundColor: "#FFFFFF"}});
 
-      expect(highlighted.length).to.eql(1);
-      expect(highlighted.text()).to.eql("Paul");
-      expect(unhighlighted.length).to.eql(0);
+      expect(highlighted.length).toEqual(1);
+      expect(highlighted.text()).toEqual("Paul");
+      expect(unhighlighted.length).toEqual(0);
     });
   });
 
   describe('clicking adjusts the state', () => {
     it('the highlight state is initially false', () => {
-      expect(user.state("highlighted")).to.be.false();
+      expect(user.state("highlighted")).toBeFalsy();
     });
 
     it('changes highlight state to true after click', () => {
       user.setState({highlighted: false});
       user.simulate("click");
-      expect(user.state("highlighted")).to.be.true();
+      expect(user.state("highlighted")).toBeTruthy();
     });
 
     it('changes highlight state to false after click', () => {
       user.setState({highlighted: true});
       user.simulate("click");
-      expect(user.state("highlighted")).to.be.false();
+      expect(user.state("highlighted")).toBeFalsy();
     });
   });
 });

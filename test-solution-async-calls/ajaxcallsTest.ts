@@ -1,6 +1,6 @@
 import { postUser, fetchUsers } from "../src-solution-async-calls/ajaxcalls";
 import sinon, {SinonFakeXMLHttpRequest, SinonFakeXMLHttpRequestStatic} from "sinon";
-import expect from "must";
+
 import {IUser} from "../src-solution-react/types";
 
 declare var global: {XMLHttpRequest : SinonFakeXMLHttpRequestStatic};
@@ -29,14 +29,14 @@ describe("validateInBackend", () => {
     it("submits user data to the backend", () => {
       postUser(user, () => { /**/ });
 
-      expect(requests.length).to.eql(1);
-      expect(requests[0].url).to.eql("/api/user");
-      expect(requests[0].method).to.eql("POST");
+      expect(requests.length).toEqual(1);
+      expect(requests[0].url).toEqual("/api/user");
+      expect(requests[0].method).toEqual("POST");
     });
 
     it("passes the result code to the callback", done => {
       postUser(user, data => {
-        expect(data).to.eql(200);
+        expect(data).toEqual(200);
         done();
       });
 
@@ -48,14 +48,14 @@ describe("validateInBackend", () => {
     it("makes request to the backend", () => {
       fetchUsers(() => { /**/ });
 
-      expect(requests.length).to.eql(1);
-      expect(requests[0].url).to.eql("/api/users");
-      expect(requests[0].method).to.eql("GET");
+      expect(requests.length).toEqual(1);
+      expect(requests[0].url).toEqual("/api/users");
+      expect(requests[0].method).toEqual("GET");
     });
 
     it("passes the retrieved data to the callback", done => {
       fetchUsers(data => {
-        expect(data).to.eql({somedata: true});
+        expect(data).toEqual({somedata: true});
         done();
       });
 

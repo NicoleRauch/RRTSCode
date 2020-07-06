@@ -1,5 +1,5 @@
 import React from "react";
-import expect from "must";
+
 import sinon, {SinonFakeServer, SinonFakeXMLHttpRequestStatic} from "sinon";
 import {mount, ReactWrapper} from "enzyme";
 import {applyMiddleware, createStore, Store} from "redux";
@@ -53,6 +53,6 @@ describe("Username end2end test", () => {
 
     // you can interact with the UI here
 
-    expect(component.find("span").map(u => u.text())).to.eql(["Nicole","Rauch","Peter","Müller","Fritz","Walter"]);
+    expect(component.find("span").map(u => u.text())).toEqual(["Nicole","Rauch","Peter","Müller","Fritz","Walter"]);
   });
 });

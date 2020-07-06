@@ -1,5 +1,5 @@
 import React from "react";
-import expect from "must";
+
 import {mount} from "enzyme";
 import sinon from "sinon";
 
@@ -11,7 +11,7 @@ describe('App', () => {
     const app = mount(<AppComponent users={[{firstName:"Petra", lastName:"Meier"}, {firstName:"Peter", lastName:"Miller"}]} dispatch={jest.fn} />);
 
     const nameParts = app.find("span");
-    expect(nameParts.map(c => c.text())).to.eql(["Petra", "Meier", "Peter", "Miller"]);
+    expect(nameParts.map(c => c.text())).toEqual(["Petra", "Meier", "Peter", "Miller"]);
   });
 
   it('invokes the dispatcher with a USER_ADDED action', () => {
@@ -21,6 +21,6 @@ describe('App', () => {
     const button = app.find("button");
     button.simulate("click");
 
-    expect(dispatcher.getCall(0).args[0]).to.eql({type: UserActions.USER_ADDED, payload: {firstName: "", lastName: ""}});
+    expect(dispatcher.getCall(0).args[0]).toEqual({type: UserActions.USER_ADDED, payload: {firstName: "", lastName: ""}});
   });
 });
