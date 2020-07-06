@@ -6,7 +6,7 @@ interface UserListProps {
     component: JSX.Element
 }
 
-const UserList = ({users, component}: UserListProps) => (
+const UserList = ({users, component}: UserListProps): React.ReactElement => (
   <ul>
     { users.map( user => <li key={"userlist_" + user.firstName
       + user.lastName}>{React.cloneElement(component, user)}</li> ) }

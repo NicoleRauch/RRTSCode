@@ -2,9 +2,9 @@ import React, {Component} from "react";
 
 import LifecycleComponent from "./LifecycleComponent";
 
-export default class extends Component {
+export default class App extends Component {
 
-  render() {
+  render(): React.ReactElement {
     return <LifecycleComponent/>;
   }
 }

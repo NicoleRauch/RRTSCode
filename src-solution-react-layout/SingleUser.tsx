@@ -1,12 +1,12 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import User from "./User";
 import {IUser} from "../src-solution-react/types";
 
-const redBorder = {
+const redBorder: CSSProperties = {
   border: "1px solid red",
   width: "30em",
   padding: "5px",
-  clear: "both" as "both",
+  clear: "both",
 };
 
 interface SingleUserProps {
@@ -14,7 +14,7 @@ interface SingleUserProps {
 
 }
 
-const SingleUser = ({user}: SingleUserProps) => (
+const SingleUser = ({user}: SingleUserProps): React.ReactElement => (
   <div style={redBorder}>
     <User {...user} />
   </div> );

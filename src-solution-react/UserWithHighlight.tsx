@@ -15,7 +15,7 @@ export default class UserWithHighlight extends Component<UserWithHighlightProps,
   constructor(props: UserWithHighlightProps) {
     super(props);
 
-    this._handleToggleClick = this._handleToggleClick.bind(this);
+    this.handleToggleClick = this.handleToggleClick.bind(this);
 
     this.state = {highlighted: false};
   }
@@ -25,7 +25,7 @@ export default class UserWithHighlight extends Component<UserWithHighlightProps,
       ? "#FF0000" : "#FFFFFF";
 
     return (
-      <div onClick={this._handleToggleClick}
+      <div onClick={this.handleToggleClick}
          style={{cursor: "pointer"}}>
           <label>First name: </label>
           <span style={{backgroundColor: highlightColor}}>
@@ -36,7 +36,7 @@ export default class UserWithHighlight extends Component<UserWithHighlightProps,
     );
   }
 
-    _handleToggleClick(): void {
+    handleToggleClick(): void {
         this.setState({highlighted: !this.state.highlighted});
     }
 }

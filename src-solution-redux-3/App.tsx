@@ -21,4 +21,4 @@ export class AppComponent extends Component<StoreState> {
   }
 }
 
-export default connect<StoreState, {}, {}, StoreState> ((state: StoreState): StoreState => state)(AppComponent);
+export default connect<StoreState, Record<string, unknown>, Record<string, unknown>, StoreState> ((state: StoreState): StoreState => state)(AppComponent);

@@ -1,17 +1,17 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
-const redBorder = {
+const redBorder: CSSProperties = {
   border: "1px solid red",
   width: "30em",
   padding: "5px",
-  clear: "both" as "both",
+  clear: "both",
 };
 
 interface SingleUserWrapperProps {
     children: JSX.Element | JSX.Element[]
 }
 
-const SingleUserWrapper = ({children}: SingleUserWrapperProps) => (
+const SingleUserWrapper = ({children}: SingleUserWrapperProps): React.ReactElement => (
   <div style={redBorder}>
     {children}
   </div> );

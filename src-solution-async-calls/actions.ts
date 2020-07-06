@@ -41,7 +41,7 @@ export const setUsers = (users: IUser[]):UsersSetAction => ({
     users
 });
 
-export const  loadUsers = (dispatch: Dispatch<Action>) => {
+export const  loadUsers = (dispatch: Dispatch<Action>): void => {
     backend.fetchUsers((users:IUser[]) => {
         dispatch(setUsers(users));
     });

@@ -29,4 +29,4 @@ const mapStateToProps = (state:StoreState): AppProps => ({
 const mapDispatchToProps = (dispatch: Dispatch<Action>): AppDispatch => ({
     dispatchUser: user => dispatch(addUser(user))
 });
-export default connect<AppProps, AppDispatch, {}, StoreState>(mapStateToProps, mapDispatchToProps)(AppComponent);
+export default connect<AppProps, AppDispatch, Record<string, unknown>, StoreState>(mapStateToProps, mapDispatchToProps)(AppComponent);

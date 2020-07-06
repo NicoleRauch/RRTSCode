@@ -1,17 +1,17 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
-const redBorder = {
+const redBorder: CSSProperties = {
   border: "1px solid red",
   width: "30em",
   padding: "5px",
-  clear: "both" as "both",
+  clear: "both",
 };
 
 interface SingleUserParamProps {
   component: JSX.Element
 }
 
-const SingleUserParam = ({component}: SingleUserParamProps) => (
+const SingleUserParam = ({component}: SingleUserParamProps): React.ReactElement => (
   <div style={redBorder}>
     {component}
   </div> );

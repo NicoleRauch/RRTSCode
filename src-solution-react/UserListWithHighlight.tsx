@@ -5,10 +5,12 @@ import {IUser} from "./types";
 
 interface UserListProps { users: IUser[] }
 
-export default ({users}:UserListProps) => (
+const UserList = ({users}:UserListProps): React.ReactElement => (
   <ul>
     {users.map(user =>
       <li key={"userlist_" + user.firstName + user.lastName}>
         <User {...user} />
       </li>)}
   </ul>);
+
+export default UserList;

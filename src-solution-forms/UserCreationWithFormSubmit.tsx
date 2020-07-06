@@ -1,16 +1,18 @@
 import React, {Component, FormEvent} from "react";
 
 
-export default class extends Component {
+export default class UserCreationWithFormSubmit extends Component {
 
-  onSubmit(e: FormEvent) {
-    e.preventDefault();
-    // console.log(e.currentTarget["firstname"].value + " " + e.currentTarget["lastname"].value);
-  }
+  
+  render(): React.ReactElement {
 
-  render() {
+    const onSubmit = (e: FormEvent): void => {
+      e.preventDefault();
+      // console.log(e.currentTarget["firstname"].value + " " + e.currentTarget["lastname"].value);
+    }
+
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={onSubmit}>
         <div>
           <label>First name:</label>
           <input type="text" name="firstname"/>

@@ -5,33 +5,33 @@ interface LifecycleComponentState {
   checked: boolean
 }
 
-export default class extends Component<{}, LifecycleComponentState> {
+export default class LifecycleComponent extends Component<Record<string, unknown>, LifecycleComponentState> {
 
   constructor() {
     super({});
     this.state = {checked: true};
-    console.log("Lifecycle Component constructor.");  // tslint:disable-line:no-console
+    console.log("Lifecycle Component constructor.");  // eslint-disable-line no-console
   }
 
-  componentDidMount() {
-    console.log("Lifecycle Component did mount."); // tslint:disable-line:no-console
+  componentDidMount(): void {
+    console.log("Lifecycle Component did mount."); // eslint-disable-line no-console
   }
 
-  shouldComponentUpdate() {
-    console.log("Should Lifecycle Component update?"); // tslint:disable-line:no-console
+  shouldComponentUpdate(): true {
+    console.log("Should Lifecycle Component update?"); // eslint-disable-line no-console
     return true;
   }
 
-  componentDidUpdate() {
-    console.log("Lifecycle Component did update."); // tslint:disable-line:no-console
+  componentDidUpdate(): void {
+    console.log("Lifecycle Component did update."); // eslint-disable-line no-console
   }
 
-  componentWillUnmount() {
-    console.log("Lifecycle Component will unmount."); // tslint:disable-line:no-console
+  componentWillUnmount(): void {
+    console.log("Lifecycle Component will unmount."); // eslint-disable-line no-console
   }
 
-  render() {
-    console.log("Lifecycle Component render."); // tslint:disable-line:no-console
+  render(): React.ReactElement {
+    console.log("Lifecycle Component render."); // eslint-disable-line no-console
     return (
       <div>
 <ChildComponent checked={this.state.checked} />

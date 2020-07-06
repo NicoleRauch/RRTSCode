@@ -4,32 +4,32 @@ interface ChildComponentProps {
     checked: boolean
 }
 
-export default class extends Component<ChildComponentProps> {
+export default class ChildComponent extends Component<ChildComponentProps> {
 
   constructor(props: ChildComponentProps) {
     super(props);
-    console.log("Child Component constructor."); // tslint:disable-line:no-console
+    console.log("Child Component constructor."); // eslint-disable-line no-console
   }
 
-  componentDidMount() {
-    console.log("Child Component did mount."); // tslint:disable-line:no-console
+  componentDidMount(): void {
+    console.log("Child Component did mount."); // eslint-disable-line no-console
   }
 
-  shouldComponentUpdate() {
-    console.log("Should Child Component update?"); // tslint:disable-line:no-console
+  shouldComponentUpdate(): true {
+    console.log("Should Child Component update?"); // eslint-disable-line no-console
     return true;
   }
 
-  componentDidUpdate() {
-    console.log("Child Component did update."); // tslint:disable-line:no-console
+  componentDidUpdate(): void {
+    console.log("Child Component did update."); // eslint-disable-line no-console
   }
 
-  componentWillUnmount() {
-    console.log("Child Component will unmount."); // tslint:disable-line:no-console
+  componentWillUnmount(): void {
+    console.log("Child Component will unmount."); // eslint-disable-line no-console
   }
 
-  render() {
-    console.log("Child Component render."); // tslint:disable-line:no-console
+  render(): React.ReactElement {
+    console.log("Child Component render."); // eslint-disable-line no-console
     return <p>{this.props.checked ? "Checked" : "Unchecked"}</p>;
   }
 

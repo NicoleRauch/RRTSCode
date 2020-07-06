@@ -15,7 +15,7 @@ export class AppComponent extends Component<StoreState & IDispatchProps> {
     loadUsers(props.dispatch);
   }
 
-  render() {
+  render(): React.ReactElement {
     return (
       <div>
         <UserList users={this.props.users} />
@@ -27,4 +27,4 @@ export class AppComponent extends Component<StoreState & IDispatchProps> {
   }
 }
 
-export default connect<StoreState, {}, {}, StoreState> ((state: StoreState): StoreState => state)(AppComponent);
+export default connect<StoreState, Record<string, unknown>, Record<string, unknown>, StoreState> ((state: StoreState): StoreState => state)(AppComponent);

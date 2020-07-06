@@ -17,7 +17,7 @@ export default class UserCreationViaInternalState extends Component<UserCreation
         this.state = {firstName: "", lastName: ""};
     }
 
-    render() {
+    render(): React.ReactElement {
         return (
             <div>
 <div>

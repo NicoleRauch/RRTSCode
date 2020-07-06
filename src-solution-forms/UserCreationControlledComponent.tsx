@@ -10,14 +10,14 @@ interface UserCreationControlledComponentState {
     lastName: string
 }
 
-export default class extends Component<UserCreationControlledComponentProps, UserCreationControlledComponentState> {
+export default class UserCreationControlledComponent extends Component<UserCreationControlledComponentProps, UserCreationControlledComponentState> {
 
   constructor(props: UserCreationControlledComponentProps) {
     super(props);
     this.state = { firstName: "Pippi", lastName: "Langstrumpf"};
   }
 
-  render() {
+  render(): React.ReactElement {
     return (
       <div>
         <div>

@@ -1,6 +1,6 @@
-import {Action, combineReducers} from "redux";
+import {combineReducers} from "redux";
 import {DataType, ProductType, IUser} from "./types";
-import {createReducer} from "./createReducer";
+import {createReducer, ActionT} from "./createReducer";
 
 export enum ActionTypes {
     USER_ADDED = "USER_ADDED",
@@ -9,7 +9,7 @@ export enum ActionTypes {
     DATA_REMOVED = "DATA_REMOVED"
 }
 
-export interface UserAddAction extends Action {
+export interface UserAddAction extends ActionT {
     type: ActionTypes.USER_ADDED,
     user: IUser
 }
@@ -26,7 +26,7 @@ const users = createReducer(INITIAL_STATE_USERS, {
   [ActionTypes.USER_ADDED]: (currentUsers: IUser[], action: UserAddAction) => currentUsers.concat(action.user)
 });
 
-export interface ProductAddAction extends Action {
+export interface ProductAddAction extends ActionT {
     type: ActionTypes.PRODUCT_ADDED
     product: ProductType
 }
@@ -44,7 +44,7 @@ const products = createReducer(INITIAL_STATE_PRODUCTS, {
   [ActionTypes.PRODUCT_ADDED]: (currentProducts: ProductType[], action: ProductAddAction) => currentProducts.concat(action.product)
 });
 
-export interface DataSetAction extends Action {
+export interface DataSetAction extends ActionT {
     type: ActionTypes.DATA_SET,
     data: DataType
 }
@@ -56,7 +56,7 @@ export const setData = (data: DataType): DataSetAction => {
     }
 }
 
-export interface DataRemoveAction extends Action {
+export interface DataRemoveAction extends ActionT {
     type: ActionTypes.DATA_REMOVED
 }
 

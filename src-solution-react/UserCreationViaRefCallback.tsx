@@ -10,7 +10,7 @@ export default class UserCreationViaRefCallback extends Component<UserCreationPr
     private firstName: HTMLInputElement | null;
     private lastName: HTMLInputElement | null;
 
-    render() {
+    render(): React.ReactElement {
         return (
             <div>
 <div>

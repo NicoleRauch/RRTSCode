@@ -1,11 +1,11 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import {IUser} from "../src-solution-react/types";
 
-const redBorder = {
+const redBorder: CSSProperties = {
   border: "1px solid red",
   width: "30em",
   padding: "5px",
-  clear: "both" as "both",
+  clear: "both",
 };
 
 interface SingleUserParamAndDataProps {
@@ -13,7 +13,7 @@ interface SingleUserParamAndDataProps {
     component: JSX.Element
 }
 
-const SingleUserParamAndData = ({user, component}: SingleUserParamAndDataProps) => (
+const SingleUserParamAndData = ({user, component}: SingleUserParamAndDataProps): React.ReactElement => (
   <div style={redBorder}>
     {React.cloneElement(component, user)}
   </div> );

@@ -11,9 +11,9 @@ const users = [
     {firstName: "Fritz", lastName: "Walter"}
 ];
 
-export default class extends Component {
+export default class App extends Component {
 
-  render() {
+  render(): React.ReactElement {
 
     return (
       <div>
