@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 
 
-interface UserWithHighlightProps {
+export interface UserWithHighlightProps {
     firstName: string,
     lastName: string
 }
 
-interface UserWithHighlightState {
+export interface UserWithHighlightState {
     highlighted: boolean
 }
 

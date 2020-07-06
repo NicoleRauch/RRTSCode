@@ -2,14 +2,14 @@ import React from "react";
 
 
 import {shallow, ShallowWrapper} from "enzyme";
-import User from "../src-solution-react/UserWithHighlight";
+import User, {UserWithHighlightProps, UserWithHighlightState} from "../src-solution-react/UserWithHighlight";
 
 
 describe('UserWithHighlight', () => {
-  let user: ShallowWrapper;
+  let user:  ShallowWrapper<UserWithHighlightProps, UserWithHighlightState, User>;
 
   beforeEach(() => {
-    user = shallow(<User firstName="Paul" lastName="Meier"/>);
+    user = shallow<User, UserWithHighlightProps, UserWithHighlightState>(<User firstName="Paul" lastName="Meier"/>);
   });
 
   describe('state leads to correct highlighting', () => {
