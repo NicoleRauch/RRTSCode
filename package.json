@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/core-js": "2.5.3",
     "@types/enzyme": "3.10.5",
+    "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/jest": "26.0.3",
     "@types/nanoajax": "0.2.30",
     "@types/ramda": "0.27.7",

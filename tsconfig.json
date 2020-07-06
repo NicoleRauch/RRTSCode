@@ -9,7 +9,7 @@
     "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDirs": ["src*", "."],
+    "rootDirs": ["src*", "test*"],
     "forceConsistentCasingInFileNames": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
@@ -17,7 +17,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noUnusedParameters": true
   },
   "exclude": [
@@ -26,8 +26,6 @@
     "build-js",
     "coverage",
     "buildParameter.js",
-    "webpack.base.config.js",
-    "webpack.beta.config.js",
     "webpack.config.js",
     "webpack.prod.config.js",
     "jest"
