@@ -13,7 +13,7 @@ interface AppDispatch { dispatchUser: (u: IUser) => void }
 
 export class AppComponent extends Component<AppProps & AppDispatch> {
 
-  render() {
+  render(): React.ReactElement {
     return (
       <div>
 <UserList users={this.props.specialUsers} />

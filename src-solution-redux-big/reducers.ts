@@ -14,7 +14,7 @@ export interface UserAddAction extends Action {
     user: IUser
 }
 
-export function addUser(user: IUser): UserAddAction {
+export const addUser = (user: IUser): UserAddAction => {
     return {
         type: ActionTypes.USER_ADDED,
         user
@@ -31,7 +31,7 @@ export interface ProductAddAction extends Action {
     product: ProductType
 }
 
-export function addProduct(product: ProductType): ProductAddAction {
+export const addProduct = (product: ProductType): ProductAddAction => {
     return {
         type: ActionTypes.PRODUCT_ADDED,
         product
@@ -49,7 +49,7 @@ export interface DataSetAction extends Action {
     data: DataType
 }
 
-export function setData(data: DataType): DataSetAction {
+export const setData = (data: DataType): DataSetAction => {
     return {
         type: ActionTypes.DATA_SET,
         data
@@ -60,7 +60,7 @@ export interface DataRemoveAction extends Action {
     type: ActionTypes.DATA_REMOVED
 }
 
-export function removeData(): DataRemoveAction {
+export const removeData = (): DataRemoveAction => {
     return {
         type: ActionTypes.DATA_REMOVED
     }

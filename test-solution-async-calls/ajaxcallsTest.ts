@@ -3,7 +3,7 @@ import sinon, {SinonFakeXMLHttpRequest, SinonFakeXMLHttpRequestStatic} from "sin
 
 import {IUser} from "../src-solution-react/types";
 
-declare var global: {XMLHttpRequest : SinonFakeXMLHttpRequestStatic};
+declare const global: {XMLHttpRequest : SinonFakeXMLHttpRequestStatic};
 
 const user: IUser = {
   firstName: "firstName",

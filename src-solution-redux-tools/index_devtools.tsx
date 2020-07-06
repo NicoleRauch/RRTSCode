@@ -7,7 +7,7 @@ import App from "../src-solution-redux-4/App";
 import {Provider} from "react-redux";
 import {createStore, compose} from "redux";
 
-const enhancedCompose = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose || compose; // tslint:disable-line:no-string-literal
+const enhancedCompose = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose || compose; // eslint-disable-line @typescript-eslint/dot-notation 
 
 const store = createStore(reducers,
   enhancedCompose(

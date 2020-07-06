@@ -13,6 +13,6 @@ const INITIAL_STATE = {
   ]
 };
 
-export default function (state:StoreState = INITIAL_STATE, _ = {}):StoreState {
+export default (state:StoreState = INITIAL_STATE, _ = {}):StoreState => {
   return state;
 }

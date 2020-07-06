@@ -19,14 +19,14 @@ export interface UserAddAction extends Action {
     payload: IUser
 }
 
-export function addUser(user: IUser) {
+export const addUser = (user: IUser): UserAddAction => {
     return {
         type: UserActions.USER_ADDED,
         payload: user
     };
 }
 
-function users(currentUsers = INITIAL_STATE.users, action: Action) {
+const users = (currentUsers = INITIAL_STATE.users, action: Action): IUser[]  => {
   switch (action.type) {
     case UserActions.USER_ADDED:
       return currentUsers.concat((action as UserAddAction).payload);
@@ -34,7 +34,7 @@ function users(currentUsers = INITIAL_STATE.users, action: Action) {
   return currentUsers;
 }
 
-export default function (state = INITIAL_STATE, action: Action = {type: "Dummy"}) {
+export default (state = INITIAL_STATE, action: Action = {type: "Dummy"}): {users: IUser[]} => {
   return {
     users: users(state.users, action)
   };

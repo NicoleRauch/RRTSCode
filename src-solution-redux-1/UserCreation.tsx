@@ -11,14 +11,14 @@ interface UserCreationState {
 }
 
 
-export default class extends Component<UserCreationProps, UserCreationState> {
+export default class UserCreation extends Component<UserCreationProps, UserCreationState> {
 
     constructor(props: UserCreationProps) {
         super(props);
         this.state = {firstName: "", lastName: ""};
     }
 
-    render() {
+    render(): React.ReactElement {
         return (
             <div>
                 <div>

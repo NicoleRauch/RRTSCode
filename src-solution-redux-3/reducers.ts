@@ -23,7 +23,7 @@ export interface UserAddAction extends Action {
     payload: IUser
 }
 
-export function addUser(user: IUser) {
+export const addUser =(user: IUser): UserAddAction => {
     return {
     type: UserActions.USER_ADDED,
     payload: user
@@ -31,6 +31,6 @@ export function addUser(user: IUser) {
 }
 
 
-export default function (state = INITIAL_STATE, _ = {}) {
+export default (state = INITIAL_STATE, _ = {}): StoreState => {
   return state;
 }

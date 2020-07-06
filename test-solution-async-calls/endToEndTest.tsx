@@ -15,7 +15,7 @@ const users = [
   {firstName: "Fritz", lastName: "Walter"}
 ];
 
-declare var global: {XMLHttpRequest : SinonFakeXMLHttpRequestStatic};
+declare const global: {XMLHttpRequest : SinonFakeXMLHttpRequestStatic};
 
 describe("Username end2end test", () => {
   let server : SinonFakeServer;

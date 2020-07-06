@@ -1,10 +1,15 @@
 import React, {Component} from "react";
-import {HashRouter as Router, Link, Route} from 'react-router-dom';
+import {HashRouter as Router, Link, Route, RouteComponentProps} from 'react-router-dom';
 
 import HelloWorld from "../src-solution-react/HelloWorldFunctionalComponent";
 import User from "../src-solution-react/UserWithHighlight";
 import UserList from "../src-solution-react/UserListWithHighlight";
 import UserCreationViaInternalState from "../src-solution-react/UserCreationViaInternalState";
+
+interface MatchParams {
+  firstName: string,
+  lastName: string
+}
 
 const users = [
   {firstName: "Nicole", lastName: "Rauch"},
@@ -12,9 +17,9 @@ const users = [
   {firstName: "Fritz", lastName: "Walter"}
 ];
 
-export default class extends Component {
+export default class App extends Component {
 
-  render() {
+  render() : React.ReactElement {
 
     return (
       <Router>
@@ -28,7 +33,7 @@ export default class extends Component {
           <hr/>
           <Route exact={true} path="/" component={HelloWorld}/>
           <Route path="/user/:firstName/:lastName"
-                 render={({match}) => <User firstName={match.params.firstName} lastName={match.params.lastName}/>}/>
+                 render={({match}:RouteComponentProps<MatchParams>) => <User firstName={match.params.firstName} lastName={match.params.lastName}/>}/>
           <Route path="/users" render={() => <UserList users={users}/>}/>
           <Route path="/creation" render={() => <UserCreationViaInternalState submitUser={() => { //
           }}/>}/>

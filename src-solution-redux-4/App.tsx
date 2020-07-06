@@ -10,7 +10,7 @@ import {IDispatchProps} from "./types";
 
 export class AppComponent extends Component<StoreState & IDispatchProps> {
 
-  render() {
+  render(): React.ReactElement {
 
       const {users, dispatch} = this.props;
 
