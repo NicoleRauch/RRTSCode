@@ -14,9 +14,7 @@ export interface UserWithHighlightState {
 export default class UserWithHighlight extends Component<UserWithHighlightProps, UserWithHighlightState> {
   constructor(props: UserWithHighlightProps) {
     super(props);
-
-    this.handleToggleClick = this.handleToggleClick.bind(this);
-
+    this.handleToggleClick= this.handleToggleClick.bind(this);
     this.state = {highlighted: false};
   }
 
