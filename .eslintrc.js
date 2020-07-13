@@ -55,7 +55,6 @@ module.exports = {
     "rules": {
         "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
         "@typescript-eslint/prefer-readonly": "error",
-        // "@typescript-eslint/prefer-readonly-parameter-types": "error",
         "@typescript-eslint/explicit-function-return-type": "error",
         "@typescript-eslint/no-unnecessary-condition": "error",
         "@typescript-eslint/no-unnecessary-type-arguments": "error",
@@ -70,8 +69,7 @@ module.exports = {
         "@typescript-eslint/quotes": "error",
         "@typescript-eslint/no-use-before-define": "error",
         "@typescript-eslint/array-type": "error",
-        //"@typescript-eslint/no-unnecessary-type-assertion": "error",
-        //"@typescript-eslint/typedef": "error",
+        "@typescript-eslint/no-unnecessary-type-assertion": "error",
         "@typescript-eslint/no-non-null-assertion": "error",
         "@typescript-eslint/no-require-imports": "error",
         "@typescript-eslint/no-dupe-class-members": "error",
