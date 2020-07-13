@@ -67,6 +67,9 @@ module.exports = {
         "@typescript-eslint/restrict-plus-operands": "error",
         "@typescript-eslint/strict-boolean-expressions": "error",
         "@typescript-eslint/no-extra-parens": "error",
+        "@typescript-eslint/quotes": "error",
+        "@typescript-eslint/no-use-before-define": "error",
+        "@typescript-eslint/array-type": "error",
         "jest/no-test-callback" : "off", // Wir arbeiten mit Test-Callbacks, deshalb Regel entfernt
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/array-type": [
