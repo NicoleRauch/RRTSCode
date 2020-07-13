@@ -33,9 +33,9 @@ export default class App extends Component {
           <hr/>
           <Route exact={true} path="/" component={HelloWorld}/>
           <Route path="/user/:firstName/:lastName"
-                 render={({match}:RouteComponentProps<MatchParams>) => <User firstName={match.params.firstName} lastName={match.params.lastName}/>}/>
-          <Route path="/users" render={() => <UserList users={users}/>}/>
-          <Route path="/creation" render={() => <UserCreationViaInternalState submitUser={() => { //
+                 render={({match}:RouteComponentProps<MatchParams>): React.ReactElement => <User firstName={match.params.firstName} lastName={match.params.lastName}/>}/>
+          <Route path="/users" render={(): React.ReactElement => <UserList users={users}/>}/>
+          <Route path="/creation" render={(): React.ReactElement => <UserCreationViaInternalState submitUser={():void => { //
           }}/>}/>
         </div>
       </Router>

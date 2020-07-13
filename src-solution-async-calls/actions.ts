@@ -21,7 +21,7 @@ export const addUser = (user: IUser): UserAddAction => ({
 
 
 export const submitUser = (user:IUser): TAction =>
-    (dispatch: Dispatch<Action>) => {
+    (dispatch: Dispatch<Action>): void => {
     backend.postUser(user, returnCode => {
       if(returnCode === 200) {
         dispatch(addUser(user));

@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import UserList from "../src-solution-redux-1/UserList";
 import UserCreation from "../src-solution-redux-1/UserCreation";
 
-import {addUser} from "./reducers";
+import {addUser, UserAddAction} from "./reducers";
 import {IUser, StoreState} from "./types";
 
 interface AppProps { specialUsers: IUser[] }
@@ -17,7 +17,7 @@ export class AppComponent extends Component<AppProps & AppDispatch> {
     return (
       <div>
 <UserList users={this.props.specialUsers} />
-<UserCreation submitUser={ user => { this.props.dispatchUser(user); } } />
+<UserCreation submitUser={ (user): void => { this.props.dispatchUser(user); } } />
       </div>
     );
   }
@@ -27,6 +27,6 @@ const mapStateToProps = (state:StoreState): AppProps => ({
     specialUsers: state.users
 });
 const mapDispatchToProps = (dispatch: Dispatch<Action>): AppDispatch => ({
-    dispatchUser: user => dispatch(addUser(user))
+    dispatchUser: (user): UserAddAction => dispatch(addUser(user))
 });
 export default connect<AppProps, AppDispatch, Record<string, unknown>, StoreState>(mapStateToProps, mapDispatchToProps)(AppComponent);

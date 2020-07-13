@@ -15,7 +15,7 @@ export class AppComponent extends Component<StoreState> {
     return (
       <div>
         <UserList users={users} />
-<UserCreation submitUser={ user => { addUser(user); } } />
+<UserCreation submitUser={ (user): void => { addUser(user); } } />
       </div>
     );
   }

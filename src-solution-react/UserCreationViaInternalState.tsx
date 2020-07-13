@@ -24,15 +24,15 @@ export default class UserCreationViaInternalState extends Component<UserCreation
 <div>
   <label>First name:</label>
   <input type="text"
-     onBlur={e => this.setState({firstName: e.target.value})}/>
+     onBlur={(e): void => this.setState({firstName: e.target.value})}/>
 </div>
 <div>
   <label>Last name:</label>
-  <input type="text" onBlur={e => this.setState({lastName: e.target.value})}/>
+  <input type="text" onBlur={(e): void => this.setState({lastName: e.target.value})}/>
 </div>
 <div>
   <button
-      onClick={() => {
+      onClick={(): void => {
         this.props.submitUser(this.state);
       }}>Submit</button>
 </div>

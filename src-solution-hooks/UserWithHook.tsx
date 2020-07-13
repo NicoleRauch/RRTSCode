@@ -12,7 +12,7 @@ const UserWithHook =
     const color = highlighted ? "#FF0000" : "#FFFFFF";
 
     return (
-        <div onClick={() => {setHighlighted(!highlighted)}}
+        <div onClick={(): void => {setHighlighted(!highlighted)}}
              style={{cursor: "pointer"}}>
             <label>First name: </label>
             <span style={{backgroundColor: color}}>{firstName}</span><br/>

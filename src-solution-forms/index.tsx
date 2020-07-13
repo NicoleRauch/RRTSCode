@@ -7,7 +7,7 @@ import UserCreationControlled from "./UserCreationControlledComponent";
 ReactDOM.render(
   <div>
     <UserCreation />
-    <UserCreationControlled submitUser={(/* d */) => { /* console.log(d) */ } } />
+    <UserCreationControlled submitUser={(/* d */): void => { /* console.log(d) */ } } />
   </div>
   , document.getElementById("start")
 );

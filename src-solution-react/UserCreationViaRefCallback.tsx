@@ -16,14 +16,14 @@ export default class UserCreationViaRefCallback extends Component<UserCreationPr
             <div>
 <div>
   <label>First name:</label>
-  <input type="text" ref={c => this.firstName = c}/>
+  <input type="text" ref={(c): HTMLInputElement | null => this.firstName = c}/>
 </div>
 <div>
   <label>Last name:</label>
-  <input type="text" ref={c => this.lastName = c}/>
+  <input type="text" ref={(c): HTMLInputElement | null => this.lastName = c}/>
 </div>
 <div>
-  <button onClick={() =>
+  <button onClick={(): void =>
     this.props.submitUser({
       firstName: this.firstName ? this.firstName.value : "",
       lastName: this.lastName ? this.lastName.value : "",

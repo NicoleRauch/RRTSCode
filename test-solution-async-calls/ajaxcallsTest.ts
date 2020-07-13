@@ -16,7 +16,7 @@ describe("validateInBackend", () => {
   beforeEach(() => {
     requests = [];
     global.XMLHttpRequest = sinon.FakeXMLHttpRequest;
-    global.XMLHttpRequest.onCreate = request => {
+    global.XMLHttpRequest.onCreate = (request): void => {
       requests.push(request);
     };
   });

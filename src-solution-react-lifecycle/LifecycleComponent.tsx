@@ -38,7 +38,7 @@ export default class LifecycleComponent extends Component<Record<string, unknown
 <ChildComponent checked={this.state.checked} />
 <input type="checkbox"
        checked={this.state.checked}
-       onChange={() => { this.setState({checked: !this.state.checked}) }} />
+       onChange={(): void => { this.setState({checked: !this.state.checked}) }} />
       </div>
     );
   }

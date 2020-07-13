@@ -20,7 +20,7 @@ export class AppComponent extends Component<StoreState & IDispatchProps> {
       <div>
         <UserList users={this.props.users} />
 <UserCreation submitUser={
-  user => { this.props.dispatch(submitUser(user)); }
+  (user): void => { this.props.dispatch(submitUser(user)); }
 } />
       </div>
     );

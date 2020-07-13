@@ -53,6 +53,10 @@ module.exports = {
     },
 
     "rules": {
+        "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+        "@typescript-eslint/prefer-readonly": "error",
+        // "@typescript-eslint/prefer-readonly-parameter-types": "error",
+        "@typescript-eslint/explicit-function-return-type": "error",
         "jest/no-test-callback" : "off", // Wir arbeiten mit Test-Callbacks, deshalb Regel entfernt
         "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "all", "argsIgnorePattern": "^_", "ignoreRestSiblings": false }],
         "@typescript-eslint/adjacent-overload-signatures": "error",

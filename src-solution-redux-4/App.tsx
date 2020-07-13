@@ -17,7 +17,7 @@ export class AppComponent extends Component<StoreState & IDispatchProps> {
     return (
       <div>
         <UserList users={users} />
-<UserCreation submitUser={ user =>
+<UserCreation submitUser={ (user): void =>
               { dispatch(addUser(user)); } } />
       </div>
     );

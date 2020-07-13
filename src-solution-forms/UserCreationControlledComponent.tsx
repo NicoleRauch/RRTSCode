@@ -24,16 +24,16 @@ export default class UserCreationControlledComponent extends Component<UserCreat
         <div>
           <label>First name:</label>
           <input type="text" value={this.state.firstName}
-                 onChange={e => this.setState({firstName: e.target.value})} />
+                 onChange={(e): void => this.setState({firstName: e.target.value})} />
         </div>
         <div>
           <label>Last name:</label>
           <input type="text" value={this.state.lastName}
-                 onChange={e => this.setState({lastName: e.target.value})} />
+                 onChange={(e): void => this.setState({lastName: e.target.value})} />
         </div>
         <div>
           <button
-            onClick={() => { this.props.submitUser(this.state); }}
+            onClick={(): void => { this.props.submitUser(this.state); }}
           >Submit</button>
         </div>
       </div>
