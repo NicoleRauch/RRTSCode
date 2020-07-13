@@ -7,10 +7,9 @@ interface UserListProps {
     users: IUser[]
 }
 
-const UserList = ({users}: UserListProps): React.ReactElement => (
+const UserList = ({users}: UserListProps): React.ReactElement => 
     <ul>
         {users.map(user => <li key={"userlist_" + user.firstName + user.lastName}><User {...user} /></li>)}
-    </ul>
-);
+    </ul>;
 
 export default UserList;

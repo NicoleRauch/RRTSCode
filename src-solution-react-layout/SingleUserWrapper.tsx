@@ -11,9 +11,9 @@ interface SingleUserWrapperProps {
     children: JSX.Element | JSX.Element[]
 }
 
-const SingleUserWrapper = ({children}: SingleUserWrapperProps): React.ReactElement => (
+const SingleUserWrapper = ({children}: SingleUserWrapperProps): React.ReactElement =>
   <div style={redBorder}>
     {children}
-  </div> );
+  </div>;
 
 export default SingleUserWrapper;

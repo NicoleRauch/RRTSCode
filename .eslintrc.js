@@ -58,8 +58,16 @@ module.exports = {
         // "@typescript-eslint/prefer-readonly-parameter-types": "error",
         "@typescript-eslint/explicit-function-return-type": "error",
         "@typescript-eslint/no-unnecessary-condition": "error",
-        "jest/no-test-callback" : "off", // Wir arbeiten mit Test-Callbacks, deshalb Regel entfernt
+        "@typescript-eslint/no-unnecessary-type-arguments": "error",
+        "@typescript-eslint/no-unsafe-assignment": "error",
+        "@typescript-eslint/switch-exhaustiveness-check": "error",
+        "@typescript-eslint/no-unused-expressions": "error",
         "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "all", "argsIgnorePattern": "^_", "ignoreRestSiblings": false }],
+        "@typescript-eslint/prefer-as-const": "error",
+        "@typescript-eslint/restrict-plus-operands": "error",
+        "@typescript-eslint/strict-boolean-expressions": "error",
+        "@typescript-eslint/no-extra-parens": "error",
+        "jest/no-test-callback" : "off", // Wir arbeiten mit Test-Callbacks, deshalb Regel entfernt
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/array-type": [
             "error",

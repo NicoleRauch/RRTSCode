@@ -11,12 +11,12 @@ const redBorder: CSSProperties = {
 
 interface SingleUserMonolithProps { user: IUser }
 
-const SingleUserMonolith = ({user}: SingleUserMonolithProps): React.ReactElement => (
+const SingleUserMonolith = ({user}: SingleUserMonolithProps): React.ReactElement =>
   <div style={redBorder}>
     <div>
       <label>First name: </label><span>{user.firstName}</span><br/>
       <label>Last name: </label><span>{user.lastName}</span><br/>
     </div>
-  </div> );
+  </div>;
 
 export default SingleUserMonolith;

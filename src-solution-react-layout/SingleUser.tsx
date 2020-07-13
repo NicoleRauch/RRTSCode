@@ -15,9 +15,9 @@ interface SingleUserProps {
 
 }
 
-const SingleUser = ({user}: SingleUserProps): React.ReactElement => (
+const SingleUser = ({user}: SingleUserProps): React.ReactElement =>
   <div style={redBorder}>
     <User {...user} />
-  </div> );
+  </div>;
 
 export default SingleUser;
