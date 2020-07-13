@@ -1,4 +1,5 @@
 import ajax from "nanoajax";
+
 import {IUser} from "../src-solution-redux-big/types";
 
 export const postUser = (user: IUser, callback: (returnCode: number) => void): void => {

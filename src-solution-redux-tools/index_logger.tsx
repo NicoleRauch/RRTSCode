@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import reducers from "../src-solution-redux-4/reducers";
-import App from "../src-solution-redux-4/App";
-
 import {Provider} from "react-redux";
 import {createStore, compose, applyMiddleware} from "redux";
 import logger from "redux-logger";
+
+import reducers from "../src-solution-redux-4/reducers";
+import App from "../src-solution-redux-4/App";
 
 const store = createStore(reducers,
   compose(

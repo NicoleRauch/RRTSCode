@@ -1,4 +1,5 @@
 import React, { CSSProperties } from "react";
+
 import User from "./User";
 import {IUser} from "../src-solution-react/types";
 

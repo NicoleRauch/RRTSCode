@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+
 import {IUser} from "../src-solution-redux-big/types";
 
 interface UserCreationControlledComponentProps {

@@ -1,6 +1,7 @@
+import {Action, Dispatch} from "redux";
+
 import * as backend from "./ajaxcalls";
 import {IUser, TAction} from "../src-solution-redux-big/types";
-import {Action, Dispatch} from "redux";
 
 export enum ActionTypes {
     USER_ADDED = "USER_ADDED",

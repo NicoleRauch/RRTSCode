@@ -1,7 +1,7 @@
 import React from "react";
 
-
 import {shallow, ShallowWrapper} from "enzyme";
+
 import User, {UserWithHighlightProps, UserWithHighlightState} from "../src-solution-react/UserWithHighlight";
 
 

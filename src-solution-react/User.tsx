@@ -1,4 +1,5 @@
 import React from "react";
+
 import {IUser} from "./types";
 
 const User = ({firstName, lastName}: IUser): JSX.Element => (

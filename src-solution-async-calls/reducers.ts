@@ -1,5 +1,6 @@
-import {IUser} from "../src-solution-redux-big/types";
 import {combineReducers} from "redux";
+
+import {IUser} from "../src-solution-redux-big/types";
 import {createReducer} from "../src-solution-redux-big/createReducer";
 import {ActionTypes, UserAddAction, UsersSetAction} from "./actions";
 

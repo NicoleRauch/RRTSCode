@@ -1,7 +1,7 @@
 import React from "react";
 
-
 import { shallow } from "enzyme";
+
 import User from "../src-solution-react/User";
 import UserList from "../src-solution-react/UserList";
 

@@ -1,5 +1,6 @@
-import {IUser} from "../src-solution-react/types";
 import {Action} from "redux";
+
+import {IUser} from "../src-solution-react/types";
 
 
 export interface StoreState {
