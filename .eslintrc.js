@@ -70,6 +70,12 @@ module.exports = {
         "@typescript-eslint/quotes": "error",
         "@typescript-eslint/no-use-before-define": "error",
         "@typescript-eslint/array-type": "error",
+        //"@typescript-eslint/no-unnecessary-type-assertion": "error",
+        //"@typescript-eslint/typedef": "error",
+        "@typescript-eslint/no-non-null-assertion": "error",
+        "@typescript-eslint/no-require-imports": "error",
+        "@typescript-eslint/no-dupe-class-members": "error",
+        "@typescript-eslint/no-dupe-class-members": "error",
         "jest/no-test-callback" : "off", // Wir arbeiten mit Test-Callbacks, deshalb Regel entfernt
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/array-type": [
