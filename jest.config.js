@@ -17,8 +17,5 @@ module.exports = {
     ],
     "setupFilesAfterEnv": ["./enzymeSetup.ts"],
     "testRegex": "\\.*[tT]est\\.tsx?$",
-    "transform": {
-        "^.+\\.tsx?$": "ts-jest"
-    },
     "testURL": "http://localhost"
 };
