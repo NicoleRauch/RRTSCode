@@ -2,9 +2,9 @@
   "name": "workshop-react-and-redux-in-typescript",
   "private": true,
   "scripts": {
-    "install-build": "npm install && NODE_ENV=production webpack -p --config webpack.prod.config.js",
     "build": "NODE_ENV=production webpack -p --config webpack.prod.config.js",
     "build-win": "webpack -p --config webpack.prod.config.js",
+    "install-build": "npm install && npm run build",
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "start-win": "node .\\node_modules\\webpack-dev-server\\bin\\webpack-dev-server.js",
     "eslint": "npx eslint . --ext .ts,.tsx",
