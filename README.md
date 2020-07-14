@@ -6,14 +6,15 @@ Code for a React-Redux training in TypeScript.
 The installation is easiest on Linux and Mac (because C++ and Python are already installed).
 But it is of course feasible on Windows, too.
 
-* Node.js version 6.x or greater
-* A suitable editor or IDE
-   * e.g. Webstorm -- [there is a 30-day test version](https://www.jetbrains.com/webstorm/download/)
-* Ideally Chrome (Firefox works as well)
+* [Node.js version 12.x](https://nodejs.org/en/download/) or greater
+* A suitable editor or IDE, e.g.
+   * Webstorm -- [there is a 30-day test version](https://www.jetbrains.com/webstorm/download/)
+   * Visual Studio Code -- [it is free](https://code.visualstudio.com/download)
+* Chrome or Firefox
 * C++ and Python -- detailed installation instructions can be found in the node-gyp module README, section ["You will also need to install"](https://github.com/nodejs/node-gyp#installation)
 
 ## First Steps
-* Check out the repository from GitHub (or copy the zipfile and unzip it)
+* Check out this repository from GitHub
 * cd into that directory
 * Install required modules: `npm install`
 * Launch the development server:
@@ -22,7 +23,8 @@ But it is of course feasible on Windows, too.
 
 After that:
 
-* open [http://localhost:3000](http://localhost:3000) in the browser
+* open [http://localhost:3000](http://localhost:3000) in the browser. If you see "Please replace this!", all is well.
+
 
 ## Building the JS-Bundle
 * Mac/Linux users: `npm run build`
