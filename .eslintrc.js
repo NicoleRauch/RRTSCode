@@ -125,7 +125,7 @@ module.exports = {
         "@typescript-eslint/prefer-for-of": "error",
         "@typescript-eslint/prefer-function-type": "error",
         "@typescript-eslint/prefer-readonly": "error",
-        "@typescript-eslint/quotes": "error",
+        "@typescript-eslint/quotes": "off",
         "@typescript-eslint/semi": [
             "off",
             null
