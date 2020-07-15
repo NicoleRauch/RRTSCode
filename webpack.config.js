@@ -8,7 +8,7 @@ const proxiedServer = "http://localhost:5555";
 module.exports = {
 
     entry: [
-        "./src-solution-react/index.tsx",
+        "./src/index.tsx",
     ],
 
     resolve: {
