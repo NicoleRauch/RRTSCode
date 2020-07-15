@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement} from "react";
 
 import {IUser} from "./types";
 
@@ -18,7 +18,7 @@ export default class UserCreationViaInternalState extends Component<UserCreation
         this.state = {firstName: "", lastName: ""};
     }
 
-    render(): React.ReactElement {
+    render(): ReactElement {
         return (
             <div>
 <div>

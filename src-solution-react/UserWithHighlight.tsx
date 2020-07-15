@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement} from "react";
 
 
 export interface UserWithHighlightProps {
@@ -17,7 +17,7 @@ export default class UserWithHighlight extends Component<UserWithHighlightProps,
     this.state = {highlighted: false};
   }
 
-  render(): React.ReactElement {
+  render(): ReactElement {
     const highlightColor = this.state.highlighted
       ? "#FF0000" : "#FFFFFF";
 

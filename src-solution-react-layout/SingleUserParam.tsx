@@ -11,7 +11,7 @@ interface SingleUserParamProps {
   component: JSX.Element
 }
 
-const SingleUserParam = ({component}: SingleUserParamProps): React.ReactElement =>
+const SingleUserParam = ({component}: SingleUserParamProps): ReactElement =>
   <div style={redBorder}>
     {component}
   </div>;

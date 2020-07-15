@@ -28,7 +28,7 @@ export default class ChildComponent extends Component<ChildComponentProps> {
     console.log("Child Component will unmount."); // eslint-disable-line no-console
   }
 
-  render(): React.ReactElement {
+  render(): ReactElement {
     console.log("Child Component render."); // eslint-disable-line no-console
     return <p>{this.props.checked ? "Checked" : "Unchecked"}</p>;
   }

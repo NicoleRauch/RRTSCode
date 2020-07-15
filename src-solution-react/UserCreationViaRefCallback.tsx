@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement} from "react";
 
 import {IUser} from "./types";
 
@@ -11,7 +11,7 @@ export default class UserCreationViaRefCallback extends Component<UserCreationPr
     private firstName: HTMLInputElement | null;
     private lastName: HTMLInputElement | null;
 
-    render(): React.ReactElement {
+    render(): ReactElement {
         return (
             <div>
 <div>

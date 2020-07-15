@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement} from "react";
 import { hot } from "react-hot-loader";
 
 import HelloWorld from "./HelloWorldFunctionalComponent";
@@ -14,7 +14,7 @@ const users = [
 
 export class App extends Component {
 
-  render(): React.ReactElement {
+  render(): ReactElement {
 
     return (
       <div>

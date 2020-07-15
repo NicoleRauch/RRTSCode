@@ -18,7 +18,7 @@ export default class UserCreationControlledComponent extends Component<UserCreat
     this.state = { firstName: "Pippi", lastName: "Langstrumpf"};
   }
 
-  render(): React.ReactElement {
+  render(): ReactElement {
     return (
       <div>
         <div>

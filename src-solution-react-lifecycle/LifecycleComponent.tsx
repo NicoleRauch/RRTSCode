@@ -31,7 +31,7 @@ export default class LifecycleComponent extends Component<Record<string, unknown
     console.log("Lifecycle Component will unmount."); // eslint-disable-line no-console
   }
 
-  render(): React.ReactElement {
+  render(): ReactElement {
     console.log("Lifecycle Component render."); // eslint-disable-line no-console
     return (
       <div>

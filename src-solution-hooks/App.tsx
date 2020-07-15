@@ -12,7 +12,7 @@ const users: IUser[] = [
 
 export default class App extends Component {
 
-  render(): React.ReactElement {
+  render(): ReactElement {
 
     return (
       <div>

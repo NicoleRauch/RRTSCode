@@ -20,7 +20,7 @@ const user = {firstName: "Peter", lastName: "Müller"};
 
 export default class App extends Component {
 
-  render(): React.ReactElement {
+  render(): ReactElement {
 
     return (
       <div>

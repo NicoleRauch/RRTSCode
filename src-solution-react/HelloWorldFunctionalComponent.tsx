@@ -1,5 +1,5 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
-const HelloWorld = ():React.ReactElement => <p>Hello World!</p>;
+const HelloWorld = ():ReactElement => <p>Hello World!</p>;
 
 export default HelloWorld;

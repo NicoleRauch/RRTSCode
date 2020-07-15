@@ -19,7 +19,7 @@ export default class UserCreation extends Component<UserCreationProps, UserCreat
         this.state = {firstName: "", lastName: ""};
     }
 
-    render(): React.ReactElement {
+    render(): ReactElement {
         return (
             <div>
                 <div>

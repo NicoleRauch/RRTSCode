@@ -4,7 +4,7 @@ import React, {Component, FormEvent} from "react";
 export default class UserCreationWithFormSubmit extends Component {
 
   
-  render(): React.ReactElement {
+  render(): ReactElement {
 
     const onSubmit = (e: FormEvent): void => {
       e.preventDefault();

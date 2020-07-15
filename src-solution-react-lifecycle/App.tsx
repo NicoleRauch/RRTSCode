@@ -4,7 +4,7 @@ import LifecycleComponent from "./LifecycleComponent";
 
 export default class App extends Component {
 
-  render(): React.ReactElement {
+  render(): ReactElement {
     return <LifecycleComponent/>;
   }
 }

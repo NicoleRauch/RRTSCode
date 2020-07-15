@@ -9,7 +9,7 @@ const users = [
     {firstName: "Fritz", lastName: "Walter"} ];
 
 export default class App extends Component {
-  render(): React.ReactElement {
+  render(): ReactElement {
     return (
       <div>
         <UserList users={users} />

@@ -14,7 +14,7 @@ interface SingleUserParamAndDataProps {
     component: JSX.Element
 }
 
-const SingleUserParamAndData = ({user, component}: SingleUserParamAndDataProps): React.ReactElement =>
+const SingleUserParamAndData = ({user, component}: SingleUserParamAndDataProps): ReactElement =>
   <div style={redBorder}>
     {React.cloneElement(component, user)}
   </div>;

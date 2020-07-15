@@ -14,7 +14,7 @@ const useHighlightColor = (): [string, () => void] => {
 };
 
 const UserWithCustomHook =
-    ({firstName, lastName}: UserWithCustomHookProps): React.ReactElement => {
+    ({firstName, lastName}: UserWithCustomHookProps): ReactElement => {
     const [color, toggleColor] = useHighlightColor();
     return (
         <div onClick={toggleColor}

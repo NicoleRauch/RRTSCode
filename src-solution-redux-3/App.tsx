@@ -8,7 +8,7 @@ import {addUser, StoreState} from "./reducers";
 
 export class AppComponent extends Component<StoreState> {
 
-  render(): React.ReactElement {
+  render(): ReactElement {
 
       const {users} = this.props;
 
