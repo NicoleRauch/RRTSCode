@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { hot } from "react-hot-loader";
 
 import HelloWorld from "./HelloWorldFunctionalComponent";
 import User from "./UserWithHighlight";
@@ -11,7 +12,7 @@ const users = [
     {firstName: "Fritz", lastName: "Walter"}
 ];
 
-export default class App extends Component {
+export class App extends Component {
 
   render(): React.ReactElement {
 
@@ -25,3 +26,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default hot(module)(App)
