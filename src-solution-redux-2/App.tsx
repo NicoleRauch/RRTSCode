@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement} from "react";
 import {connect} from "react-redux";
 
 import UserList from "../src-solution-redux-1/UserList";

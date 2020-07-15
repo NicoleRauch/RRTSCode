@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement} from "react";
 
 import {IUser} from "../src-solution-redux-big/types";
 

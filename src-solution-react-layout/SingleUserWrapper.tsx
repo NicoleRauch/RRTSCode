@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, ReactElement } from "react";
 
 const redBorder: CSSProperties = {
   border: "1px solid red",

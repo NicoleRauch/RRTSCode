@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 import User from "./User";
 import {IUser} from "../src-solution-react/types";

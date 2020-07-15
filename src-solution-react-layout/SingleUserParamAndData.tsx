@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, ReactElement } from "react";
 
 import {IUser} from "../src-solution-react/types";
 

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement} from "react";
 import {HashRouter as Router, Link, Route, RouteComponentProps} from 'react-router-dom';
 
 import HelloWorld from "../src-solution-react/HelloWorldFunctionalComponent";

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement} from "react";
 import {Action, Dispatch} from "redux";
 import { connect } from "react-redux";
 
