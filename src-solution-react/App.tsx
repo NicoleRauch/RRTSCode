@@ -1,5 +1,5 @@
+import { hot } from "react-hot-loader/root";
 import React, {Component, ReactElement} from "react";
-import { hot } from "react-hot-loader";
 
 import HelloWorld from "./HelloWorldFunctionalComponent";
 import User from "./UserWithHighlight";
@@ -27,4 +27,4 @@ export class App extends Component {
   }
 }
 
-export default hot(module)(App)
+export default hot(App)

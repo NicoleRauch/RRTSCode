@@ -1,3 +1,4 @@
+import { hot } from "react-hot-loader/root";
 import React, {Component, ReactElement} from "react";
 
 import User from "./User";
@@ -18,7 +19,7 @@ const users = [
 
 const user = {firstName: "Peter", lastName: "Müller"};
 
-export default class App extends Component {
+export class App extends Component {
 
   render(): ReactElement {
 
@@ -43,3 +44,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default hot(App);

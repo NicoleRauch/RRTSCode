@@ -8,10 +8,14 @@ const proxiedServer = "http://localhost:5555";
 module.exports = {
 
     entry: [
-        "./src/index.tsx",
+        'react-hot-loader/patch',
+        "./src-solution-react/index.tsx",
     ],
 
     resolve: {
+        alias: {
+            'react-dom': '@hot-loader/react-dom',
+        },
         extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
     },
 
@@ -49,9 +53,17 @@ module.exports = {
     ],
     module: {
         rules: [
-            { test: /\.tsx?$/,
+            {
+                test: /\.(j|t)sx?$/,
                 exclude: /node_modules/,
-                use: [{loader: "ts-loader"}]
+                loader: "babel-loader",
+                options: {
+                    // This is a feature of `babel-loader` for webpack (not Babel itself).
+                    // It enables caching results in ./node_modules/.cache/babel-loader/
+                    // directory for faster rebuilds.
+                    cacheDirectory: true,
+                    plugins: ['react-hot-loader/babel']
+                }
             },
         ]
     }
