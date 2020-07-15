@@ -53,7 +53,6 @@ module.exports = {
     },
 
     "rules": { 
-        "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/array-type": [
             "error",
             {
@@ -111,30 +110,22 @@ module.exports = {
         ],
         "@typescript-eslint/no-dupe-class-members": "error",
         "@typescript-eslint/no-empty-function": "off",
-        "@typescript-eslint/no-empty-interface": "error",
         "@typescript-eslint/no-explicit-any": "error",
         "@typescript-eslint/no-extra-parens": "error",
         "@typescript-eslint/no-misused-new": "error",
-        "@typescript-eslint/no-namespace": "error",
         "@typescript-eslint/no-non-null-assertion": "error",
         "@typescript-eslint/no-parameter-properties": "off",
         "@typescript-eslint/no-require-imports": "error",
         "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
         "@typescript-eslint/no-unnecessary-condition": "error",
         "@typescript-eslint/no-unnecessary-type-arguments": "error",
-        "@typescript-eslint/no-unnecessary-type-assertion": "error",
-        "@typescript-eslint/no-unsafe-assignment": "error",
         "@typescript-eslint/no-unused-expressions": "error",
         "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "all", "argsIgnorePattern": "^_", "ignoreRestSiblings": false }],
         "@typescript-eslint/no-use-before-define": "error",
-        "@typescript-eslint/no-var-requires": "error",
-        "@typescript-eslint/prefer-as-const": "error",
         "@typescript-eslint/prefer-for-of": "error",
         "@typescript-eslint/prefer-function-type": "error",
-        "@typescript-eslint/prefer-namespace-keyword": "error",
         "@typescript-eslint/prefer-readonly": "error",
         "@typescript-eslint/quotes": "error",
-        "@typescript-eslint/restrict-plus-operands": "error",
         "@typescript-eslint/semi": [
             "off",
             null
