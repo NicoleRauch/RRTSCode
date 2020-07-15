@@ -52,29 +52,7 @@ module.exports = {
         ]
     },
 
-    "rules": {
-        "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
-        "@typescript-eslint/prefer-readonly": "error",
-        "@typescript-eslint/explicit-function-return-type": "error",
-        "@typescript-eslint/no-unnecessary-condition": "error",
-        "@typescript-eslint/no-unnecessary-type-arguments": "error",
-        "@typescript-eslint/no-unsafe-assignment": "error",
-        "@typescript-eslint/switch-exhaustiveness-check": "error",
-        "@typescript-eslint/no-unused-expressions": "error",
-        "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "all", "argsIgnorePattern": "^_", "ignoreRestSiblings": false }],
-        "@typescript-eslint/prefer-as-const": "error",
-        "@typescript-eslint/restrict-plus-operands": "error",
-        "@typescript-eslint/strict-boolean-expressions": "error",
-        "@typescript-eslint/no-extra-parens": "error",
-        "@typescript-eslint/quotes": "error",
-        "@typescript-eslint/no-use-before-define": "error",
-        "@typescript-eslint/array-type": "error",
-        "@typescript-eslint/no-unnecessary-type-assertion": "error",
-        "@typescript-eslint/no-non-null-assertion": "error",
-        "@typescript-eslint/no-require-imports": "error",
-        "@typescript-eslint/no-dupe-class-members": "error",
-        "@typescript-eslint/no-dupe-class-members": "error",
-        "jest/no-test-callback" : "off", // Wir arbeiten mit Test-Callbacks, deshalb Regel entfernt
+    "rules": { 
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/array-type": [
             "error",
@@ -109,6 +87,7 @@ module.exports = {
         ],
         "@typescript-eslint/consistent-type-assertions": "error",
         "@typescript-eslint/dot-notation": "error",
+        "@typescript-eslint/explicit-function-return-type": "error",
         "@typescript-eslint/explicit-member-accessibility": [
             "off",
             {
@@ -130,23 +109,38 @@ module.exports = {
                 }
             }
         ],
+        "@typescript-eslint/no-dupe-class-members": "error",
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-empty-interface": "error",
         "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-extra-parens": "error",
         "@typescript-eslint/no-misused-new": "error",
         "@typescript-eslint/no-namespace": "error",
+        "@typescript-eslint/no-non-null-assertion": "error",
         "@typescript-eslint/no-parameter-properties": "off",
+        "@typescript-eslint/no-require-imports": "error",
+        "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+        "@typescript-eslint/no-unnecessary-condition": "error",
+        "@typescript-eslint/no-unnecessary-type-arguments": "error",
+        "@typescript-eslint/no-unnecessary-type-assertion": "error",
+        "@typescript-eslint/no-unsafe-assignment": "error",
         "@typescript-eslint/no-unused-expressions": "error",
-        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "all", "argsIgnorePattern": "^_", "ignoreRestSiblings": false }],
+        "@typescript-eslint/no-use-before-define": "error",
         "@typescript-eslint/no-var-requires": "error",
+        "@typescript-eslint/prefer-as-const": "error",
         "@typescript-eslint/prefer-for-of": "error",
         "@typescript-eslint/prefer-function-type": "error",
         "@typescript-eslint/prefer-namespace-keyword": "error",
-        "@typescript-eslint/quotes": "off",
+        "@typescript-eslint/prefer-readonly": "error",
+        "@typescript-eslint/quotes": "error",
+        "@typescript-eslint/restrict-plus-operands": "error",
         "@typescript-eslint/semi": [
             "off",
             null
         ],
+        "@typescript-eslint/strict-boolean-expressions": "error",
+        "@typescript-eslint/switch-exhaustiveness-check": "error",
         "@typescript-eslint/triple-slash-reference": [
             "error",
             {
@@ -189,6 +183,7 @@ module.exports = {
         ],
         "id-match": "error",
         "import/order": "off",
+        "jest/no-test-callback" : "off", // Wir arbeiten mit Test-Callbacks, deshalb Regel entfernt
         "linebreak-style": "off",
         "max-classes-per-file": [
             "error",
@@ -228,6 +223,15 @@ module.exports = {
             "error",
             "never"
         ],
+        "prefer-arrow/prefer-arrow-functions": [
+            "error",
+            {
+                disallowPrototype: true,
+                singleReturnOnly: false,
+                classPropertiesAllowed: false,
+                allowStandaloneDeclarations: false
+            }
+        ],
         "prefer-const": "error",
         "prefer-object-spread": "error",
         "quote-props": "off",
@@ -247,15 +251,6 @@ module.exports = {
             }
         ],
         "use-isnan": "error",
-        "valid-typeof": "off",
-        "prefer-arrow/prefer-arrow-functions": [
-            "error",
-            {
-                disallowPrototype: true,
-                singleReturnOnly: false,
-                classPropertiesAllowed: false,
-                allowStandaloneDeclarations: false
-            }
-        ]
+        "valid-typeof": "off",   
     }
 };
