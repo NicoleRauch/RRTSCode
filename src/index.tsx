@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import App from "./App";
 
 ReactDOM.render(
-    <div>Please replace this!</div>
+    <App/>
   , document.getElementById("start")
 );
 

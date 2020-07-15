@@ -9,7 +9,7 @@ module.exports = {
 
     entry: [
         'react-hot-loader/patch',
-        "./src-solution-react/index.tsx",
+        "./src/index.tsx",
     ],
 
     resolve: {
