@@ -1,12 +1,12 @@
 const path = require("path");
 const webpack = require("webpack");
+const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
+const baseConfig = require("./webpack.config.js");
+
+module.exports = merge(baseConfig, {
     mode: "production",
-    entry: [
-        "./src/index.tsx"
-    ],
     output: {
         path: path.join(__dirname, "build"),
         filename: "[hash].bundle.js"
@@ -24,13 +24,5 @@ module.exports = {
     ],
     optimization: {
         minimize: true
-    },
-  module: {
-    rules: [
-        { test: /\.tsx?$/,
-            exclude: /node_modules/,
-            use: [{loader: "ts-loader"}]
-        },
-    ]
-  }
-};
+    }
+});
