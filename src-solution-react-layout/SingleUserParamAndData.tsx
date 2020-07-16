@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement } from "react";
+import React, {CSSProperties, ReactElement} from "react";
 
 import {IUser} from "../src-solution-react/types";
 
@@ -11,7 +11,7 @@ const redBorder: CSSProperties = {
 
 interface SingleUserParamAndDataProps {
     user: IUser,
-    component: JSX.Element
+    component: ReactElement
 }
 
 const SingleUserParamAndData = ({user, component}: SingleUserParamAndDataProps): ReactElement =>

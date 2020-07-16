@@ -1,10 +1,10 @@
-import React, { ReactElement } from "react";
+import React, {ReactElement} from "react";
 
 import {IUser} from "../src-solution-react/types";
 
 interface UserListProps {
     users: IUser[],
-    component: JSX.Element
+    component: ReactElement
 }
 
 const UserList = ({users, component}: UserListProps): ReactElement => 

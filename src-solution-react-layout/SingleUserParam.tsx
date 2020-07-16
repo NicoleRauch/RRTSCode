@@ -8,7 +8,7 @@ const redBorder: CSSProperties = {
 };
 
 interface SingleUserParamProps {
-  component: JSX.Element
+  component: ReactElement
 }
 
 const SingleUserParam = ({component}: SingleUserParamProps): ReactElement =>
