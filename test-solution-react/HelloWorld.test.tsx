@@ -1,5 +1,4 @@
 import React from "react";
-
 import { shallow } from "enzyme";
 
 import HelloWorldFunctional from "../src-solution-react/HelloWorldFunctionalComponent";
@@ -14,14 +13,14 @@ describe('HelloWorldComponent', () => {
 
     expect(functional.html()).toEqual("<p>Hello World!</p>");
 
-        const clazz = shallow(<HelloWorldClass/>);
+    const clazz = shallow(<HelloWorldClass/>);
 
-        expect(clazz.text()).toEqual("Hello World!");
+    expect(clazz.text()).toEqual("Hello World!");
 
-        expect(clazz.type()).toEqual("p");
+    expect(clazz.type()).toEqual("p");
 
-        expect(clazz.name()).toEqual("p");
+    expect(clazz.name()).toEqual("p");
 
-        expect(clazz.html()).toEqual("<p>Hello World!</p>");
-    });
+    expect(clazz.html()).toEqual("<p>Hello World!</p>");
+  });
 });
