@@ -54,7 +54,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(j|t)sx?$/,
+                enforce: 'pre',
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                loader: 'eslint-loader',
+            },
+            {
+                test: /\.tsx?$/,
                 exclude: /node_modules/,
                 loader: "awesome-typescript-loader",
                 options: {

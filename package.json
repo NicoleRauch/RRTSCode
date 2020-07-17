@@ -10,10 +10,11 @@
     "check-updates": "npm outdated",
     "devserver": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "devserver-win": "node .\\node_modules\\webpack-dev-server\\bin\\webpack-dev-server.js",
+    "typecheck": "tsc --noEmit",
     "eslint": "npx eslint . --ext .ts,.tsx",
-    "start": "npm run eslint && npm run devserver",
-    "start-win": "npm run eslint && npm run devserver-win",
-    "test": "npm run eslint && npx jest",
+    "start": "npm run devserver",
+    "start-win": "npm run devserver-win",
+    "test": "npm run typecheck && npm run eslint && npx jest",
     "test-watch": "jest --watch"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "enzyme-adapter-react-16": "1.15.2",
     "eslint": "7.4.0",
     "eslint-config-prettier": "6.11.0",
+    "eslint-loader": "4.0.2",
     "eslint-plugin-import": "2.21.2",
     "eslint-plugin-jest": "23.17.1",
     "eslint-plugin-jsdoc": "28.5.1",
