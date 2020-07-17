@@ -56,7 +56,7 @@ module.exports = {
             {
                 test: /\.(j|t)sx?$/,
                 exclude: /node_modules/,
-                loader: "babel-loader",
+                loader: "awesome-typescript-loader",
                 options: {
                     // This is a feature of `babel-loader` for webpack (not Babel itself).
                     // It enables caching results in ./node_modules/.cache/babel-loader/
