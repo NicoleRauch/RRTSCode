@@ -20,6 +20,11 @@ export default class ChildComponent extends Component<ChildComponentProps> {
     return true;
   }
 
+  getSnapshotBeforeUpdate(): null {
+      console.log("Child Component get snapshot before update."); // eslint-disable-line no-console
+      return null;
+  }
+
   componentDidUpdate(): void {
     console.log("Child Component did update."); // eslint-disable-line no-console
   }
