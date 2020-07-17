@@ -11,10 +11,9 @@
     "devserver": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "devserver-win": "node .\\node_modules\\webpack-dev-server\\bin\\webpack-dev-server.js",
     "eslint": "npx eslint . --ext .ts,.tsx",
-    "typecheck": "tsc --noEmit",
-    "start": "npm run typecheck && npm run eslint && npm run devserver",
-    "start-win": "npm run typecheck && npm run eslint && npm run devserver-win",
-    "test": "npm run typecheck && npm run eslint && npx jest",
+    "start": "npm run eslint && npm run devserver",
+    "start-win": "npm run eslint && npm run devserver-win",
+    "test": "npm run eslint && npx jest",
     "test-watch": "jest --watch"
   },
   "devDependencies": {
