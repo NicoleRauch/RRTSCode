@@ -6,8 +6,7 @@ import UserList from "../src-solution-redux-1/UserList";
 import UserCreation from "../src-solution-redux-1/UserCreation";
 
 import {addUser} from "./reducers";
-import {StoreState} from "../src-solution-redux-3/reducers";
-import {IDispatchProps} from "./types";
+import {IDispatchProps, StoreState} from "./types";
 
 export class AppComponent extends Component<StoreState & IDispatchProps> {
 

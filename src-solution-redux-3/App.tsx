@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 import UserList from "../src-solution-redux-1/UserList";
 import UserCreation from "../src-solution-redux-1/UserCreation";
 
-import {addUser, StoreState} from "./reducers";
+import {addUser} from "./reducers";
+import {StoreState} from "../src-solution-redux-2/types";
 
 export class AppComponent extends Component<StoreState> {
 
@@ -16,7 +17,8 @@ export class AppComponent extends Component<StoreState> {
     return (
       <div>
         <UserList users={users} />
-<UserCreation submitUser={ (user): void => { addUser(user); } } />
+<UserCreation
+    submitUser={ (user): void => { addUser(user); } } />
       </div>
     );
   }

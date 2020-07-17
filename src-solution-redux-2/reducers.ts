@@ -1,11 +1,8 @@
-import {IUser} from "../src-solution-react/types";
+import {Action} from "redux";
+import {StoreState} from "./types";
 
 
-export interface StoreState {
-    users: IUser[]
-}
-
-const INITIAL_STATE = {
+const INITIAL_STATE: StoreState = {
   users: [
     {firstName: "Nicole", lastName: "Rauch"},
     {firstName: "Peter", lastName: "Müller"},
@@ -13,6 +10,9 @@ const INITIAL_STATE = {
   ]
 };
 
-export default (state:StoreState = INITIAL_STATE, _ = {}):StoreState => {
+export default (
+    state: StoreState = INITIAL_STATE,
+    _: Action = {type: "Dummy"}
+    ): StoreState => {
   return state;
 }

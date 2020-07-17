@@ -1,9 +1,9 @@
 import {Action} from "redux";
 
-import {IUser} from "../src-solution-react/types";
+import {IUser, StoreState} from "./types";
 
 
-const INITIAL_STATE = {
+const INITIAL_STATE: StoreState = {
   users: [
     {firstName: "Nicole", lastName: "Rauch"},
     {firstName: "Peter", lastName: "Müller"},
@@ -25,18 +25,17 @@ export const addUser = (user: IUser): UserAddAction => {
         type: UserActions.USER_ADDED,
         payload: user
     };
-}
+};
 
-const users = (currentUsers = INITIAL_STATE.users, action: Action): IUser[]  => {
+const users = (currentUsers: IUser[], action: Action): IUser[]  => {
   switch (action.type) {
     case UserActions.USER_ADDED:
       return currentUsers.concat((action as UserAddAction).payload);
   }
   return currentUsers;
-}
+};
 
-export default (state = INITIAL_STATE, action: Action = {type: "Dummy"}): {users: IUser[]} => {
-  return {
-    users: users(state.users, action)
-  };
-}
+export default (state: StoreState = INITIAL_STATE,
+                action: Action = {type: "Dummy"}): StoreState =>
+    ({users: users(state.users, action)});
+

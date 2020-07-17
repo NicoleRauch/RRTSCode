@@ -1,13 +1,7 @@
 import {Action} from "redux";
+import {IUser, StoreState} from "../src-solution-redux-2/types";
 
-import {IUser} from "../src-solution-react/types";
-
-
-export interface StoreState {
-    users: IUser[]
-}
-
-const INITIAL_STATE = {
+const INITIAL_STATE: StoreState = {
   users: [
     {firstName: "Nicole", lastName: "Rauch"},
     {firstName: "Peter", lastName: "Müller"},
@@ -29,9 +23,9 @@ export const addUser =(user: IUser): UserAddAction => {
     type: UserActions.USER_ADDED,
     payload: user
   };
-}
+};
 
 
-export default (state = INITIAL_STATE, _ = {}): StoreState => {
+export default (state: StoreState = INITIAL_STATE, _: Action = {type: "Dummy"}): StoreState => {
   return state;
 }
