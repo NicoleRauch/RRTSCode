@@ -13,6 +13,4 @@ const INITIAL_STATE: StoreState = {
 export default (
     state: StoreState = INITIAL_STATE,
     _: Action = {type: "Dummy"}
-    ): StoreState => {
-  return state;
-}
+    ): StoreState => state;

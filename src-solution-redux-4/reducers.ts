@@ -20,12 +20,10 @@ export interface UserAddedAction extends Action {
     user: IUser
 }
 
-export const addUser = (user: IUser): UserAddedAction => {
-    return {
+export const addUser = (user: IUser): UserAddedAction => ({
         type: UserActions.USER_ADDED,
         user
-    };
-};
+});
 
 const users = (currentUsers: UsersState, action: Action): UsersState  => {
   switch (action.type) {

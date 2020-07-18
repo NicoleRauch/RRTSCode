@@ -12,7 +12,7 @@ describe('reducers', () => {
 
   describe('Actions', () => {
     it('creates a USER_ADDED action', () => {
-      expect(addUser(user)).toEqual({type: UserActions.USER_ADDED, user: user});
+      expect(addUser(user)).toEqual({type: UserActions.USER_ADDED, user});
     });
   });
 

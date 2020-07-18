@@ -15,12 +15,11 @@ export interface UserAddAction extends ActionT {
     user: IUser
 }
 
-export const addUser = (user: IUser): UserAddAction => {
-    return {
-        type: ActionTypes.USER_ADDED,
-        user
-    };
-}
+export const addUser = (user: IUser): UserAddAction => ({
+    type: ActionTypes.USER_ADDED,
+    user
+});
+
 
 const INITIAL_STATE_USERS: IUser[] = [];
 const users = createReducer(INITIAL_STATE_USERS, {
@@ -32,12 +31,11 @@ export interface ProductAddAction extends ActionT {
     product: ProductType
 }
 
-export const addProduct = (product: ProductType): ProductAddAction => {
-    return {
-        type: ActionTypes.PRODUCT_ADDED,
-        product
-    }
-}
+export const addProduct = (product: ProductType): ProductAddAction => ({
+    type: ActionTypes.PRODUCT_ADDED,
+    product
+});
+
 
 const INITIAL_STATE_PRODUCTS: ProductType[] = [];
 
@@ -50,22 +48,20 @@ export interface DataSetAction extends ActionT {
     data: DataType
 }
 
-export const setData = (data: DataType): DataSetAction => {
-    return {
-        type: ActionTypes.DATA_SET,
-        data
-    }
-}
+export const setData = (data: DataType): DataSetAction => ({
+    type: ActionTypes.DATA_SET,
+    data
+})
+
 
 export interface DataRemoveAction extends ActionT {
     type: ActionTypes.DATA_REMOVED
 }
 
-export const removeData = (): DataRemoveAction => {
-    return {
-        type: ActionTypes.DATA_REMOVED
-    }
-}
+export const removeData = (): DataRemoveAction => ({
+    type: ActionTypes.DATA_REMOVED
+})
+
 
 const INITIAL_STATE_OTHER_DATA: DataType | null = null;
 

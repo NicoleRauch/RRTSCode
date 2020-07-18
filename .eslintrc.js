@@ -52,7 +52,7 @@ module.exports = {
         ]
     },
 
-    "rules": { 
+    "rules": {
         "@typescript-eslint/array-type": [
             "error",
             {
@@ -142,6 +142,7 @@ module.exports = {
         ],
         "@typescript-eslint/type-annotation-spacing": "off",
         "@typescript-eslint/unified-signatures": "error",
+        "arrow-body-style": ["error", "as-needed"],
         "arrow-parens": [
             "off",
             "always"

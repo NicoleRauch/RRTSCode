@@ -18,14 +18,10 @@ export interface UserAddAction extends Action {
     user: IUser
 }
 
-export const addUser =(user: IUser): UserAddAction => {
-    return {
+export const addUser =(user: IUser): UserAddAction => ({
     type: UserActions.USER_ADDED,
     user
-  };
-};
+});
 
 
-export default (state: StoreState = INITIAL_STATE, _: Action = {type: "Dummy"}): StoreState => {
-  return state;
-}
+export default (state: StoreState = INITIAL_STATE, _: Action = {type: "Dummy"}): StoreState => state
