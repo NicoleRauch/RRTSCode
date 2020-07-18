@@ -5,10 +5,10 @@ import {Provider} from "react-redux";
 import {createStore, compose, applyMiddleware} from "redux";
 import logger from "redux-logger";
 
-import reducers from "../src-solution-redux-4/reducers";
+import reducer from "../src-solution-redux-4/reducers";
 import App from "../src-solution-redux-4/App";
 
-const store = createStore(reducers,
+const store = createStore(reducer,
   compose(
     applyMiddleware(
       logger

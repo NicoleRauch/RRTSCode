@@ -5,11 +5,11 @@ import {Provider} from "react-redux";
 import {createStore, applyMiddleware} from "redux";
 import thunkMiddleware from "redux-thunk";
 
-import reducers from "./reducers";
+import reducer from "./reducers";
 import App from "./App";
 
 
-const store = createStore(reducers,
+const store = createStore(reducer,
     applyMiddleware(
       thunkMiddleware
     )

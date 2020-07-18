@@ -6,7 +6,7 @@ import {applyMiddleware, createStore, Store} from "redux";
 import {Provider, ProviderProps} from "react-redux";
 import thunkMiddleware from "redux-thunk";
 
-import reducers from "../src-solution-async-calls/reducers";
+import reducer from "../src-solution-async-calls/reducers";
 import App from "../src-solution-async-calls/App";
 
 const users = [
@@ -26,7 +26,7 @@ describe("Username end2end test", () => {
     global.XMLHttpRequest = sinon.FakeXMLHttpRequest;
     server = sinon.fakeServer.create({respondImmediately: true});
 
-    store = createStore(reducers,
+    store = createStore(reducer,
       applyMiddleware(thunkMiddleware)
     );
   });
