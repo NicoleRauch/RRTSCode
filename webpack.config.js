@@ -10,6 +10,7 @@ module.exports = {
     entry: [
         'react-hot-loader/patch',
         "./src/index.tsx",
+        // "./src-solution-redux-tools/index_devtools_and_logger.tsx",
     ],
 
     resolve: {
