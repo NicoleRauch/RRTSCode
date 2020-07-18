@@ -15,12 +15,12 @@ export enum UserActions {
     USER_ADDED = "USER_ADDED"
 }
 
-export interface UserAddAction extends Action {
+export interface UserAddedAction extends Action {
     type: UserActions.USER_ADDED,
     payload: IUser
 }
 
-export const addUser = (user: IUser): UserAddAction => {
+export const addUser = (user: IUser): UserAddedAction => {
     return {
         type: UserActions.USER_ADDED,
         payload: user
@@ -30,12 +30,12 @@ export const addUser = (user: IUser): UserAddAction => {
 const users = (currentUsers: UsersState, action: Action): UsersState  => {
   switch (action.type) {
     case UserActions.USER_ADDED:
-      return currentUsers.concat((action as UserAddAction).payload);
+      return currentUsers.concat((action as UserAddedAction).payload);
   }
   return currentUsers;
 };
 
 export default (state: StoreState = INITIAL_STATE,
-                action: Action = {type: "Dummy"}): StoreState =>
+       action: Action = {type: "Dummy"}): StoreState =>
     ({users: users(state.users, action)});
 
