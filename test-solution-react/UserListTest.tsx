@@ -27,11 +27,11 @@ expect(userComps.length).toEqual(2);
 expect(userComps.at(0).key()).toBeNull();
 
 expect(userComps.at(0).props())
-  .toEqual({firstName:"Petra", lastName:"Meier"});
+  .toEqual({user :{firstName:"Petra", lastName:"Meier"}});
 expect(userComps.at(1).props())
-  .toEqual({firstName:"Peter", lastName:"Miller"});
+  .toEqual({user :{firstName:"Peter", lastName:"Miller"}});
 
-expect(userComps.at(0).prop("firstName")).toEqual("Petra");
+expect(userComps.at(0).prop("user")).toEqual({firstName:"Petra", lastName:"Meier"});
 
   });
 });

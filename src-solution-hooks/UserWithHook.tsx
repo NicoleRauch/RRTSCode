@@ -1,12 +1,12 @@
 import React, {useState, ReactElement} from "react";
+import { IUser } from "../src-solution-redux-4/types";
 
 export interface UserWithHookProps {
-    firstName: string,
-    lastName: string
+    user: IUser
 }
 
 const UserWithHook =
-    ({firstName, lastName}: UserWithHookProps): ReactElement => {
+    ({user:{firstName, lastName}}: UserWithHookProps): ReactElement => {
 
     const [highlighted, setHighlighted] = useState(false);
     const color = highlighted ? "#FF0000" : "#FFFFFF";

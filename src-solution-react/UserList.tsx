@@ -9,7 +9,7 @@ const UserList = ({users}:UserListProps): ReactElement =>
   <ul>
     {users.map(user =>
       <li key={"userlist_" + user.firstName + user.lastName}>
-        <User {...user} />
+        <User user={user} />
       </li>)}
   </ul>;
 

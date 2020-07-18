@@ -1,8 +1,8 @@
 import React, {useState, ReactElement} from "react";
+import { IUser } from "../src-solution-redux-4/types";
 
 export interface UserWithCustomHookProps {
-    firstName: string,
-    lastName: string
+    user: IUser
 }
 
 const useHighlightColor = (): [string, () => void] => {
@@ -14,7 +14,7 @@ const useHighlightColor = (): [string, () => void] => {
 };
 
 const UserWithCustomHook =
-    ({firstName, lastName}: UserWithCustomHookProps): ReactElement => {
+    ({user:{firstName, lastName}}: UserWithCustomHookProps): ReactElement => {
     const [color, toggleColor] = useHighlightColor();
     return (
         <div onClick={toggleColor}

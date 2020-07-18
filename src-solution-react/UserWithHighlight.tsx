@@ -1,9 +1,9 @@
 import React, {Component, ReactElement} from "react";
+import { IUser } from "../src-solution-redux-4/types";
 
 
 export interface UserWithHighlightProps {
-    firstName: string,
-    lastName: string
+    user: IUser
 }
 
 export interface UserWithHighlightState {
@@ -26,9 +26,9 @@ export default class UserWithHighlight extends Component<UserWithHighlightProps,
          style={{cursor: "pointer"}}>
           <label>First name: </label>
           <span style={{backgroundColor: highlightColor}}>
-        {this.props.firstName}</span><br/>
+        {this.props.user.firstName}</span><br/>
           <label>Last name: </label>
-          <span>{this.props.lastName}</span><br/>
+          <span>{this.props.user.lastName}</span><br/>
         </div>
     );
   }

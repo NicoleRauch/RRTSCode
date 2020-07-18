@@ -17,8 +17,8 @@ export class App extends Component {
 
     return (
       <div>
-        <User {...users[0]} />
-        <CustomHookUser {...users[1]} />
+        <User user={users[0]} />
+        <CustomHookUser user={users[1]} />
       </div>
     );
   }

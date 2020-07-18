@@ -9,7 +9,7 @@ describe('UserWithHighlight', () => {
   let user:  ShallowWrapper<UserWithHighlightProps, UserWithHighlightState, User>;
 
   beforeEach(() => {
-    user = shallow<User, UserWithHighlightProps, UserWithHighlightState>(<User firstName="Paul" lastName="Meier"/>);
+    user = shallow<User, UserWithHighlightProps, UserWithHighlightState>(<User user={{firstName:"Paul", lastName:"Meier"}}/>);
   });
 
   describe('state leads to correct highlighting', () => {

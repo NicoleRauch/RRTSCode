@@ -5,8 +5,9 @@ import HelloWorld from "./HelloWorldFunctionalComponent";
 import User from "./UserWithHighlight";
 import UserList from "./UserListWithHighlight";
 import UserCreationViaInternalState from "./UserCreationViaInternalState";
+import { IUser } from "../src-solution-redux-4/types";
 
-const users = [
+const users: IUser[] = [
     {firstName: "Nicole", lastName: "Rauch"},
     {firstName: "Peter", lastName: "Müller"},
     {firstName: "Fritz", lastName: "Walter"}
@@ -19,7 +20,7 @@ export class App extends Component {
     return (
       <div>
         <HelloWorld />
-        <User {...users[0]} />
+        <User user={users[0]} />
         <UserList users={users} />
         <UserCreationViaInternalState submitUser={ (): void => { /**/ } } />
       </div>

@@ -30,16 +30,16 @@ export class App extends Component {
 <SingleUser user={user} />
 <br />
 <SingleUserWrapper>
-  <User {...user} />
+  <User user={user} />
 </SingleUserWrapper>
 <br />
-<SingleUserParam component={<User {...user} />} />
+<SingleUserParam component={<User user={user} />} />
 <br />
-<SingleUserParamAndData component={<User firstName="" lastName="" />} user={user} />
+<SingleUserParamAndData component={<User user={{firstName:"", lastName:""}} />} user={user} />
 <br />
 
 <hr/>
-<UserList users={users} component={<User firstName="" lastName="" />} />
+<UserList users={users} component={<User user={{firstName:"", lastName:""}} />} />
       </div>
     );
   }

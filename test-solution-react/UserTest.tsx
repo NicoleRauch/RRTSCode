@@ -8,7 +8,7 @@ import User from "../src-solution-react/User";
 describe('User', () => {
   it('displays the name that is passed to it', () => {
 const user =
-  shallow(<User firstName="Petra" lastName="Meier" />);
+  shallow(<User user={{firstName:"Petra", lastName:"Meier"}} />);
 
 const nameParts = user.find("span");
 
