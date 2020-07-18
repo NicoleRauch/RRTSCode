@@ -16,10 +16,14 @@ export interface DataType {
     otherData: string
 }
 
+export type UserState = IUser[];
+export type ProductState = ProductType[];
+export type OtherDataState = DataType | null;
+
 export interface StoreState {
-    users: IUser[]
-    products: ProductType[],
-    otherData: DataType | null,
+    users: UserState
+    products: ProductState,
+    otherData: OtherDataState,
 }
 
 export type TAction = ThunkAction<
