@@ -17,20 +17,20 @@ export enum UserActions {
 
 export interface UserAddedAction extends Action {
     type: UserActions.USER_ADDED,
-    payload: IUser
+    user: IUser
 }
 
 export const addUser = (user: IUser): UserAddedAction => {
     return {
         type: UserActions.USER_ADDED,
-        payload: user
+        user
     };
 };
 
 const users = (currentUsers: UsersState, action: Action): UsersState  => {
   switch (action.type) {
     case UserActions.USER_ADDED:
-      return currentUsers.concat((action as UserAddedAction).payload);
+      return currentUsers.concat((action as UserAddedAction).user);
   }
   return currentUsers;
 };

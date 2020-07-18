@@ -15,13 +15,13 @@ export enum UserActions {
 
 export interface UserAddAction extends Action {
     type: UserActions.USER_ADDED,
-    payload: IUser
+    user: IUser
 }
 
 export const addUser =(user: IUser): UserAddAction => {
     return {
     type: UserActions.USER_ADDED,
-    payload: user
+    user
   };
 };
 

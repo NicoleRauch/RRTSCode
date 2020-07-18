@@ -21,6 +21,6 @@ describe('App', () => {
     const button = app.find("button");
     button.simulate("click");
 
-    expect(dispatcher.getCall(0).args[0]).toEqual({type: UserActions.USER_ADDED, payload: {firstName: "", lastName: ""}});
+    expect(dispatcher.getCall(0).args[0]).toEqual({type: UserActions.USER_ADDED, user: {firstName: "", lastName: ""}});
   });
 });
