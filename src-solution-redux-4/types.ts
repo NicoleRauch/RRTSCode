@@ -9,6 +9,8 @@ export interface IUser {
     lastName: string
 }
 
+export type UsersState = IUser[];
+
 export interface StoreState {
-    users: IUser[]
+    users: UsersState
 }

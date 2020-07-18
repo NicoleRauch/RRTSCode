@@ -1,6 +1,6 @@
 import {Action} from "redux";
 
-import {IUser, StoreState} from "./types";
+import {IUser, StoreState, UsersState} from "./types";
 
 
 const INITIAL_STATE: StoreState = {
@@ -27,7 +27,7 @@ export const addUser = (user: IUser): UserAddAction => {
     };
 };
 
-const users = (currentUsers: IUser[], action: Action): IUser[]  => {
+const users = (currentUsers: UsersState, action: Action): UsersState  => {
   switch (action.type) {
     case UserActions.USER_ADDED:
       return currentUsers.concat((action as UserAddAction).payload);
