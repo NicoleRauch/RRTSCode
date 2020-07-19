@@ -3,7 +3,6 @@ import {shallow, ShallowWrapper} from "enzyme";
 
 import UserCreation, {UserCreationProps, UserCreationState} from "../src-solution-react/UserCreationViaInternalState";
 
-
 describe('UserCreation', () => {
   let submit: jest.Mock;
   let user: ShallowWrapper<UserCreationProps, UserCreationState, UserCreation>;

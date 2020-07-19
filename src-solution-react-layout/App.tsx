@@ -6,7 +6,7 @@ import SingleUser from "./SingleUser";
 import SingleUserMonolith from "./SingleUserMonolith";
 import SingleUserWrapper from "./SingleUserWrapper";
 import SingleUserParam from "./SingleUserParam";
-import SingleUserParamAndData from "./SingleUserParamAndData";
+
 
 import UserList from "./UserList";
 
@@ -35,11 +35,9 @@ export class App extends Component {
 <br />
 <SingleUserParam component={<User user={user} />} />
 <br />
-<SingleUserParamAndData component={<User user={{firstName:"", lastName:""}} />} user={user} />
-<br />
 
 <hr/>
-<UserList users={users} component={<User user={{firstName:"", lastName:""}} />} />
+<UserList users={users} Component={User} />
       </div>
     );
   }

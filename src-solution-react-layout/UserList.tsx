@@ -1,16 +1,17 @@
 import React, {ReactElement} from "react";
 
 import {IUser} from "../src-solution-react/types";
+import {UserProps} from "./User";
 
 interface UserListProps {
     users: IUser[],
-    component: ReactElement
+    Component: (props: UserProps) => ReactElement
 }
 
-const UserList = ({users, component}: UserListProps): ReactElement => 
+const UserList = ({users, Component}: UserListProps): ReactElement =>
   <ul>
     { users.map( user => <li key={"userlist_" + user.firstName
-      + user.lastName}>{React.cloneElement(component, user)}</li> ) }
+      + user.lastName}><Component user={user}/></li> ) }
   </ul>;
 
 export default UserList;
