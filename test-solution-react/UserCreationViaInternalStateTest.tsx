@@ -1,17 +1,15 @@
 import React from "react";
-
-import sinon, {SinonSpy} from "sinon";
 import {shallow, ShallowWrapper} from "enzyme";
 
 import UserCreation, {UserCreationProps, UserCreationState} from "../src-solution-react/UserCreationViaInternalState";
 
 
 describe('UserCreation', () => {
-  let submit: SinonSpy;
+  let submit: jest.Mock;
   let user: ShallowWrapper<UserCreationProps, UserCreationState, UserCreation>;
 
   beforeEach(() => {
-    submit = sinon.spy();
+    submit = jest.fn();
     user = shallow<UserCreation, UserCreationProps, UserCreationState>(<UserCreation submitUser={submit}/>);
   });
 
@@ -34,9 +32,9 @@ describe('UserCreation', () => {
     const button = user.find("button"); // .first();
     button.simulate("click");
 
-    expect(submit.called).toBeTruthy();
-    expect(submit.calledOnce).toBeTruthy();
-    expect(submit.getCall(0).args).toEqual([{firstName: "Paul", lastName: "Meier"}]); // array!
+    expect(submit).toHaveBeenCalled();
+    expect(submit).toHaveBeenCalledTimes(1);
+    expect(submit).toHaveBeenCalledWith({firstName: "Paul", lastName: "Meier"});
   });
 
   it("blackbox test", () => {
@@ -47,7 +45,6 @@ describe('UserCreation', () => {
     const button = user.find("button"); // .first();
     button.simulate("click");
 
-    expect(submit.getCall(0).args)
-      .toEqual([{firstName: "Paul", lastName: "Meier"}]);
+    expect(submit).toHaveBeenNthCalledWith(1, {firstName: "Paul", lastName: "Meier"});
   });
 });
