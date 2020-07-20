@@ -5,7 +5,7 @@ import HelloWorld from "./HelloWorldFunctionalComponent";
 import User from "./UserWithHighlight";
 import UserList from "./UserListWithHighlight";
 import UserCreationViaInternalState from "./UserCreationViaInternalState";
-import { IUser } from "../src-solution-redux-4/types";
+import { IUser } from "./types";
 
 const users: IUser[] = [
     {firstName: "Nicole", lastName: "Rauch"},

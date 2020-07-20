@@ -1,5 +1,5 @@
 import React, {Component, ReactElement} from "react";
-import { IUser } from "../src-solution-redux-4/types";
+import { IUser } from "./types";
 
 
 export type UserWithHighlightProps = {
