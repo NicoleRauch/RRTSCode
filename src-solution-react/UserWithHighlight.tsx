@@ -2,11 +2,11 @@ import React, {Component, ReactElement} from "react";
 import { IUser } from "../src-solution-redux-4/types";
 
 
-export interface UserWithHighlightProps {
+export type UserWithHighlightProps = {
     user: IUser
 }
 
-export interface UserWithHighlightState {
+export type UserWithHighlightState = {
     highlighted: boolean
 }
 

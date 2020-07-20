@@ -3,7 +3,7 @@ import React, {ReactElement} from "react";
 import {IUser} from "../src-solution-react/types";
 import {UserProps} from "./User";
 
-interface UserListProps {
+type UserListProps = {
     users: IUser[],
     Component: (props: UserProps) => ReactElement
 }

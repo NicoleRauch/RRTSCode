@@ -1,4 +1,4 @@
-export interface IUser {
+export type IUser = {
     firstName: string,
     lastName: string
 }

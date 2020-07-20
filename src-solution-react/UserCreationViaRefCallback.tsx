@@ -3,7 +3,7 @@ import React, {Component, ReactElement} from "react";
 import {IUser} from "./types";
 
 
-interface UserCreationProps {
+type UserCreationProps = {
     submitUser: (user: IUser) => void
 }
 

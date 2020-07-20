@@ -9,7 +9,7 @@ const redBorder: CSSProperties = {
   clear: "both",
 };
 
-interface SingleUserMonolithProps { user: IUser }
+type SingleUserMonolithProps = { user: IUser }
 
 const SingleUserMonolith = ({user}: SingleUserMonolithProps): ReactElement =>
   <div style={redBorder}>

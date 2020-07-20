@@ -1,18 +1,18 @@
 import {Action} from "redux";
 import {ThunkAction, ThunkDispatch} from "redux-thunk";
 
-export interface IUser {
+export type IUser = {
     firstName: string,
     lastName: string
 }
 
-export interface ProductType {
+export type ProductType = {
     id: string,
     price: number
     // ...
 }
 
-export interface DataType {
+export type DataType = {
     otherData: string
 }
 
@@ -20,7 +20,7 @@ export type UserState = IUser[];
 export type ProductState = ProductType[];
 export type OtherDataState = DataType | null;
 
-export interface StoreState {
+export type StoreState = {
     users: UserState
     products: ProductState,
     otherData: OtherDataState,
@@ -39,6 +39,6 @@ export type TDispatch = ThunkDispatch<
     Action<string>
     >;
 
-export interface IDispatchProps {
+export type IDispatchProps = {
     dispatch: TDispatch
 }

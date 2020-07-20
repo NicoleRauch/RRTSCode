@@ -7,7 +7,7 @@ import User from "../src-solution-react/UserWithHighlight";
 import UserList from "../src-solution-react/UserListWithHighlight";
 import UserCreationViaInternalState from "../src-solution-react/UserCreationViaInternalState";
 
-interface MatchParams {
+type MatchParams = {
   firstName: string,
   lastName: string
 }

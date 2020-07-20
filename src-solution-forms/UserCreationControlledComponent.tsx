@@ -2,11 +2,11 @@ import React, {Component, ReactElement} from "react";
 
 import {IUser} from "../src-solution-redux-big/types";
 
-interface UserCreationControlledComponentProps {
+type UserCreationControlledComponentProps = {
     submitUser: (user: IUser) => void
 }
 
-interface UserCreationControlledComponentState {
+type UserCreationControlledComponentState = {
     firstName: string,
     lastName: string
 }

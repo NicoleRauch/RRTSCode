@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 
 import {IUser} from "../src-solution-react/types";
 
-export interface UserProps {
+export type UserProps = {
   user: IUser
 }
 

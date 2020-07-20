@@ -1,7 +1,7 @@
 import React, {useState, ReactElement} from "react";
 import { IUser } from "../src-solution-redux-4/types";
 
-export interface UserWithCustomHookProps {
+export type UserWithCustomHookProps = {
     user: IUser
 }
 

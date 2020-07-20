@@ -10,7 +10,7 @@ const redBorder: CSSProperties = {
   clear: "both",
 };
 
-interface SingleUserProps {
+type SingleUserProps = {
   user: IUser
 
 }

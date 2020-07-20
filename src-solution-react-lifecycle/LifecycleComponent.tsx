@@ -4,7 +4,7 @@ import ChildComponent from "./ChildComponent";
 
 type LifecycleComponentProps = Record<string, unknown>;
 
-interface LifecycleComponentState {
+type LifecycleComponentState = {
   checked: boolean
 }
 

@@ -1,6 +1,6 @@
 import React, {Component, ReactElement} from "react";
 
-interface ChildComponentProps {
+type ChildComponentProps = {
     checked: boolean
 }
 

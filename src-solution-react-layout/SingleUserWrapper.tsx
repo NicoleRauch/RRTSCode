@@ -7,7 +7,7 @@ const redBorder: CSSProperties = {
   clear: "both",
 };
 
-interface SingleUserWrapperProps {
+type SingleUserWrapperProps = {
     children: ReactNode
 }
 

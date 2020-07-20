@@ -2,11 +2,11 @@ import React, {Component, ReactElement} from "react";
 
 import {IUser} from "../src-solution-react/types";
 
-interface UserCreationProps {
+type UserCreationProps = {
     submitUser: (user: IUser) => void
 }
 
-interface UserCreationState {
+type UserCreationState = {
     firstName: string,
     lastName: string
 }

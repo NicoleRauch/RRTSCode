@@ -7,7 +7,7 @@ const redBorder: CSSProperties = {
   clear: "both",
 };
 
-interface SingleUserParamProps {
+type SingleUserParamProps = {
   component: ReactElement
 }
 

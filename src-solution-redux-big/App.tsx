@@ -9,8 +9,8 @@ import UserCreation from "../src-solution-redux-1/UserCreation";
 import {addUser, UserAddedAction} from "./reducers";
 import {IUser, StoreState} from "./types";
 
-interface AppProps { specialUsers: IUser[] }
-interface AppDispatch { dispatchUser: (u: IUser) => void }
+type AppProps = { specialUsers: IUser[] }
+type AppDispatch = { dispatchUser: (u: IUser) => void }
 
 export class AppComponent extends Component<AppProps & AppDispatch> {
 
