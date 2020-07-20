@@ -1,6 +1,6 @@
 import ajax from "nanoajax";
 
-import {IUser} from "../src-solution-redux-big/types";
+import {IUser} from "./types";
 
 export const postUser = (user: IUser, callback: (returnCode: number) => void): void => {
   ajax.ajax({
@@ -12,7 +12,7 @@ export const postUser = (user: IUser, callback: (returnCode: number) => void): v
       callback(code);
     }
   );
-}
+};
 
 export const fetchUsers = (callback: (response: IUser[]) => void): void => {
   ajax.ajax({
@@ -23,4 +23,4 @@ export const fetchUsers = (callback: (response: IUser[]) => void): void => {
         callback(JSON.parse(response));
     }
   );
-}
+};

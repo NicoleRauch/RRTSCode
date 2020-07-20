@@ -1,15 +1,11 @@
 import {combineReducers} from "redux";
 
-import {IUser} from "../src-solution-redux-big/types";
+import {IUser} from "./types";
 import {createReducer} from "../src-solution-redux-big/createReducer";
 import {ActionTypes, UserAddAction, UsersSetAction} from "./actions";
 
 const INITIAL_STATE = {
-  users: [
-    {firstName: "Nicole", lastName: "Rauch"},
-    {firstName: "Peter", lastName: "Müller"},
-    {firstName: "Fritz", lastName: "Walter"}
-  ]
+  users: []
 };
 
 const users = createReducer(INITIAL_STATE.users, {

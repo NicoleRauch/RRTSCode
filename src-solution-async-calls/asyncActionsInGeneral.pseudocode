@@ -1,9 +1,6 @@
-import {Action, Dispatch} from "redux";
-import {StoreState} from "../src-solution-redux-big/reducers";
+export const asyncActionInANutshell = () =>
 
-export function asyncActionInANutshell() {
-
-  return (dispatch: Dispatch<Action>, getState: () => StoreState) => {
+  (dispatch: Dispatch<Action>, getState: () => StoreState)=>{
 
     const { someStatePart } = getState();
 
@@ -15,4 +12,3 @@ export function asyncActionInANutshell() {
 
     });
   };
-}
