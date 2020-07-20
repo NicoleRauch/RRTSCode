@@ -11,8 +11,8 @@ import App from "../src-solution-async-calls/App";
 
 const users = [
   {firstName: "Nicole", lastName: "Rauch"},
-  {firstName: "Peter", lastName: "Müller"},
-  {firstName: "Fritz", lastName: "Walter"}
+  {firstName: "Fritz", lastName: "Müller"},
+  {firstName: "Klaus", lastName: "Walter"}
 ];
 
 declare const global: {XMLHttpRequest : SinonFakeXMLHttpRequestStatic};
@@ -53,6 +53,6 @@ describe("Username end2end test", () => {
 
     // you can interact with the UI here
 
-    expect(component.find("span").map(u => u.text())).toEqual(["Nicole","Rauch","Peter","Müller","Fritz","Walter"]);
+    expect(component.find("span").map(u => u.text())).toEqual(["Nicole","Rauch","Fritz","Müller","Klaus","Walter"]);
   });
 });
