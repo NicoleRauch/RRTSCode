@@ -10,8 +10,7 @@ export enum ActionTypes {
     DATA_REMOVED = "DATA_REMOVED"
 }
 
-export interface UserAddedAction extends Action {
-    type: ActionTypes.USER_ADDED,
+export type UserAddedAction = Action<ActionTypes.USER_ADDED> & {
     user: IUser
 }
 
@@ -27,8 +26,7 @@ const users = createReducer(INITIAL_STATE_USERS, {
   [ActionTypes.USER_ADDED]: (currentUsers: UserState, action: UserAddedAction) => currentUsers.concat(action.user)
 });
 
-export interface ProductAddedAction extends Action {
-    type: ActionTypes.PRODUCT_ADDED
+export type ProductAddedAction = Action<ActionTypes.PRODUCT_ADDED> & {
     product: ProductType
 }
 
@@ -44,8 +42,7 @@ const products = createReducer(INITIAL_STATE_PRODUCTS, {
   [ActionTypes.PRODUCT_ADDED]: (currentProducts: ProductState, action: ProductAddedAction) => currentProducts.concat(action.product)
 });
 
-export interface DataSetAction extends Action {
-    type: ActionTypes.DATA_SET,
+export type DataSetAction = Action<ActionTypes.DATA_SET> & {
     data: DataType
 }
 
@@ -55,9 +52,7 @@ export const setData = (data: DataType): DataSetAction => ({
 });
 
 
-export interface DataRemovedAction extends Action {
-    type: ActionTypes.DATA_REMOVED
-}
+export type DataRemovedAction = Action<ActionTypes.DATA_REMOVED>
 
 export const removeData = (): DataRemovedAction => ({
     type: ActionTypes.DATA_REMOVED

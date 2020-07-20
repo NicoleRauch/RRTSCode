@@ -9,8 +9,7 @@ export enum ActionTypes {
 }
 
 
-export interface UserAddAction extends Action {
-    type: ActionTypes.USER_ADDED,
+export type UserAddAction = Action<ActionTypes.USER_ADDED> & {
     user: IUser
 }
 
@@ -30,10 +29,8 @@ export const submitUser = (user:IUser): TAction =>
   };
 
 
-export interface UsersSetAction extends Action {
-  type: ActionTypes.USERS_SET,
+export type UsersSetAction = Action<ActionTypes.USERS_SET> & {
     users: IUser[]
-
 }
 
 
