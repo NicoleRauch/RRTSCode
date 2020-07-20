@@ -1,11 +1,16 @@
+import {Action, Dispatch} from "redux";
 
-export interface IUser {
+export type IDispatchProps = {
+    dispatch: Dispatch<Action>
+}
+
+export type IUser = {
     firstName: string,
     lastName: string
 }
 
-type UsersState = IUser[];
+export type UsersState = IUser[];
 
-export interface StoreState {
+export type StoreState = {
     users: UsersState
 }

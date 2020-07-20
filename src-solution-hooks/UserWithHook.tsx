@@ -1,5 +1,5 @@
 import React, {useState, ReactElement} from "react";
-import { IUser } from "../src-solution-redux-4/types";
+import { IUser } from "../src-solution-redux-2/types";
 
 export type UserWithHookProps = {
     user: IUser

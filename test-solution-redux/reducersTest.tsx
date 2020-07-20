@@ -1,6 +1,6 @@
 
-import reducer, {addUser, UserActions} from "../src-solution-redux-4/reducers";
-import {IUser, StoreState} from "../src-solution-redux-4/types";
+import reducer, {addUser, UserActions} from "../src-solution-redux-2/reducers";
+import {IUser, StoreState} from "../src-solution-redux-2/types";
 
 
 

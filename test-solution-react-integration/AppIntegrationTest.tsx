@@ -1,8 +1,8 @@
 import React from "react";
 import {mount} from "enzyme";
 
-import {AppComponent} from "../src-solution-redux-4/App";
-import {UserActions} from "../src-solution-redux-4/reducers";
+import {AppComponent} from "../src-solution-redux-2/App";
+import {UserActions} from "../src-solution-redux-2/reducers";
 
 describe('App', () => {
   it('displays its user list', () => {

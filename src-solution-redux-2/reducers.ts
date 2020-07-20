@@ -1,5 +1,6 @@
 import {Action} from "redux";
-import {StoreState} from "./types";
+
+import {IUser, StoreState, UsersState} from "./types";
 
 
 const INITIAL_STATE: StoreState = {
@@ -10,7 +11,33 @@ const INITIAL_STATE: StoreState = {
   ]
 };
 
-export default (
-    state: StoreState = INITIAL_STATE,
-    _: Action = {type: "Dummy"}
-    ): StoreState => state;
+export enum UserActions {
+    USER_ADDED = "USER_ADDED"
+}
+
+export type UserAddedAction =
+    Action<UserActions.USER_ADDED> & { user: IUser }
+
+export const addUser = (user: IUser): UserAddedAction => ({
+        type: UserActions.USER_ADDED,
+        user
+});
+
+const users = (state: UsersState, action: Action): UsersState  => {
+  switch (action.type) {
+    case UserActions.USER_ADDED:
+      return state.concat((action as UserAddedAction).user);
+  }
+  return state;
+};
+
+export default (state: StoreState = INITIAL_STATE,
+       action: Action = {type: "Dummy"}): StoreState =>
+    ({users: users(state.users, action)});
+
+
+/* Definition von Action in redux:
+export interface Action<T = any> {
+  type: T
+}
+ */

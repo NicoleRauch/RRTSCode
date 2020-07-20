@@ -4,8 +4,8 @@ import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
 import {createStore, compose} from "redux";
 
-import reducer from "../src-solution-redux-4/reducers";
-import App from "../src-solution-redux-4/App";
+import reducer from "../src-solution-redux-2/reducers";
+import App from "../src-solution-redux-2/App";
 
 
 const enhancedCompose = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose; // eslint-disable-line @typescript-eslint/dot-notation 
