@@ -2,20 +2,11 @@ import { hot } from "react-hot-loader/root";
 import React, {Component, ReactElement} from "react";
 
 import User from "./User";
-import SingleUser from "./SingleUser";
+import UserWrapper from "./UserWrapper";
 import SingleUserMonolith from "./SingleUserMonolith";
-import SingleUserWrapper from "./SingleUserWrapper";
-import SingleUserParam from "./SingleUserParam";
-
-
-import UserList from "./UserList";
-
-
-const users = [
-    {firstName: "Nicole", lastName: "Rauch"},
-    {firstName: "Peter", lastName: "Müller"},
-    {firstName: "Fritz", lastName: "Walter"}
-];
+import ComponentWrapper from "./ComponentWrapper";
+import CompAsParamWrapper from "./CompAsParamWrapper";
+import UserListUsage from "./UserListUsage";
 
 const user = {firstName: "Peter", lastName: "Müller"};
 
@@ -27,17 +18,15 @@ export class App extends Component {
       <div>
 <SingleUserMonolith user={user} />
 <br />
-<SingleUser user={user} />
+<UserWrapper user={user} />
 <br />
-<SingleUserWrapper>
+<ComponentWrapper>
   <User user={user} />
-</SingleUserWrapper>
+</ComponentWrapper>
 <br />
-<SingleUserParam component={<User user={user} />} />
-<br />
-
-<hr/>
-<UserList users={users} Component={User} />
+<CompAsParamWrapper component={<User user={user} />} />
+<br/>
+<UserListUsage />
       </div>
     );
   }

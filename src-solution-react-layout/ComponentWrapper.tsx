@@ -7,13 +7,13 @@ const redBorder: CSSProperties = {
   clear: "both",
 };
 
-type SingleUserWrapperProps = {
+type ComponentWrapperProps = {
     children: ReactNode
 }
 
-const SingleUserWrapper = ({children}: SingleUserWrapperProps): ReactElement =>
+const ComponentWrapper = ({children}: ComponentWrapperProps): ReactElement =>
   <div style={redBorder}>
     {children}
   </div>;
 
-export default SingleUserWrapper;
+export default ComponentWrapper;

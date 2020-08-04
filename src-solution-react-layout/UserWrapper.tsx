@@ -10,14 +10,13 @@ const redBorder: CSSProperties = {
   clear: "both",
 };
 
-type SingleUserProps = {
+type UserWrapperProps = {
   user: IUser
-
 }
 
-const SingleUser = ({user}: SingleUserProps): ReactElement =>
+const UserWrapper = ({user}: UserWrapperProps): ReactElement =>
   <div style={redBorder}>
     <User user={user} />
   </div>;
 
-export default SingleUser;
+export default UserWrapper;

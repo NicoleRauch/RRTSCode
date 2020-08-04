@@ -7,13 +7,14 @@ const redBorder: CSSProperties = {
   clear: "both",
 };
 
-type SingleUserParamProps = {
+type CompAsParamWrapperProps = {
   component: ReactElement
 }
 
-const SingleUserParam = ({component}: SingleUserParamProps): ReactElement =>
+const CompAsParamWrapper = ({component}: CompAsParamWrapperProps): ReactElement =>
+
   <div style={redBorder}>
     {component}
   </div>;
 
-export default SingleUserParam;
+export default CompAsParamWrapper;
