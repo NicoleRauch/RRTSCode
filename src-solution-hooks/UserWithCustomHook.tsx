@@ -5,26 +5,26 @@ export type UserWithCustomHookProps = {
     user: IUser
 }
 
-const useHighlightColor = (): [string, () => void] => {
+const useHighlightColor =
+    (): {color: string, toggleColor: () => void} => {
 
-    const [highlighted, setHighlighted] = useState(false);
-
-    const color = highlighted ? "#FF0000" : "#FFFFFF";
-    return [color, (): void => {setHighlighted(!highlighted)}]
+  const [highlighted, setHighlighted] = useState(false);
+  const color = highlighted ? "#FF0000" : "#FFFFFF";
+  return {color, toggleColor:
+          (): void => {setHighlighted(!highlighted)}};
 };
 
 const UserWithCustomHook =
-    ({user:{firstName, lastName}}: UserWithCustomHookProps): ReactElement => {
-    const [color, toggleColor] = useHighlightColor();
-    return (
-        <div onClick={toggleColor}
-             style={{cursor: "pointer"}}>
-            <label>First name: </label>
-            <span style={{backgroundColor: color}}>{firstName}</span><br/>
-            <label>Last name: </label>
-            <span>{lastName}</span><br/>
-        </div>
-    );
+  ({user}: UserWithCustomHookProps): ReactElement => {
+  const {color, toggleColor} = useHighlightColor();
+  return (
+    <div onClick={toggleColor} style={{cursor: "pointer"}}>
+      <label>First name: </label>
+      <span style={{backgroundColor: color}}>{user.firstName}</span><br/>
+      <label>Last name: </label>
+      <span>{user.lastName}</span><br/>
+    </div>
+  );
 };
 
 export default UserWithCustomHook;
