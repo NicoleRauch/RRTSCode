@@ -8,8 +8,13 @@ import logger from "redux-logger";
 import reducer from "../src-solution-redux-2/reducers";
 import App from "../src-solution-redux-2/App";
 
+declare const window: {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: typeof compose
+}
 
-const enhancedCompose = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose; // eslint-disable-line @typescript-eslint/dot-notation 
+const enhancedCompose: typeof compose =
+    (process.env.NODE_ENV === "development" ? window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] : undefined) // eslint-disable-line @typescript-eslint/dot-notation
+    || compose;
 
 const store = createStore(reducer,
     enhancedCompose(
