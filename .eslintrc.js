@@ -104,6 +104,12 @@ module.exports = {
         "@typescript-eslint/no-non-null-assertion": "error",
         "@typescript-eslint/no-parameter-properties": "off",
         "@typescript-eslint/no-require-imports": "error",
+        "@typescript-eslint/no-shadow": [
+            "error",
+            {
+                "hoist": "all"
+            }
+        ],
         "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
         "@typescript-eslint/no-unnecessary-condition": "error",
         "@typescript-eslint/no-unnecessary-type-arguments": "error",
@@ -163,7 +169,7 @@ module.exports = {
         ],
         "id-match": "error",
         "import/order": "off",
-        "jest/no-test-callback" : "off", // Wir arbeiten mit Test-Callbacks, deshalb Regel entfernt
+        "jest/no-done-callback" : "off", // Wir arbeiten mit Test-Callbacks, deshalb Regel entfernt
         "linebreak-style": "off",
         "max-classes-per-file": [
             "error",
@@ -185,12 +191,7 @@ module.exports = {
         "no-irregular-whitespace": "off",
         "no-multiple-empty-lines": "off",
         "no-new-wrappers": "error",
-        "no-shadow": [
-            "error",
-            {
-                "hoist": "all"
-            }
-        ],
+        "no-shadow": "off",
         "no-throw-literal": "error",
         "no-trailing-spaces": "off",
         "no-undef-init": "error",
