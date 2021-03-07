@@ -18,8 +18,7 @@ But it is of course feasible on Windows, too.
 * cd into that directory
 * Install required modules: `npm install`
 * Launch the development server:
-   * Mac/Linux users: `npm start`
-   * Windows users: `npm run start-win`
+   * `npm start`
 
 After that:
 
@@ -27,8 +26,7 @@ After that:
 
 
 ## Building the JS-Bundle
-* Mac/Linux users: `npm run build`
-* Windows users: `npm run build-win`
+* `npm run build`
 * open `build/index.html` in the browser
 
 ## Trying out the solutions

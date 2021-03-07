@@ -1,6 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const baseConfig = require("./webpack.config.js");
@@ -9,7 +9,7 @@ module.exports = merge(baseConfig, {
     mode: "production",
     output: {
         path: path.join(__dirname, "build"),
-        filename: "[hash].bundle.js"
+        filename: "[contenthash].bundle.js"
     },
     plugins: [
         new HtmlWebpackPlugin({
