@@ -1,4 +1,3 @@
-import { hot } from "react-hot-loader/root";
 import React, {Component, ReactElement} from "react";
 import { connect } from "react-redux";
 
@@ -24,4 +23,4 @@ export class AppComponent extends Component<StoreState & IDispatchProps> {
   }
 }
 
-export default hot(connect<StoreState, Record<string, unknown>, Record<string, unknown>, StoreState> ((state: StoreState): StoreState => state)(AppComponent));
+export default connect<StoreState, Record<string, unknown>, Record<string, unknown>, StoreState> ((state: StoreState): StoreState => state)(AppComponent);

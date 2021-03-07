@@ -1,9 +1,12 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const localPort = "3000";
 const proxiedServer = "http://localhost:5555";
+
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
 
@@ -41,7 +44,8 @@ module.exports = {
         filename: "[hash].bundle.js"
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
+        isDevelopment && new webpack.HotModuleReplacementPlugin(),
+        isDevelopment && new ReactRefreshWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: "./index.html"
         }),
@@ -51,9 +55,21 @@ module.exports = {
                 NODE_ENV: '"development"'
             }
         })
-    ],
+    ].filter(Boolean),
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                    use: [{
+                        loader: "babel-loader",
+                        options: {
+                            plugins: [
+                                isDevelopment && require.resolve('react-refresh/babel')
+                            ].filter(Boolean),
+                        },
+                    }],
+            },
             {
                 enforce: 'pre',
                 test: /\.tsx?$/,
@@ -63,14 +79,10 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                loader: "awesome-typescript-loader",
-                options: {
-                    // This is a feature of `babel-loader` for webpack (not Babel itself).
-                    // It enables caching results in ./node_modules/.cache/babel-loader/
-                    // directory for faster rebuilds.
-                    cacheDirectory: true,
-                    plugins: ['react-hot-loader/babel']
-                }
+                use: [{
+                    loader: "ts-loader",
+                    options: { transpileOnly: true },
+                }]
             },
         ]
     }

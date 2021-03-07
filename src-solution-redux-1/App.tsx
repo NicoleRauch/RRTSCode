@@ -1,4 +1,3 @@
-import { hot } from "react-hot-loader/root";
 import React, {Component, ReactElement} from "react";
 
 import UserList from "./UserList";
@@ -21,4 +20,4 @@ export class App extends Component {
   }
 }
 
-export default hot(App);
+export default App;

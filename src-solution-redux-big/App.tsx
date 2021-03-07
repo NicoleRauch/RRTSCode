@@ -1,4 +1,3 @@
-import { hot } from "react-hot-loader/root";
 import React, {Component, ReactElement} from "react";
 import {Action, Dispatch} from "redux";
 import { connect } from "react-redux";
@@ -33,4 +32,4 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): AppDispatch =>
   dispatchUser:
       (user): UserAddedAction => dispatch(addUser(user))
 });
-export default hot(connect<AppProps, AppDispatch, Record<string, unknown>, StoreState>(mapStateToProps, mapDispatchToProps)(AppComponent));
+export default connect<AppProps, AppDispatch, Record<string, unknown>, StoreState>(mapStateToProps, mapDispatchToProps)(AppComponent);
