@@ -16,7 +16,7 @@ But it is of course feasible on Windows, too.
 ## First Steps
 * Check out this repository from GitHub
 * cd into that directory
-* Install required modules: `npm install`
+* Install required modules: `npm install --legacy-peer-deps`
 * Launch the development server:
    * `npm start`
 
