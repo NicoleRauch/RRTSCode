@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/test-solution-react-integration" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test-solution-redux" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test-typescript" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build-js" />
     </content>
     <orderEntry type="inheritedJdk" />

@@ -10,6 +10,7 @@ module.exports = {
         "node"
     ],
     "roots": [
+        "test",
         "test-typescript",
         "test-solution-react",
         "test-solution-redux",
