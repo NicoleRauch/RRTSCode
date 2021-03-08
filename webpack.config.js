@@ -11,15 +11,11 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 module.exports = {
 
     entry: [
-        'react-hot-loader/patch',
         "./src/index.tsx",
         // "./src-solution-redux-tools/index_devtools_and_logger.tsx",
     ],
 
     resolve: {
-        alias: {
-            'react-dom': '@hot-loader/react-dom',
-        },
         extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
     },
 
