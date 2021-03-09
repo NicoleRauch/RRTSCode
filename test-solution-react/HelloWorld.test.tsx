@@ -9,7 +9,6 @@ describe('HelloWorldComponent', () => {
     const functional = shallow(<HelloWorldFunctional />);
     expect(functional.text()).toEqual("Hello World!");
     expect(functional.type()).toEqual("p");
-    expect(functional.name()).toEqual("p");
 
     expect(functional.html()).toEqual("<p>Hello World!</p>");
 
@@ -18,8 +17,6 @@ describe('HelloWorldComponent', () => {
     expect(clazz.text()).toEqual("Hello World!");
 
     expect(clazz.type()).toEqual("p");
-
-    expect(clazz.name()).toEqual("p");
 
     expect(clazz.html()).toEqual("<p>Hello World!</p>");
   });
