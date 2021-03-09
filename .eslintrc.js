@@ -74,7 +74,7 @@ module.exports = {
         ],
         "@typescript-eslint/consistent-type-assertions": "error",
         "@typescript-eslint/dot-notation": "error",
-        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/explicit-function-return-type": "warning",
         "@typescript-eslint/explicit-member-accessibility": [
             "off",
             {
@@ -114,7 +114,7 @@ module.exports = {
         "@typescript-eslint/no-unnecessary-condition": "error",
         "@typescript-eslint/no-unnecessary-type-arguments": "error",
         "@typescript-eslint/no-unused-expressions": "error",
-        "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "all", "argsIgnorePattern": "^_", "ignoreRestSiblings": false }],
+        "@typescript-eslint/no-unused-vars": ["warning", { "vars": "all", "args": "all", "argsIgnorePattern": "^_", "ignoreRestSiblings": false }],
         "@typescript-eslint/no-use-before-define": "error",
         "@typescript-eslint/prefer-for-of": "error",
         "@typescript-eslint/prefer-function-type": "error",
@@ -217,6 +217,7 @@ module.exports = {
         "prefer-object-spread": "error",
         "quote-props": "off",
         "radix": "error",
+        "react/jsx-key": "warning",
         "space-before-function-paren": "off",
         "space-in-parens": [
             "off",
