@@ -26,7 +26,7 @@ module.exports = {
         compress: false, // do not spend time on this
         host: "0.0.0.0", // server is also available externally
         overlay: {       // overlay for compiler issues
-          warnings: true,
+          warnings: false,
           errors: true
         },
         port: localPort,
