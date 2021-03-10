@@ -8,9 +8,7 @@ export const postUser = (user: IUser, callback: (returnCode: number) => void): v
       method: "POST",
       body: "firstName=" + user.firstName + "&lastName=" + user.lastName
     },
-    (code) => {
-      callback(code);
-    }
+    callback
   );
 };
 
