@@ -20,7 +20,7 @@ export const addUser = (user: IUser): UserAddAction => ({
 
 
 export const submitUser = (user:IUser): TAction =>
-    (dispatch: Dispatch<Action>): void => {
+  (dispatch: Dispatch<Action>): void => {
     backend.postUser(user, returnCode => {
       if(returnCode === 200) {
         dispatch(addUser(user));
@@ -39,8 +39,9 @@ export const setUsers = (users: IUser[]):UsersSetAction => ({
     users
 });
 
-export const  loadUsers = (dispatch: Dispatch<Action>): void => {
+export const  loadUsers = (): TAction =>
+  (dispatch: Dispatch<Action>): void => {
     backend.fetchUsers((users:IUser[]) => {
-        dispatch(setUsers(users));
+      dispatch(setUsers(users));
     });
-};
+  };

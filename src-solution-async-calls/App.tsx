@@ -11,7 +11,7 @@ export class AppComponent extends Component<StoreState & IDispatchProps> {
 
   constructor(props: StoreState & IDispatchProps){
     super(props);
-    loadUsers(props.dispatch);
+    props.dispatch(loadUsers());
   }
 
   render(): ReactElement {
