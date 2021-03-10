@@ -7,10 +7,10 @@ import UserCreation from "./UserCreation";
 export class AppComponent extends Component<StoreState & IDispatchProps> {
 
   render(): ReactElement {
-    return (<div>
+    return <div>
         <UserList users={this.props.users} />
         <UserCreation dispatch={this.props.dispatch} />
-      </div>);}}
+      </div>;}}
 
 export default connect<StoreState, Record<string, unknown>, Record<string, unknown>, StoreState>
 ((state: StoreState): StoreState => state)(AppComponent);
