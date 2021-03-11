@@ -65,6 +65,8 @@
     "@types/react-redux": "7.1.16",
     "@types/react-router-dom": "5.1.7",
     "@types/redux-logger": "3.0.8",
+    "fp-ts": "2.9.5",
+    "io-ts": "2.2.16",
     "nanoajax": "0.4.3",
     "react": "17.0.1",
     "react-dom": "17.0.1",
