@@ -50,8 +50,7 @@ router.post('/user', function(req, res, next) {
     var users = JSON.parse(data);
     users.push({
       firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      eMail: req.body.eMail
+      lastName: req.body.lastName
     });
     fs.writeFile(FILE, JSON.stringify(users), function(err) {
       if (err) { return next(err); }
