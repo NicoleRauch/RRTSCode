@@ -43,8 +43,6 @@ describe("Username end2end test", () => {
       [200, {"Content-Type": "application/json"}, "User successfully added."]
     );
 
-    // In case you need to find out which API is called, enable this:
-    // this.server.respondWith(response => { console.log(response.url); response.respond(); });
 
     component = mount<Provider, ProviderProps, Record<string, unknown>>(<Provider store={store}>
         <App/>
@@ -52,7 +50,15 @@ describe("Username end2end test", () => {
     );
 
     // you can interact with the UI here
+    //  const button = component.find("button");
+    //  button.simulate("click");
 
     expect(component.find("span").map(u => u.text())).toEqual(["Nicole","Rauch","Fritz","Müller","Klaus","Walter"]);
+
+    // In case you need to find out which API is called, you can probe the calls like this:
+    expect(server.requests.length).toEqual(1);
+    // console.log(server.requests[0]) // to have a look at the actual object
+    expect(server.requests[0].method).toEqual("GET");
+    expect(server.requests[0].url).toEqual("/api/users");
   });
 });
