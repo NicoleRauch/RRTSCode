@@ -170,6 +170,17 @@ module.exports = {
         "id-match": "error",
         "import/order": "off",
         "jest/no-done-callback" : "off", // Wir arbeiten mit Test-Callbacks, deshalb Regel entfernt
+        "jest/expect-expect": [
+            "error",
+            {
+                "assertFunctionNames": [
+                    "expect", // Jest
+                    "expectState", "expectStructure", // storeHelpers
+                    // local:
+                    "validationSuccessful", "validationFailed",
+                ]
+            }
+        ],
         "linebreak-style": "off",
         "max-classes-per-file": [
             "error",

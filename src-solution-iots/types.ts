@@ -3,7 +3,7 @@ import {ThunkAction, ThunkDispatch} from "redux-thunk";
 
 import * as t from "io-ts";
 
-const IOUser = t.type({
+export const IOUser = t.type({ // or t.strict to forbid additional fields
     firstName: t.string,
     lastName: t.string
 });
