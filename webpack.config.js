@@ -53,10 +53,9 @@ module.exports = {
     devtool: "source-map",
     output: {
         path: path.join(__dirname, "build"),
-        filename: "[hash].bundle.js"
+        filename: "[fullhash].bundle.js"
     },
     plugins: [
-        isDevelopment && new webpack.HotModuleReplacementPlugin(),
         isDevelopment && new ReactRefreshWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: "./index.html"
