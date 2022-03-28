@@ -1,6 +1,7 @@
 import ajax from "nanoajax";
 
 import {IUser} from "./types";
+import { RawGETType } from "./validation";
 
 export const postUser = (user: IUser, callback: (returnCode: number) => void): void => {
   ajax.ajax({
@@ -12,13 +13,13 @@ export const postUser = (user: IUser, callback: (returnCode: number) => void): v
   );
 };
 
-export const fetchUsers = (callback: (response: IUser[]) => void): void => {
+export const fetchUsers = (callback: (response: RawGETType) => void): void => {
   ajax.ajax({
       url: "/api/users",
       method: "GET"
     },
     (_, response) => {
-        callback(JSON.parse(response));
+        callback(JSON.parse(response) as RawGETType);
     }
   );
 };
