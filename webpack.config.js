@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const localPort = "3000";
 const proxiedServer = "http://localhost:5555";
@@ -12,7 +13,7 @@ module.exports = {
 
     entry: [
         "./src/index.tsx",
-        // "./src-solution-redux-tools/index_devtools_and_logger.tsx",
+        // "./src-solution-iots/index.tsx",
     ],
 
     resolve: {
@@ -21,13 +22,16 @@ module.exports = {
 
     mode: "development",
     devServer: {
-        contentBase: "./build",
-        lazy: false,     // always compile immediately in order to save time
+        static: {
+            directory: "./build",
+        },
         compress: false, // do not spend time on this
         host: "0.0.0.0", // server is also available externally
-        overlay: {       // overlay for compiler issues
-          warnings: false,
-          errors: true
+        client: {
+            overlay: {       // overlay for compiler issues
+              warnings: false,
+              errors: true
+            },
         },
         port: localPort,
         hot: true,       // hot module replacement
@@ -50,7 +54,8 @@ module.exports = {
                 IS_IN_WEBPACK: true,
                 NODE_ENV: '"development"'
             }
-        })
+        }),
+        new ESLintPlugin({})
     ].filter(Boolean),
     module: {
         rules: [
@@ -65,12 +70,6 @@ module.exports = {
                             ].filter(Boolean),
                         },
                     }],
-            },
-            {
-                enforce: 'pre',
-                test: /\.tsx?$/,
-                exclude: /node_modules/,
-                loader: 'eslint-loader',
             },
             {
                 test: /\.tsx?$/,
