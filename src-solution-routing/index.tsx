@@ -1,10 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import {createRoot} from "react-dom/client";
 
 import App from "./App";
 
-ReactDOM.render(
-    <App />
-  , document.getElementById("start")
-);
-
+const start: HTMLElement | null = document.getElementById("start");
+if (start !== null) {
+    const root = createRoot(start);
+    root.render(<App />);
+}

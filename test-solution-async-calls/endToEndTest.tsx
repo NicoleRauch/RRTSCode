@@ -7,12 +7,13 @@ import React from "react";
 import {render} from "@testing-library/react";
 
 import sinon, {SinonFakeServer} from "sinon";
-import {applyMiddleware, createStore, Store} from "redux";
+import {Store} from "redux";
 import {Provider} from "react-redux";
 import thunkMiddleware from "redux-thunk";
 
 import reducer from "../src-solution-async-calls/reducers";
 import App from "../src-solution-async-calls/App";
+import { configureStore } from "@reduxjs/toolkit";
 
 const users = [
   {firstName: "Nicole", lastName: "Rauch"},
@@ -27,9 +28,10 @@ describe("Username end2end test", () => {
   beforeEach(() => {
     server = sinon.fakeServer.create({respondImmediately: true});
 
-    store = createStore(reducer,
-      applyMiddleware(thunkMiddleware)
-    );
+    store = configureStore({
+      reducer,
+      middleware: [thunkMiddleware],
+    });
   });
 
   afterEach(() => {

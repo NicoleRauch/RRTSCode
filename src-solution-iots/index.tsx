@@ -1,26 +1,26 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 import {Provider} from "react-redux";
-import {createStore, applyMiddleware} from "redux";
 import thunkMiddleware from "redux-thunk";
 import logger from "redux-logger";
+import {createRoot} from "react-dom/client";
 
 import reducer from "./reducers";
 import App from "./App";
+import { configureStore } from "@reduxjs/toolkit";
 
+export const store = configureStore({
+    reducer,
+    middleware: [thunkMiddleware, logger],
+    devTools: true,
+});
 
-const store = createStore(reducer,
-    applyMiddleware(
-      thunkMiddleware,
-      logger
-    )
-);
-
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-  , document.getElementById("start")
-);
-
+const start: HTMLElement | null = document.getElementById("start");
+if (start !== null) {
+    const root = createRoot(start);
+    root.render(
+        <Provider store={store}>
+            <App />
+        </Provider>
+    );
+}

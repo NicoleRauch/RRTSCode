@@ -1,14 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import {createRoot} from "react-dom/client";
 
 import UserCreation from "./UserCreationWithFormSubmit";
 import UserCreationControlled from "./UserCreationControlledComponent";
 
-ReactDOM.render(
-  <div>
-    <UserCreation />
-    <UserCreationControlled submitUser={(/* d */): void => { /* console.log(d) */ } } />
-  </div>
-  , document.getElementById("start")
-);
-
+const start: HTMLElement | null = document.getElementById("start");
+if (start !== null) {
+    const root = createRoot(start);
+    root.render(
+        <div>
+            <UserCreation/>
+            <UserCreationControlled submitUser={(/* d */): void => { /* console.log(d) */
+            }}/>
+        </div>
+    );
+}

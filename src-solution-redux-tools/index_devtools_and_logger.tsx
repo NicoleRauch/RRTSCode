@@ -1,31 +1,26 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 import {Provider} from "react-redux";
-import {createStore, compose, applyMiddleware} from "redux";
 import logger from "redux-logger";
+import {createRoot} from "react-dom/client";
+import {configureStore} from "@reduxjs/toolkit";
+import thunkMiddleware from "redux-thunk";
 
 import reducer from "../src-solution-redux-2/reducers";
 import App from "../src-solution-redux-2/App";
 
-declare const window: {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: typeof compose
+export const store = configureStore({
+    reducer,
+    middleware: [thunkMiddleware, logger],
+    devTools: true,
+});
+
+const start: HTMLElement | null = document.getElementById("start");
+if (start !== null) {
+    const root = createRoot(start);
+    root.render(
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    );
 }
-
-const enhancedCompose: typeof compose =
-    (process.env.NODE_ENV === "development" ? window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] : undefined) // eslint-disable-line @typescript-eslint/dot-notation
-    || compose;
-
-const store = createStore(reducer,
-    enhancedCompose(
-        applyMiddleware(
-            logger
-            // more middlewares go here if required
-        )));
-
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-  , document.getElementById("start")
-);
