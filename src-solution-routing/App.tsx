@@ -14,7 +14,7 @@ const users = [
 
 type MatchParams = {
   firstName: string,
-  lastName: string
+  lastName: string,
 }
 
 const UserWrapper = (): ReactElement => {

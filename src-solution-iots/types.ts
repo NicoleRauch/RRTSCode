@@ -14,6 +14,10 @@ export const IOUserList = t.array(IOUser);
 
 export type IUserList = t.TypeOf<typeof IOUserList>;
 
+
+
+// -------------------------------
+
 export type UserState = IUserList;
 
 export type StoreState = {

@@ -4,7 +4,7 @@
 
 import React from "react";
 
-import sinon, {SinonFakeServer, SinonFakeXMLHttpRequestStatic} from "sinon";
+import sinon, {SinonFakeServer} from "sinon";
 import {mount, ReactWrapper} from "enzyme";
 import {applyMiddleware, createStore, Store} from "redux";
 import {Provider, ProviderProps} from "react-redux";
@@ -19,15 +19,12 @@ const users = [
   {firstName: "Klaus", lastName: "Walter"}
 ];
 
-declare const global: {XMLHttpRequest : SinonFakeXMLHttpRequestStatic};
-
 describe("Username end2end test", () => {
   let server : SinonFakeServer;
   let store : Store;
   let component: ReactWrapper<ProviderProps, Record<string, unknown>, Provider>;
 
   beforeEach(() => {
-    global.XMLHttpRequest = sinon.FakeXMLHttpRequest;
     server = sinon.fakeServer.create({respondImmediately: true});
 
     store = createStore(reducer,

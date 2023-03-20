@@ -44,10 +44,11 @@ export const setUsers = (users: IUserList): UsersSetAction => ({
 export const loadUsers = (): TAction =>
     (dispatch: Dispatch<Action>): void => {
         backend.fetchUsers((usersRaw: RawGETType) => {
-            validate<IUserList>(usersRaw, IOUserList, "User List", fold(() => {
+            validate<IUserList>(usersRaw, IOUserList, "User List",
+                fold(() => {
                 // error message or something
-            }, (userList: IUserList) => {
-                dispatch(setUsers(userList));
-            }));
+                }, (userList: IUserList) => {
+                    dispatch(setUsers(userList));
+                }));
         });
     };
