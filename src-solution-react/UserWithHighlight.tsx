@@ -26,7 +26,7 @@ export default class UserWithHighlight extends Component<UserWithHighlightProps,
       <div onClick={this.handleToggleClick.bind(this) as ()=>void}
          style={{cursor: "pointer"}}>
           <label>First name: </label>
-          <span style={{backgroundColor: highlightColor}}>
+          <span style={{backgroundColor: highlightColor}} data-testid="firstname">
         {this.props.user.firstName}</span><br/>
           <label>Last name: </label>
           <span>{this.props.user.lastName}</span><br/>

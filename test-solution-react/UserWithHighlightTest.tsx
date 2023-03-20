@@ -1,54 +1,27 @@
-import React from "react";
-import {shallow, ShallowWrapper} from "enzyme";
+/**
+ * @jest-environment jsdom
+ */
+import "@testing-library/jest-dom";
 
-import User, {UserWithHighlightProps, UserWithHighlightState} from "../src-solution-react/UserWithHighlight";
+import React from "react";
+import {fireEvent, render, screen} from "@testing-library/react";
+
+import User from "../src-solution-react/UserWithHighlight";
 
 describe('UserWithHighlight', () => {
-  let user:  ShallowWrapper<UserWithHighlightProps, UserWithHighlightState, User>;
-
-  beforeEach(() => {
-    user = shallow<User, UserWithHighlightProps, UserWithHighlightState>(<User user={{firstName:"Paul", lastName:"Meier"}}/>);
-  });
 
   describe('state leads to correct highlighting', () => {
-    it('does not highlight the user name when the highlighted state is set to false', () => {
-      user.setState({highlighted: false});
+    it('does not highlight the user name when it has not been clicked', () => {
+      render(<User user={{firstName:"Paul", lastName:"Meier"}}/>);
 
-      const highlighted = user.find({style: {backgroundColor: "#FF0000"}});
-      const unhighlighted = user.find({style: {backgroundColor: "#FFFFFF"}});
-
-      expect(highlighted.length).toEqual(0);
-      expect(unhighlighted.length).toEqual(1);
-      expect(unhighlighted.text()).toEqual("Paul");
+      expect(screen.getByTestId("firstname")).toHaveStyle({"background-color": "#FFFFFF"});
     });
 
     it('highlights the user name when the highlighted state is set to true', () => {
-      user.setState({highlighted: true});
+      render(<User user={{firstName:"Paul", lastName:"Meier"}}/>);
+      fireEvent.click(screen.getByTestId("firstname"));
 
-      const highlighted = user.find({style: {backgroundColor: "#FF0000"}});
-      const unhighlighted = user.find({style: {backgroundColor: "#FFFFFF"}});
-
-      expect(highlighted.length).toEqual(1);
-      expect(highlighted.text()).toEqual("Paul");
-      expect(unhighlighted.length).toEqual(0);
-    });
-  });
-
-  describe('clicking adjusts the state', () => {
-    it('the highlight state is initially false', () => {
-      expect(user.state("highlighted")).toBeFalsy();
-    });
-
-    it('changes highlight state to true after click', () => {
-      user.setState({highlighted: false});
-      user.simulate("click");
-      expect(user.state("highlighted")).toBeTruthy();
-    });
-
-    it('changes highlight state to false after click', () => {
-      user.setState({highlighted: true});
-      user.simulate("click");
-      expect(user.state("highlighted")).toBeFalsy();
+      expect(screen.getByTestId("firstname")).toHaveStyle({"background-color": "#FF0000"});
     });
   });
 });

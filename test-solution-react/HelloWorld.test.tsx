@@ -1,23 +1,22 @@
+/**
+ * @jest-environment jsdom
+ */
+import "@testing-library/jest-dom";
+
 import React from "react";
-import { shallow } from "enzyme";
+import {render} from "@testing-library/react";
 
 import HelloWorldFunctional from "../src-solution-react/HelloWorldFunctionalComponent";
 import HelloWorldClass from "../src-solution-react/HelloWorldClassComponent";
 
 describe('HelloWorldComponent', () => {
-  it('checks the result\'s type and contents', () => {
-    const functional = shallow(<HelloWorldFunctional />);
-    expect(functional.text()).toEqual("Hello World!");
-    expect(functional.type()).toEqual("p");
+  it('checks the displayed text (Functional Component)', () => {
+    const {container} = render(<HelloWorldFunctional/>);
+    expect(container).toHaveTextContent("Hello World");
+  });
 
-    expect(functional.html()).toEqual("<p>Hello World!</p>");
-
-    const clazz = shallow(<HelloWorldClass/>);
-
-    expect(clazz.text()).toEqual("Hello World!");
-
-    expect(clazz.type()).toEqual("p");
-
-    expect(clazz.html()).toEqual("<p>Hello World!</p>");
+  it('checks the displayed text (Functional Component)', () => {
+    const {container} = render(<HelloWorldClass/>);
+    expect(container).toHaveTextContent("Hello World");
   });
 });

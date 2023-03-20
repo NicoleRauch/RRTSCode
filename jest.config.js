@@ -18,7 +18,7 @@ module.exports = {
         "test-solution-async-calls",
         "test-solution-iots"
     ],
-    setupFilesAfterEnv: ["./jest.setup.ts", "./enzymeSetup.ts"],
+    setupFilesAfterEnv: ["./jest.setup.ts"],
     testRegex: "\\.*[tT]est\\.tsx?$",
-    testURL: "http://localhost"
+    testURL: "http://localhost",
 };

@@ -1,5 +1,6 @@
-import React, {Component, ReactElement} from "react";
+import React, {useEffect} from "react";
 import { connect } from "react-redux";
+import * as R from "ramda";
 
 import UserList from "../src-solution-redux-1/UserList";
 import UserCreation from "./UserCreation";
@@ -7,21 +8,16 @@ import UserCreation from "./UserCreation";
 import {loadUsers} from "./actions";
 import {StoreState, IDispatchProps} from "./types";
 
-export class AppComponent extends Component<StoreState & IDispatchProps> {
+export const AppComponent = ({users, dispatch}: StoreState & IDispatchProps) => {
 
-  constructor(props: StoreState & IDispatchProps){
-    super(props);
-    props.dispatch(loadUsers());
-  }
+  useEffect(() => {
+    dispatch(loadUsers());
+  }, [dispatch]);
 
-  render(): ReactElement {
-    return (
-      <div>
-        <UserList users={this.props.users} />
-        <UserCreation dispatch={this.props.dispatch} />
-      </div>
-    );
-  }
-}
+  return <div>
+    <UserList users={users}/>
+    <UserCreation dispatch={dispatch}/>
+  </div>;
+};
 
-export default connect<StoreState, Record<string, unknown>, Record<string, unknown>, StoreState> ((state: StoreState): StoreState => state)(AppComponent);
+export default connect<StoreState, Record<string, unknown>, Record<string, unknown>, StoreState>(R.identity)(AppComponent);
