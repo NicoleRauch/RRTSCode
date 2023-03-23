@@ -1,30 +1,21 @@
-import React, {Component, ReactElement} from "react";
+import React from "react";
 
 import HelloWorld from "./HelloWorldFunctionalComponent";
-import User from "./UserWithHighlight";
-import UserList from "./UserListWithHighlight";
-import UserCreationViaInternalState from "./UserCreationViaInternalState";
-import { IUser } from "./types";
+import User from "./User";
+import UserList from "./UserList";
+import {IUser} from "./types";
 
 const users: IUser[] = [
-    {firstName: "Nicole", lastName: "Rauch"},
-    {firstName: "Peter", lastName: "Müller"},
-    {firstName: "Fritz", lastName: "Walter"}
+  {firstName: "Nicole", lastName: "Rauch"},
+  {firstName: "Peter", lastName: "Müller"},
+  {firstName: "Fritz", lastName: "Walter"}
 ];
 
-export class App extends Component {
+const App = () =>
+  <div>
+    <HelloWorld/>
+    <User user={users[0]}/>
+    <UserList users={users}/>
+  </div>;
 
-  render(): ReactElement {
-
-    return (
-      <div>
-        <HelloWorld />
-        <User user={users[0]} />
-        <UserList users={users} />
-        <UserCreationViaInternalState submitUser={ (): void => { /**/ } } />
-      </div>
-    );
-  }
-}
-
-export default App
+export default App;

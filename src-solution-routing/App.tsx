@@ -4,7 +4,7 @@ import {HashRouter as Router, Link, Route, Routes, useParams} from 'react-router
 import HelloWorld from "../src-solution-react/HelloWorldFunctionalComponent";
 import User from "../src-solution-react/UserWithHighlight";
 import UserList from "../src-solution-react/UserListWithHighlight";
-import UserCreationViaInternalState from "../src-solution-react/UserCreationViaInternalState";
+import UserCreationViaInternalState from "../src-solution-react/UserCreationViaStateHook";
 
 const users = [
   {firstName: "Nicole", lastName: "Rauch"},

@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 import User from "./UserWithHighlight";
-import {IUser} from "./types";
+import {IUser} from "../src-solution-react/types";
 
 type UserListProps = { users: IUser[] }
 

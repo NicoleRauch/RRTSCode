@@ -8,3 +8,4 @@ if (start !== null) {
     const root = createRoot(start);
     root.render(<App />);
 }
+
