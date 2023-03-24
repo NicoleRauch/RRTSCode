@@ -2,9 +2,9 @@ import React, {Component, ReactElement} from "react";
 import {HashRouter as Router, Link, Route, Routes, useParams} from 'react-router-dom';
 
 import HelloWorld from "../src-solution-react/HelloWorldFunctionalComponent";
-import User from "../src-solution-react/UserWithHighlight";
-import UserList from "../src-solution-react/UserListWithHighlight";
-import UserCreationViaInternalState from "../src-solution-react/UserCreationViaStateHook";
+import User from "../src-solution-react-2/UserWithHighlight";
+import UserList from "../src-solution-react-2/UserListWithHighlight";
+import UserCreationViaInternalState from "../src-solution-react-2/UserCreationViaStateHook";
 
 const users = [
   {firstName: "Nicole", lastName: "Rauch"},

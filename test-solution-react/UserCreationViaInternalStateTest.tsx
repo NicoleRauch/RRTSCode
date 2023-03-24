@@ -6,7 +6,7 @@ import "@testing-library/jest-dom";
 import React from "react";
 import {fireEvent, render, screen} from "@testing-library/react";
 
-import UserCreation from "../src-solution-react/UserCreationViaStateHook";
+import UserCreation from "../src-solution-react-2/UserCreationViaStateHook";
 
 describe('UserCreation', () => {
 

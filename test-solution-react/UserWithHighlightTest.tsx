@@ -6,7 +6,7 @@ import "@testing-library/jest-dom";
 import React from "react";
 import {fireEvent, render, screen} from "@testing-library/react";
 
-import User from "../src-solution-react/UserWithHighlight";
+import User from "../src-solution-react-2/UserWithHighlight";
 
 describe('UserWithHighlight', () => {
 
