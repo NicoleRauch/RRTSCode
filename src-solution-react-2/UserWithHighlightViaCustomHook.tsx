@@ -1,9 +1,8 @@
 import React, {useState, ReactElement} from "react";
-import {UserWithHighlightProps} from "./UserWithHighlight";
+import {UserProps} from "../src-solution-react/User";
 
 const useHighlightColor =
     (): {color: string, toggleColor: () => void} => {
-
   const [highlighted, setHighlighted] = useState(false);
   const color = highlighted ? "#FF0000" : "#FFFFFF";
   return {color, toggleColor:
@@ -11,7 +10,7 @@ const useHighlightColor =
 };
 
 const UserWithHighlightViaCustomHook =
-  ({user}: UserWithHighlightProps): ReactElement => {
+  ({user}: UserProps): ReactElement => {
   const {color, toggleColor} = useHighlightColor();
   return (
     <div onClick={toggleColor} style={{cursor: "pointer"}}>

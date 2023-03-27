@@ -1,11 +1,7 @@
 import React, {useState} from "react";
-import {IUser} from "../src-solution-react/types";
+import {UserProps} from "../src-solution-react/User";
 
-export type UserWithHighlightProps = {
-  user: IUser
-}
-
-const UserWithHighlight = ({user}: UserWithHighlightProps) => {
+const UserWithHighlight = ({user}: UserProps) => {
 
   const [highlighted, setHighlighted] = useState(false);
 

@@ -10,7 +10,7 @@ import UserCreation from "../src-solution-react-2/UserCreationViaStateHook";
 
 describe('UserCreation', () => {
 
-  it("passes the field contents to the submit callback", () => {
+  it("passes the data to the submit callback", () => {
     const submit = jest.fn();
     render(<UserCreation submitUser={submit}/>);
 
