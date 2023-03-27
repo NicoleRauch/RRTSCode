@@ -1,9 +1,5 @@
 import React, {useState, ReactElement} from "react";
-import { IUser } from "../src-solution-redux-2/types";
-
-export type UserWithCustomHookProps = {
-    user: IUser
-}
+import {UserWithHighlightProps} from "./UserWithHighlight";
 
 const useHighlightColor =
     (): {color: string, toggleColor: () => void} => {
@@ -14,8 +10,8 @@ const useHighlightColor =
           (): void => {setHighlighted(!highlighted)}};
 };
 
-const UserWithCustomHook =
-  ({user}: UserWithCustomHookProps): ReactElement => {
+const UserWithHighlightViaCustomHook =
+  ({user}: UserWithHighlightProps): ReactElement => {
   const {color, toggleColor} = useHighlightColor();
   return (
     <div onClick={toggleColor} style={{cursor: "pointer"}}>
@@ -27,4 +23,4 @@ const UserWithCustomHook =
   );
 };
 
-export default UserWithCustomHook;
+export default UserWithHighlightViaCustomHook;
