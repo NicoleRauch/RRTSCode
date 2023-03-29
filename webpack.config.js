@@ -15,6 +15,7 @@ module.exports = {
     entry: [
         // "./src/index.tsx",
         "./src-solution-react/index.tsx",
+        // "./src-solution-hooks/index.tsx",
         // "./src-solution-react2/index.tsx",
         // "./src-solution-react-lifecycle/index.tsx",
         // "./src-solution-react-layout/index.tsx",
