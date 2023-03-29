@@ -10,8 +10,7 @@ const UserCreation = ({submitUser}: UserCreationProps) => {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
 
-  return <div>
-    <div>
+  return <div><div>
       <label>First name:</label>
       <input type="text"
              onBlur={(e): void => setFirstName(e.target.value)}/>

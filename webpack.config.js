@@ -23,6 +23,7 @@ module.exports = {
         // "./src-solution-redux-2/index.tsx",
         // "./src-solution-redux-big/index.tsx",
         // "./src-solution-redux-tools/index_devtools_and_logger.tsx",
+        // "./src-solution-useReducer/index.tsx",
         // "./src-solution-async-calls/index.tsx",
         // "./src-solution-routing/index.tsx",
         // "./src-solution-iots/index.tsx",
