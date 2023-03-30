@@ -25,6 +25,7 @@ module.exports = {
         // "./src-solution-redux-tools/index_devtools_and_logger.tsx",
         // "./src-solution-useReducer/index.tsx",
         // "./src-solution-async-calls/index.tsx",
+        // "./src-solution-tanstack-query/index.tsx",
         // "./src-solution-routing/index.tsx",
         // "./src-solution-iots/index.tsx",
         // "./src-solution-forms/index.tsx",
