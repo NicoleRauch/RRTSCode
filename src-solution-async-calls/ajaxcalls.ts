@@ -6,7 +6,11 @@ export const postUser = (user: IUser, callback: (returnCode: number) => void): v
   ajax.ajax({
       url: "/api/user",
       method: "POST",
-      body: "firstName=" + user.firstName + "&lastName=" + user.lastName
+      body: JSON.stringify(user),
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
     },
     callback
   );

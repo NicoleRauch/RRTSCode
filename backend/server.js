@@ -16,7 +16,7 @@ var FILE = path.join(__dirname, 'users.json');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.set('port', process.env.PORT || 5555);        // set our port
 
