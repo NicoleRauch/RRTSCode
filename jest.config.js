@@ -16,7 +16,8 @@ module.exports = {
         "test-solution-redux",
         "test-solution-react-integration",
         "test-solution-async-calls",
-        "test-solution-iots"
+        "test-solution-iots",
+        "test-exercises-zod"
     ],
     setupFilesAfterEnv: ["./jest.setup.ts"],
     testRegex: "\\.*[tT]est\\.tsx?$",

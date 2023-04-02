@@ -1,7 +1,7 @@
 import {fold} from "fp-ts/Option";
 import * as t from "io-ts";
 
-import {RawGETType, validate} from "../src-solution-iots/validation";
+import {RawGETType, validate} from "../src-solution-iots-alt/validation";
 import {compareStructure} from "./expectHelpers";
 
 export const expectCall = (real: any, expected: any, info: string): void => { // eslint-disable-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types

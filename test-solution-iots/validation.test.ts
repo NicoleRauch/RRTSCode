@@ -1,6 +1,6 @@
 import * as R from "ramda";
 
-import {IOUser, IOUserList, IUser} from "../src-solution-iots/types";
+import {IOUser, IOUserList, IUser} from "../src-solution-iots-alt/types";
 import {validationSuccessfulTemplate, validationFailsTemplate} from "./validationHelpers";
 
 const user: IUser = {
