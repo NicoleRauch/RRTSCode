@@ -18,6 +18,7 @@ module.exports = {
         // "./src-solution-hooks/index.tsx",
         // "./src-solution-react2/index.tsx",
         // "./src-solution-react-lifecycle/index.tsx",
+        // "./src-solution-react-lifecycle-hooks/index.tsx",
         // "./src-solution-react-layout/index.tsx",
         // "./src-solution-redux-1/index.tsx",
         // "./src-solution-redux-2/index.tsx",
