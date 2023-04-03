@@ -27,7 +27,7 @@ describe("validateInBackend", () => {
 
   describe("postUser", () => {
     it("submits user data to the backend", () => {
-      postUser(user, () => { /**/ });
+      postUser(user, jest.fn());
 
       expect(requests.length).toEqual(1);
       expect(requests[0].url).toEqual("/api/user");
@@ -46,7 +46,7 @@ describe("validateInBackend", () => {
 
   describe("fetchUsers", () => {
     it("makes request to the backend", () => {
-      fetchUsers(() => { /**/ });
+      fetchUsers(jest.fn());
 
       expect(requests.length).toEqual(1);
       expect(requests[0].url).toEqual("/api/users");
