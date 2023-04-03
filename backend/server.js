@@ -6,13 +6,14 @@
 // =============================================================================
 
 // load the packages we need
-var express = require('express');
-var bodyParser = require('body-parser');
-var fs = require('fs');
-var path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const fs = require('fs');
+const path = require('path');
+const { networkInterfaces } = require('os');
 
-var app = express();                 // define our app using express
-var FILE = path.join(__dirname, 'users.json');
+const app = express();                 // define our app using express
+const FILE = path.join(__dirname, 'users.json');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -65,6 +66,23 @@ app.use('/api', router);
 
 // START THE SERVER
 // =============================================================================
+const nets = networkInterfaces();
+const results = Object.create(null); // Or just '{}', an empty object
+
+for (const name of Object.keys(nets)) {
+  for (const net of nets[name]) {
+    // Skip over non-IPv4 and internal (i.e. 127.0.0.1) addresses
+    // 'IPv4' is in Node <= 17, from 18 it's a number 4 or 6
+    const familyV4Value = typeof net.family === 'string' ? 'IPv4' : 4
+    if (net.family === familyV4Value && !net.internal) {
+      if (!results[name]) {
+        results[name] = [];
+      }
+      results[name].push(net.address);
+    }
+  }
+}
 app.listen(app.get('port'), function () {
   console.log('Connect to the server via http://localhost:' + app.get('port'));
+  console.log("or via IP address(es):", JSON.stringify(results));
 });
