@@ -20,7 +20,9 @@
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "noUnusedParameters": true,
-    "exactOptionalPropertyTypes": true
+    "exactOptionalPropertyTypes": true,
+
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules",
