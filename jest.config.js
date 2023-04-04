@@ -16,6 +16,7 @@ module.exports = {
         "test-solution-redux",
         "test-solution-react-integration",
         "test-solution-async-calls",
+        "test-solution-async-calls-tanstack-query",
         "test-solution-iots",
         "test-exercises-zod"
     ],
