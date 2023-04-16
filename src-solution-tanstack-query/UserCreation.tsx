@@ -14,13 +14,13 @@ const UserCreation = () => {
   const [lastName, setLastName] = useState<string>("");
 
   return <div><div>
-      <label>First name:</label>
-      <input type="text" data-testid="firstname"
+      <label htmlFor="first">First name:</label>
+      <input type="text" id="first" data-testid="firstname"
              onBlur={(e): void => setFirstName(e.target.value)}/>
     </div>
     <div>
-      <label>Last name:</label>
-      <input type="text" data-testid="lastname" onBlur={(e): void => setLastName(e.target.value)}/>
+      <label htmlFor="last">Last name:</label>
+      <input type="text" id="last" data-testid="lastname" onBlur={(e): void => setLastName(e.target.value)}/>
     </div>
     <div>
       <button

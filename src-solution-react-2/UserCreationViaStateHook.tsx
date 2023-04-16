@@ -12,13 +12,13 @@ const [lastName, setLastName] = useState<string>("");
 
 return <div>
   <div>
-    <label>First name:</label>
-    <input type="text"
-       onBlur={(e): void => setFirstName(e.target.value)}/>
+    <label htmlFor="first">First name:</label>
+    <input type="text" id="first"
+           onBlur={(e): void => setFirstName(e.target.value)}/>
   </div>
   <div>
-    <label>Last name:</label>
-    <input type="text" onBlur={(e): void => setLastName(e.target.value)}/>
+    <label htmlFor="last">Last name:</label>
+    <input type="text" id="last" onBlur={(e): void => setLastName(e.target.value)}/>
   </div>
   <div>
     <button
