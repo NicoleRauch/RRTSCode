@@ -8,8 +8,8 @@ export type UserProps = {
 
 const User = ({user: {firstName, lastName}}: UserProps): ReactElement =>
   <div>
-    <label>First name: </label><span>{firstName}</span><br/>
-    <label>Last name: </label><span>{lastName}</span><br/>
+    <span>First name: </span><span>{firstName}</span><br/>
+    <span>Last name: </span><span>{lastName}</span><br/>
   </div>;
 
 export default User;
