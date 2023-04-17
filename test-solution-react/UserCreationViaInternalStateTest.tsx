@@ -21,4 +21,15 @@ describe('UserCreation', () => {
 
     expect(submit).toHaveBeenNthCalledWith(1, {firstName: "Paul", lastName: "Meier"});
   });
+
+  it("oder mit getByLabelText", () => {
+    const submitSpy = jest.fn();
+    render(<UserCreation submitUser={submitSpy}/>);
+    fireEvent.blur(screen.getByLabelText("First name:"), {target: {value: "Fritz"}});
+    fireEvent.blur(screen.getByLabelText("Last name:"), {target: {value: "Müller"}});
+    fireEvent.click(screen.getByRole("button"));
+
+    expect(submitSpy).toHaveBeenCalledWith({"firstName": "Fritz", "lastName": "Müller"})
+  });
+
 });

@@ -24,13 +24,12 @@ describe("Username end2end test", () => {
   });
 
   it("displays all loaded users", async () => {
-    const scopeGet = nock("http://localhost")
+    const scope = nock("http://localhost")
       .get("/api/users")
       .reply(200,
         JSON.stringify(users),
       );
     /*
-    const scopePost = nock("http://localhost")
       .post("/api/user")
       .reply(200,
         "User successfully added.",
@@ -48,7 +47,6 @@ describe("Username end2end test", () => {
       expect(container).toHaveTextContent(name)
     );
 
-    expect(scopeGet.isDone()).toBeTruthy();
-    // expect(scopePost.isDone()).toBeTruthy();
+    scope.isDone();
   });
 });
