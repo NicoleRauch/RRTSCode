@@ -10,6 +10,10 @@
       <sourceFolder url="file://$MODULE_DIR$/test-typescript" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test-solution-iots" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test-solution-async-calls-tanstack-query" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src-fortgeschritten" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test-exercises-zod" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build-js" />
     </content>
     <orderEntry type="inheritedJdk" />
