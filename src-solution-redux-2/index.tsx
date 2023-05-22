@@ -2,12 +2,17 @@ import React from "react";
 
 import {Provider} from "react-redux";
 import {createRoot} from "react-dom/client";
+import logger from "redux-logger";
 
 import reducer from "./reducers";
 import App from "./App";
 import { configureStore } from "@reduxjs/toolkit";
 
-export const store = configureStore({reducer});
+export const store = configureStore({
+  reducer,
+  middleware: [logger],
+  devTools: true
+});
 
 const start: HTMLElement | null = document.getElementById("start");
 if (start !== null) {
