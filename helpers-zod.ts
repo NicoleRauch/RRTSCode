@@ -10,7 +10,7 @@ export const zodValidationSuccessful = <T>(codec: Z.ZodType<T>) => (data: unknow
   expectStructure(result, data);
 };
 
-export const zodValidationSuccessfulResultingIn = <T>(codec: Z.ZodType<T>) => (data: unknown, expectedResult: T): void => {
+export const zodValidationSuccessfulResultingIn = <T>(codec: Z.ZodType<T>) => (data: unknown, expectedResult: unknown): void => {
   const result = codec.parse(data);
   expectStructure(result, expectedResult);
 };

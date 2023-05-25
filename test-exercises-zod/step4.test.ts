@@ -1,5 +1,5 @@
 import * as Z from "zod";
-import {zodValidationFailed, zodValidationSuccessful} from "../helpers-zod";
+import {zodValidationFailed, zodValidationSuccessful, zodValidationSuccessfulResultingIn} from "../helpers-zod";
 
 
 it("has dummy test to avoid test failure", () => {
@@ -29,7 +29,7 @@ describe.skip("Step 4 - Union and Intersection", () => {
         });
 
         it("accepts objects that contain both parts and unknown entries - but strips fields", () => {
-           // !!! zodValidationSuccessfulResultingIn(Codec4_2)({a: 7, b: "X", c: "ccc"}, {a: 7, b: "X"});
+           zodValidationSuccessfulResultingIn(Codec4_2)({a: 7, b: "X", c: "ccc"}, {a: 7, b: "X"});
         });
 
         it("rejects objects that contain only one part", () => {
