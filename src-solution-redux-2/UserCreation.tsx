@@ -1,40 +1,35 @@
-import React, {Component, ReactElement} from "react";
+import React, {useState} from "react";
 
 import {IDispatchProps} from "./types";
 import {addUser} from "./reducers";
 
-type UserCreationState = {
-    firstName: string,
-    lastName: string
-}
 
-export default class UserCreation extends Component<IDispatchProps, UserCreationState> {
+const UserCreation = ({dispatch}: IDispatchProps) => {
 
-    constructor(props: IDispatchProps) {
-        super(props);
-        this.state = {firstName: "", lastName: ""};
-    }
+    const [firstName, setFirstName] = useState<string>("");
+    const [lastName, setLastName] = useState<string>("");
 
-    render(): ReactElement {
-        return (
+    return (
+        <div>
             <div>
-                <div>
-                    <label>First name:</label>
-                    <input type="text"
-                           onBlur={(e): void => this.setState({firstName: e.target.value})}/>
-                </div>
-<div>
-  <label>Last name:</label>
-  <input type="text" onBlur={(e): void => this.setState({lastName: e.target.value})}/>
-</div>
-<div>
-  <button
-    onClick={(): void => {
-      this.props.dispatch(addUser(this.state))
-    }}
-  >Submit</button>
-</div>
+                <label>First name:</label>
+                <input type="text"
+                       onBlur={(e): void => setFirstName(e.target.value)}/>
             </div>
-        );
-    }
-}
+            <div>
+                <label>Last name:</label>
+                <input type="text" onBlur={(e): void => setLastName(e.target.value)}/>
+            </div>
+            <div>
+                <button
+                    onClick={(): void => {
+                        dispatch(addUser({firstName, lastName}))
+                    }}
+                >Submit
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default UserCreation;
