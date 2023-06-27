@@ -1,6 +1,6 @@
 import * as Z from "zod";
 
-import {zodValidationFailed, zodValidationSuccessful} from "../helpers-zod";
+import {zodValidationFailed, zodValidationSuccessful} from "./helpers-zod";
 
 it("has dummy test to avoid test failure", () => {
     expect(1).toEqual(1);
