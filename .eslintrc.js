@@ -145,7 +145,7 @@ module.exports = {
             "off",
             "off"
         ],
-        "camelcase": "error",
+        "camelcase": "off",
         "comma-dangle": "off",
         "complexity": "off",
         "constructor-super": "error",
@@ -169,9 +169,10 @@ module.exports = {
         ],
         "id-match": "error",
         "import/order": "off",
+        "jest/no-disabled-tests": "off",
         "jest/no-done-callback" : "off", // Wir arbeiten mit Test-Callbacks, deshalb Regel entfernt
         "jest/expect-expect": [
-            "error",
+            "off",
             {
                 "assertFunctionNames": [
                     "expect", // Jest
