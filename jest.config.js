@@ -14,6 +14,7 @@ module.exports = {
         "test-typescript",
         "test-solution-react",
         "test-solution-redux",
+        "test-solution-redux-hooks",
         "test-solution-react-integration",
         "test-solution-async-calls",
         "test-solution-async-calls-tanstack-query",

@@ -1,6 +1,6 @@
 import {Action} from "redux";
 
-import {IUser, StoreState, UsersState} from "./types";
+import {IUser, StoreState, IUsers} from "./types";
 
 
 const INITIAL_STATE: StoreState = {
@@ -23,7 +23,7 @@ export const addUser = (user: IUser): UserAddedAction => ({
         user
 });
 
-const users = (state: UsersState, action: Action): UsersState  => {
+const users = (state: IUsers, action: Action): IUsers  => {
   switch (action.type) {
     case UserActions.USER_ADDED:
       return state.concat((action as UserAddedAction).user);

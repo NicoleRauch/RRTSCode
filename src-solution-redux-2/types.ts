@@ -9,8 +9,6 @@ export type IUser = {
     lastName: string
 }
 
-export type UsersState = IUser[];
+export type IUsers = IUser[];
 
-export type StoreState = {
-    users: UsersState
-}
+export type StoreState = { users: IUsers };
