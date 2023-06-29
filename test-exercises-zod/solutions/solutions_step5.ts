@@ -9,5 +9,5 @@ export const Codec5_2 = Z.intersection(
 );
 export const Codec5_3 = Z.intersection(
     Z.object({a: Z.string()}),
-    Z.union([Z.object({b: Z.string()}), Z.object({c: Z.string()})])
+    Z.union([Z.object({version: Z.literal("1.0"), b: Z.string()}), Z.object({version: Z.literal("2.0"), c: Z.string()})])
 );

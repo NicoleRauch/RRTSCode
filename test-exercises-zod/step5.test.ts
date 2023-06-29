@@ -34,12 +34,14 @@ describe.skip("Step 5 - Putting it all together", () => {
         const Codec5_3 = Z.void();
 
         it("allows and disallows various elements", () => {
-            zodValidationSuccessful(Codec5_3)({a: "A", b: "B"});
-            zodValidationSuccessful(Codec5_3)({a: "AA", c: "C"});
+            zodValidationSuccessful(Codec5_3)({a: "AA", b: "B", version: "1.0"});
+            zodValidationSuccessful(Codec5_3)({a: "AB", c: "C", version: "2.0"});
 
             zodValidationFailed(Codec5_3)({a: "A"});
             zodValidationFailed(Codec5_3)({b: "B"});
+            zodValidationFailed(Codec5_3)({b: "B", version: "1.0"});
             zodValidationFailed(Codec5_3)({c: "C"});
+            zodValidationFailed(Codec5_3)({c: "C", version: "2.0"});
         });
     });
 
