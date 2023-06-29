@@ -1,18 +1,18 @@
-import * as z from "zod";
+import * as Z from "zod";
 
 
-const ZState = z.union([z.literal("on"), z.literal("off")]);
+const ZState = Z.union([Z.literal("on"), Z.literal("off")]);
 
-const ZTemperature = z.object({
-    temperature: z.number()
+const ZTemperature = Z.object({
+    temperature: Z.number()
 });
-const ZHeatSwitch = z.object({
+const ZHeatSwitch = Z.object({
     heat: ZState
 });
-const ZTargetSet = z.object({
+const ZTargetSet = Z.object({
     target: ZTemperature
 });
 
-const ZCommand = z.union([ZHeatSwitch, ZTargetSet]);
-export const ZCommands = z.array(ZCommand);
-export type ICommands = z.infer<typeof ZCommands>;
+const ZCommand = Z.union([ZHeatSwitch, ZTargetSet]);
+export const ZCommands = Z.array(ZCommand);
+export type ICommands = Z.infer<typeof ZCommands>;

@@ -1,11 +1,11 @@
-import * as z from "zod";
+import * as Z from "zod";
 
-const ZUser = z.object({
-    firstName: z.string().min(1),
-    lastName: z.string()
+const ZUser = Z.object({
+    firstName: Z.string().min(1),
+    lastName: Z.string()
 }).strict();
-export type IUser = z.infer<typeof ZUser>;
+export type IUser = Z.infer<typeof ZUser>;
 
 export const ZUsers = ZUser.array();
-export type IUsers = z.infer<typeof ZUsers>;
+export type IUsers = Z.infer<typeof ZUsers>;
 
