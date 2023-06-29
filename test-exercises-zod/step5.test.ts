@@ -42,6 +42,8 @@ describe.skip("Step 5 - Putting it all together", () => {
             zodValidationFailed(Codec5_3)({b: "B", version: "1.0"});
             zodValidationFailed(Codec5_3)({c: "C"});
             zodValidationFailed(Codec5_3)({c: "C", version: "2.0"});
+            zodValidationFailed(Codec5_3)({a: "AA", b: "B", version: "2.0"});
+            zodValidationFailed(Codec5_3)({a: "AB", c: "C", version: "1.0"});
         });
     });
 
