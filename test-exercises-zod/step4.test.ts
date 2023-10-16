@@ -22,7 +22,9 @@ describe.skip("Step 4 - Union and Intersection", () => {
     });
 
     describe("Step 4.2 - Intersection Types", () => {
-        const Codec4_2 = Z.void();
+        const Codec4_2A = Z.object({a: Z.number()});
+        const Codec4_2B = Z.object({b: Z.string()});
+        const Codec4_2 = Z.void(); // zur Lösung Codec4_2A und Codec4_2B verwenden!
 
         it("accepts objects that contain both parts", () => {
            zodValidationSuccessful(Codec4_2)({a: 7, b: "X"});
@@ -33,6 +35,9 @@ describe.skip("Step 4 - Union and Intersection", () => {
         });
 
         it("rejects objects that contain only one part", () => {
+           zodValidationSuccessful(Codec4_2A)({a: 111});
+           zodValidationSuccessful(Codec4_2B)({b: "ABC"});
+
            zodValidationFailed(Codec4_2)({a: 111});
            zodValidationFailed(Codec4_2)({b: "ABC"});
         });
