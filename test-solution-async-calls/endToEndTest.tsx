@@ -9,7 +9,7 @@ import {render} from "@testing-library/react";
 import sinon, {SinonFakeServer} from "sinon";
 import {Store} from "redux";
 import {Provider} from "react-redux";
-import thunkMiddleware from "redux-thunk";
+import {thunk} from "redux-thunk";
 
 import reducer from "../src-solution-async-calls/reducers";
 import App from "../src-solution-async-calls/App";
@@ -30,7 +30,7 @@ describe("Username end2end test", () => {
 
     store = configureStore({
       reducer,
-      middleware: [thunkMiddleware],
+      middleware: (gDM) => gDM().concat(thunk),
     });
   });
 
