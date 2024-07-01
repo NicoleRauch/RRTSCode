@@ -22,7 +22,7 @@ export const addUser = (user: IUser): UserAddedAction => ({
 
 const INITIAL_STATE_USERS: UserState = [];
 
-const users = createReducer<UserState>(INITIAL_STATE_USERS, {
+const users = createReducer<UserState, ActionTypes>(INITIAL_STATE_USERS, {
   [ActionTypes.USER_ADDED]: (currentUsers: UserState, action: UserAddedAction) => currentUsers.concat(action.user)
 });
 
@@ -38,7 +38,7 @@ export const addProduct = (product: ProductType): ProductAddedAction => ({
 
 const INITIAL_STATE_PRODUCTS: ProductState = [];
 
-const products = createReducer<ProductState>(INITIAL_STATE_PRODUCTS, {
+const products = createReducer<ProductState, ActionTypes>(INITIAL_STATE_PRODUCTS, {
   [ActionTypes.PRODUCT_ADDED]: (currentProducts: ProductState, action: ProductAddedAction) => currentProducts.concat(action.product)
 });
 
@@ -61,7 +61,7 @@ export const removeData = (): DataRemovedAction => ({
 
 const INITIAL_STATE_OTHER_DATA: OtherDataState = null;
 
-const otherData = createReducer<OtherDataState>(INITIAL_STATE_OTHER_DATA, {
+const otherData = createReducer<OtherDataState, ActionTypes>(INITIAL_STATE_OTHER_DATA, {
   [ActionTypes.DATA_SET]: (data: OtherDataState, _: DataSetAction) => data,
   [ActionTypes.DATA_REMOVED]: (_: OtherDataState, __: DataRemovedAction) => null
 });

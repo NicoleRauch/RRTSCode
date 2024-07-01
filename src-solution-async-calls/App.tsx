@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {ReactElement, useEffect} from "react";
 import { connect } from "react-redux";
 import * as R from "ramda";
 
@@ -8,7 +8,7 @@ import UserCreation from "./UserCreation";
 import {loadUsers} from "./actions";
 import {StoreState, IDispatchProps} from "./types";
 
-export const AppComponent = ({users, dispatch}: StoreState & IDispatchProps) => {
+export const AppComponent = ({users, dispatch}: StoreState & IDispatchProps): ReactElement => {
 
   useEffect(() => {
     dispatch(loadUsers());

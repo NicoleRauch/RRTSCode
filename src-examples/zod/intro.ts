@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition, no-console */
 import * as Z from "zod";
 
 export type Data = { a: { b: { c: string } } };
 
-export const f = (d: any): void => {
+export const f = (d: Data): void => {
     if (d.a === undefined || d.a.b === undefined || typeof d.a.b.c !== "string") {
         throw new Error();
     }

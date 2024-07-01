@@ -1,4 +1,4 @@
-import React, {useReducer} from "react";
+import React, {ReactElement, useReducer} from "react";
 
 import UserList from "../src-solution-redux-1/UserList";
 import UserCreation from "../src-solution-redux-1/UserCreation";
@@ -6,7 +6,7 @@ import {IUser} from "../src-solution-react/types";
 import {addUser, INITIAL_STATE, usersReducer} from "./reducer";
 import {Action, UsersState} from "./types";
 
-const App = () => {
+const App = (): ReactElement => {
   const [users, dispatch] = useReducer<(s: UsersState, a: Action) => UsersState>(usersReducer, INITIAL_STATE);
 
   return <div>

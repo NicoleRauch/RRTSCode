@@ -1,3 +1,4 @@
+/* eslint react-hooks/exhaustive-deps: 0 */
 import React, {ReactElement, useEffect, useMemo, useState} from "react";
 
 import ChildComponent from "./ChildComponent";
@@ -30,7 +31,7 @@ const LifecycleComponent = (): ReactElement => {
       <input type="checkbox"
              checked={checked}
              onChange={(): void => {
-               console.log("Set state.");
+               console.log("Set state.");   // eslint-disable-line no-console
                setChecked(!checked);
              }}/>
     </div>

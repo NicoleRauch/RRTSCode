@@ -1,7 +1,7 @@
 
 expect.extend({
     // is used in src-solution-iots:
-    toEqualWithInfo(received, expected, info: string) {
+    toEqualWithInfo(received: unknown, expected: unknown, info: string) {
         return {
             pass: this.equals(received, expected),
 

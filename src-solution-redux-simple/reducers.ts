@@ -22,8 +22,10 @@ export const addUser = (user: IUser): UserAddedAction => ({
 
 const userReducer1 = (state: IUsers, action: Action): IUsers => {
   switch (action.type) {
-    case UserActions.USER_ADDED:
+    case UserActions.USER_ADDED.valueOf():
       return state.concat((action as UserAddedAction).user);
+    default:
+      return state;
   }
   return state;
 };
@@ -34,10 +36,10 @@ export const reducer1 = (state: StoreState = INITIAL_STATE,
 
 const INITIAL_STATE_USERS: IUsers = [];
 
-const userReducer2 = (state:IUsers, action:Action):IUsers => {
+const userReducer2 = (state:IUsers | undefined, action:Action):IUsers => {
   switch (action.type) {
-    case UserActions.USER_ADDED:
-      return state.concat((action as UserAddedAction).user);
+    case UserActions.USER_ADDED.valueOf():
+      return (state||[]).concat((action as UserAddedAction).user);
   }
   return state || INITIAL_STATE_USERS;
 };

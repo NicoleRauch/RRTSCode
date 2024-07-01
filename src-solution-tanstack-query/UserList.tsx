@@ -12,7 +12,7 @@ const UserList = (): ReactElement => {
     initialData: []
   });
 
-  console.log("users: ", users);
+  console.log("users: ", users); // eslint-disable-line no-console
 
   return <ul>
     {users.map(user => <li key={"userlist_" + user.firstName + user.lastName}><User user={user}/></li>)}

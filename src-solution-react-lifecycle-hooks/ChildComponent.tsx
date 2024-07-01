@@ -1,3 +1,4 @@
+/* eslint react-hooks/exhaustive-deps: 0 */
 import React, {ReactElement, useEffect, useMemo} from "react";
 
 type ChildComponentProps = {

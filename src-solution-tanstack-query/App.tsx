@@ -1,12 +1,12 @@
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import React from "react";
+import React, {ReactElement} from "react";
 
 import UserList from "./UserList";
 import UserCreation from "./UserCreation";
 
 const queryClient = new QueryClient();
 
-const App = () =>
+const App = (): ReactElement =>
   <QueryClientProvider client={queryClient}>
     <div>
       <UserList />

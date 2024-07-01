@@ -10,7 +10,7 @@ const todosReducer = (state: TodoType[], action: Action): TodoType[] =>
 
 export const Todos = (): ReactElement => {
   const [todos, dispatch] = useReducer(todosReducer, []);
-  const handleBlur = (text: TodoType) => {
+  const handleBlur = (text: TodoType): void => {
     dispatch({type: 'add', text});
   }
   return <div>

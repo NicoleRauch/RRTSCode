@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, {ReactElement, useState} from "react";
 import {useDispatch} from "react-redux";
 import {addUser} from "../src-solution-redux-2/reducers";
 
-const UserCreation = () => {
+const UserCreation = (): ReactElement => {
   const dispatch = useDispatch();
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");

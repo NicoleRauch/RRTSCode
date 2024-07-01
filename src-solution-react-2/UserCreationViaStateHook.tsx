@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, {ReactElement, useState} from "react";
 
 import {IUser} from "../src-solution-react/types";
 
 export type UserCreationProps = {
   submitUser: (user: IUser) => void
 }
-const UserCreation = ({submitUser}: UserCreationProps) => {
+const UserCreation = ({submitUser}: UserCreationProps): ReactElement => {
 
 const [firstName, setFirstName] = useState<string>("");
 const [lastName, setLastName] = useState<string>("");

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ReactElement} from "react";
 
 import UserList from "./UserList";
 import UserCreation from "./UserCreation";
@@ -10,7 +10,7 @@ const users: IUser[] = [
   {firstName: "Fritz", lastName: "Walter"}
 ];
 
-const App = () =>
+const App = (): ReactElement =>
   <div>
     <UserList users={users}/>
     <UserCreation submitUser={(): void => { /**/

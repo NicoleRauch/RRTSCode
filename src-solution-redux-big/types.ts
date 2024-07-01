@@ -30,13 +30,13 @@ export type TAction = ThunkAction<
     void,
     StoreState,
     unknown,
-    Action<string>
+    Action
     >;
 
 export type TDispatch = ThunkDispatch<
     StoreState,
     void,
-    Action<string>
+    Action
     >;
 
 export type IDispatchProps = {

@@ -1,9 +1,9 @@
 import {useMutation, useQueryClient} from "@tanstack/react-query";
-import React, {useState} from "react";
+import React, {ReactElement, useState} from "react";
 
 import {postUser} from "./backendCalls";
 
-const UserCreation = () => {
+const UserCreation = (): ReactElement => {
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: postUser,

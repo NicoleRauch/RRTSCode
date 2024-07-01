@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, {ReactElement, useState} from "react";
 
 import {IDispatchProps} from "../src-solution-redux-2/types";
 import {addUser} from "./reducers";
 
 
-const UserCreation = ({dispatch}: IDispatchProps) => {
+const UserCreation = ({dispatch}: IDispatchProps): ReactElement => {
 
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");

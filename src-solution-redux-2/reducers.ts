@@ -25,7 +25,7 @@ export const addUser = (user: IUser): UserAddedAction => ({
 
 const users = (state: IUsers, action: Action): IUsers  => {
   switch (action.type) {
-    case UserActions.USER_ADDED:
+    case UserActions.USER_ADDED.valueOf():
       return state.concat((action as UserAddedAction).user);
   }
   return state;

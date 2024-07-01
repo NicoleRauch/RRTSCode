@@ -1,7 +1,7 @@
 import {IUser, IUsers, ZUsers} from "./types";
 
-export const postUser = (user: IUser): Promise<Response> => {
-  return window.fetch("/api/user", {
+export const postUser = (user: IUser): Promise<Response> =>
+  window.fetch("/api/user", {
     method: "POST",
     body: JSON.stringify(user),
     headers: {
@@ -9,7 +9,6 @@ export const postUser = (user: IUser): Promise<Response> => {
       "Content-Type": "application/json"
     },
   });
-};
 
 export const fetchUsers = (): Promise<IUsers> =>
   window.fetch("/api/users") // load data

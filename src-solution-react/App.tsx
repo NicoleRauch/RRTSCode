@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ReactElement} from "react";
 
 import HelloWorld from "./HelloWorldFunctionalComponent";
 import User from "./User";
@@ -11,7 +11,7 @@ const users: IUser[] = [
   {firstName: "Fritz", lastName: "Walter"}
 ];
 
-const App = () =>
+const App = (): ReactElement =>
   <div>
     <HelloWorld/>
     <User user={users[0]}/>
