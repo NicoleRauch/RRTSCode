@@ -1,6 +1,6 @@
 import {Action, combineReducers} from "redux";
 
-import {IUser, UserState, ProductType, ProductState, DataType, OtherDataState, StoreState} from "./types";
+import {IUser, UserState, ProductType, ProductState, DataType, OtherDataState} from "./types";
 import {createReducer} from "./createReducer";
 
 export enum ActionTypes {
@@ -66,7 +66,7 @@ const otherData = createReducer<OtherDataState>(INITIAL_STATE_OTHER_DATA, {
   [ActionTypes.DATA_REMOVED]: (_: OtherDataState, __: DataRemovedAction) => null
 });
 
-export default combineReducers<StoreState>({
+export default combineReducers({
   users,
   products,
   otherData

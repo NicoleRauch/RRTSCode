@@ -10,7 +10,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({
   reducer,
-  middleware: [logger],
+  middleware: (gDM) => gDM().concat(logger),
   devTools: true
 });
 

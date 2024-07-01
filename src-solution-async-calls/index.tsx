@@ -1,7 +1,7 @@
 import React from "react";
 
 import {Provider} from "react-redux";
-import thunkMiddleware from "redux-thunk";
+import {thunk} from "redux-thunk";
 import logger from "redux-logger";
 import {createRoot} from "react-dom/client";
 
@@ -11,7 +11,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({
     reducer,
-    middleware: [thunkMiddleware, logger],
+    middleware: (gDM) => gDM().concat(thunk, logger),
     devTools: true,
 });
 

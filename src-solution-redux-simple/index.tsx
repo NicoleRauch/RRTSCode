@@ -10,7 +10,7 @@ import reducer from "./reducers";
 
 export const store = configureStore({
     reducer,
-    middleware: [logger],
+    middleware: (gDM) => gDM().concat(logger),
     devTools: true,
 });
 
