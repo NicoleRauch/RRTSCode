@@ -5,7 +5,7 @@ Code for a React-Redux training in TypeScript.
 
 To successfully use this codebase, please install:
 
-* [Node.js version 14.x](https://nodejs.org/en/download/) or greater
+* [Node.js version 18.x](https://nodejs.org/en/download/) or greater
 * A suitable editor or IDE, e.g.
    * Webstorm -- [there is a 30-day test version](https://www.jetbrains.com/webstorm/download/)
    * Visual Studio Code -- [it is free](https://code.visualstudio.com/download)
@@ -16,11 +16,11 @@ To successfully use this codebase, please install:
 * cd into that directory
 * Install required modules: `npm install` (in case of errors please use `npm install --legacy-peer-deps`)
 * Launch the development server:
-   * `npm start`
-
-After that:
-
-* open [http://localhost:3000](http://localhost:3000) in the browser. If you see "Please replace this!", all is well.
+  * `npm start`
+  * Open [http://localhost:3000](http://localhost:3000) in the browser. You should see "Please replace this!".
+* Run the tests:
+  * `npm test` (either in the console or from your IDE)
+  * There should be 1 passing test.
 
 
 ## Trying out the solutions
