@@ -21,12 +21,12 @@ const UserCreation = ({dispatch}: IDispatchProps): ReactElement => {
                 <input type="text" onBlur={(e): void => setLastName(e.target.value)}/>
             </div>
             <div>
-                <button
-                    onClick={(): void => {
-                        dispatch(addUser({firstName, lastName}))
-                    }}
-                >Submit
-                </button>
+<button
+    onClick={(): void => {
+        dispatch(addUser({firstName, lastName}))
+    }}
+>Submit
+</button>
             </div>
         </div>
     );

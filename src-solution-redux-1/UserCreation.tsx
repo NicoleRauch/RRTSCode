@@ -13,7 +13,7 @@ const UserCreation = ({submitUser}: UserCreationProps): ReactElement => {
   return <div><div>
       <label>First name:</label>
       <input type="text"
-             onBlur={(e): void => setFirstName(e.target.value)}/>
+          onBlur={(e): void => setFirstName(e.target.value)}/>
     </div>
     <div>
       <label>Last name:</label>

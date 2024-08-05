@@ -1,7 +1,7 @@
 import React, {ReactElement, useState} from "react";
 import {UserProps} from "../src-solution-react/User";
 
-const UserWithHighlight = ({user}: UserProps): ReactElement => {
+const UserWithHighlight =({user}: UserProps):ReactElement => {
 
   const [highlighted, setHighlighted] = useState(false);
 
