@@ -13,25 +13,28 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 module.exports = {
 
     entry: [
-        "./src/index.tsx",
-        // "./src-fortgeschritten/index.tsx",
+        // "./src/index.tsx",
         // "./src-solution-react/index.tsx",
         // "./src-solution-hooks/index.tsx",
-        // "./src-solution-react-2/index.tsx",
-        // "./src-solution-react-lifecycle/index.tsx",
         // "./src-solution-react-lifecycle-hooks/index.tsx",
-        // "./src-solution-react-layout/index.tsx",
+        // "./src-solution-react-2/index.tsx",
         // "./src-solution-redux-1/index.tsx",
-        // "./src-solution-redux-2/index.tsx",
-        // "./src-solution-redux-big/index.tsx",
-        // "./src-solution-redux-tools/index_devtools_and_logger.tsx",
         // "./src-solution-useReducer/index.tsx",
+        // "./src-solution-redux-2/index.tsx",
+        // "./src-solution-redux-tools/index_devtools_and_logger.tsx",
+
+        // "./src-solution-redux-big/index.tsx",
         // "./src-solution-async-calls/index.tsx",
         // "./src-solution-tanstack-query/index.tsx",
+
+        // "./src-solution-react-layout/index.tsx",
+
         // "./src-solution-data-validation/index.tsx",
         // "./src-solution-routing/index.tsx",
         // "./src-solution-iots/index.tsx",
         // "./src-solution-forms/index.tsx",
+
+        // "./src-solution-react-lifecycle/index.tsx",
     ],
 
     resolve: {
