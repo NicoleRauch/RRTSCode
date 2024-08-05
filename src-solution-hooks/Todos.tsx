@@ -14,6 +14,7 @@ export const Todos = (): ReactElement => {
     dispatch({type: 'add', text});
   }
   return <div>
+    <h2>ToDo App</h2>
     <div>{todos.join(", ")}</div>
     <input onBlur={e => handleBlur(e.target.value)}/>
   </div>;
