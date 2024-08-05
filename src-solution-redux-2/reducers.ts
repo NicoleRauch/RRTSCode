@@ -3,7 +3,7 @@ import {Action} from "redux";
 import {IUser, StoreState, IUsers} from "./types";
 
 
-const INITIAL_STATE: StoreState = {
+export const INITIAL_STATE: StoreState = {
   users: [
     {firstName: "Nicole", lastName: "Rauch"},
     {firstName: "Peter", lastName: "Müller"},
